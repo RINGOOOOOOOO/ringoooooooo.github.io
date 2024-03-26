@@ -1,0 +1,12 @@
+@font-face {
+  font-family: smalle;
+  src: url("asset/smalle.ttf");
+}
+
+h1 {
+  font-family: smalle;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
