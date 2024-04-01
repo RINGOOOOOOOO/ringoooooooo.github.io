@@ -82,6 +82,7 @@ h1::after {
 
 #yt-link {
   position: absolute;
+  text-decoration-line: none;
   bottom: 2em;
   width: 100%;
   color: hsl(0 0 0 / 0.7);
