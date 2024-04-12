@@ -3,9 +3,12 @@
   src: url("asset/smalle.ttf");
 }
 
+@media screen and (max-width: 480px) {
+}
+
 :root {
   --bg-color: hsl(49 37% 94%);
-  --typewriterSpeed: 6s;
+  --typewriterSpeed: 5s;
   --typewriterCharacters: 24;
 }
 
@@ -25,7 +28,7 @@ h1 {
   font-family: smalle;
   position: relative;
   width: max-content;
-  letter-spacing: 1.15rem;
+  letter-spacing: 0.5rem;
 }
 
 h1::before,
@@ -82,7 +85,7 @@ h1::after {
 
 #yt-link {
   position: absolute;
-  text-decoration-line: none;
+  /* text-decoration-line: none; */
   bottom: 2em;
   width: 100%;
   color: hsl(0 0 0 / 0.7);
