@@ -26,7 +26,11 @@ h1 {
 p {
   font-family: smalle;
 }
-
+p1 {
+  font-family: smalle;
+  margin-left: -10px;
+  font-size: 15px;
+}
 .StartMenu-item {
   margin-top: 90px;
   margin-left: 20px;
@@ -55,7 +59,7 @@ p {
 .menu-button img {
   width: auto;
   height: auto;
-  margin-top: 155px;
+  margin-top: 92px;
   margin-left: 225px;
 }
 
@@ -96,6 +100,14 @@ p {
   z-index: -1;
 }
 
+.Browser {
+  grid-area: 1 / 1 / 3 / 6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 .Taskbarline {
   grid-area: 3 / 1 / 4 / 6;
   background-image: url("asset/taskbarline.png");
@@ -117,11 +129,11 @@ p {
   grid-area: 3 / 1 / 4 / 2;
   background-image: url("asset/startbuttonunpressed.png");
   height: 100%;
-  z-index: 1;
-  background-size: 212px 51px;
-
+  z-index: 4;
   cursor: pointer;
-  background-size: cover;
+  background-size: auto 51px; /* 调整宽度,高度自适应 */
+  background-repeat: no-repeat;
+  background-position: left center;
   /* background-color: azure; */
 }
 
@@ -135,7 +147,7 @@ p {
   /* position: absolute; */
   bottom: 51px;
   height: 100%;
-  z-index: 1;
+  z-index: 5;
   /*  overflow: hidden; */
   /* position: fixed;  */
   /* background-color: aqua; */
@@ -185,27 +197,39 @@ p {
 }
 
 .AboutMeBrowser {
+  display: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 70px 300px 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-left: 450px;
-  margin-top: 50px;
-  width: 560px;
-  height: 400px;
-  position: absolute;
+  /* margin-left: 450px;
+  margin-top: 50px; */
+  width: 700px;
+  height: 500px;
+  position: absolute; /* Ensure it's absolute for positioning */
   background-image: url("asset/AboutMe.png");
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 3;
+  cursor: move; /* Change cursor to indicate draggable */
+  z-index: 1;
+
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .AboutMeWeb {
   grid-area: 2 / 1 / 3 / 2;
-  cursor: move;
-  padding: 10px 0 0 50px;
+  padding: 20px 0 0 50px;
   display: flex;
   justify-content: space-between;
-  pointer-events: auto;
+}
+
+.AboutMeBrowser.visible {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.AboutMeBrowser.hidden {
+  display: none;
 }
