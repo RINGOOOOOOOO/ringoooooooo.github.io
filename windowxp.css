@@ -110,7 +110,7 @@ p1 {
 
 .Taskbarline {
   grid-area: 3 / 1 / 4 / 6;
-  background-image: url("asset/taskbarline.png");
+  background-image: url("asset/Taskbarline.png");
   height: 100%;
   z-index: 0;
   background-size: cover;
@@ -165,7 +165,7 @@ p1 {
 
 .Time {
   grid-area: 3 / 5 / 4 / 6;
-  background-image: url("asset/timebar.png");
+  background-image: url("asset/Timebar.png");
   background-size: 173px 51px;
   height: 100%;
   z-index: 1;
@@ -206,7 +206,7 @@ p1 {
   width: 700px;
   height: 500px;
   position: absolute; /* Ensure it's absolute for positioning */
-  background-image: url("asset/AboutMe.png");
+  background-image: url("asset/Aboutme.png");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: move; /* Change cursor to indicate draggable */
