@@ -19,7 +19,7 @@ body {
   display: grid;
   place-content: center;
   text-align: center;
-  background-image: url("asset/Wallpaper.png");
+  /* background-image: url("asset/Wallpaper.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -116,7 +116,7 @@ h1::after {
   font-size: 0.8rem;
   position: absolute;
   text-decoration-line: none;
-  /* bottom: 2em; */
+  bottom: 2em;
   width: 100%;
   color: hsl(0 0 0 / 0.7);
 }
@@ -125,5 +125,3 @@ h1::after {
 #yt-link:focus {
   color: teal;
 }
-
-
