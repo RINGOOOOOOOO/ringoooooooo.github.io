@@ -6,6 +6,19 @@
     <title>Jinhao Xu's Desktop</title>
     <link rel="stylesheet" href="windowxp.css" />
     <script src="windowxp.js"></script>
+    <script>
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
+      document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "F12" ||
+          (event.ctrlKey && event.shiftKey && event.key === "I")
+        ) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </head>
 
   <body>
