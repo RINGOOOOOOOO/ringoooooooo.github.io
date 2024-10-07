@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         popupWindow.classList.add("hidden");
       }, 500);
-      aboutMeTask.style.backgroundImage = "url('asset/AboutMeTasklit.png')";
+      aboutMeTask.style.backgroundImage = "url('asset/AboutmeTasklit.png')";
     } else {
       popupWindow.classList.remove("hidden");
       setTimeout(() => {
