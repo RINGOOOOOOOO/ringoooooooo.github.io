@@ -125,13 +125,20 @@ p1 {
   background-repeat: no-repeat;
 }
 
+#aboutMeButton {
+  display: inline-block;
+  cursor: pointer;
+  /* background-color: #f5f8fb; */
+  padding-right: 105px;
+}
+
 .Start {
   grid-area: 3 / 1 / 4 / 2;
   background-image: url("asset/startbuttonunpressed.png");
   height: 100%;
   z-index: 4;
   cursor: pointer;
-  background-size: auto 51px; /* 调整宽度,高度自适应 */
+  background-size: auto 51px;
   background-repeat: no-repeat;
   background-position: left center;
   /* background-color: azure; */

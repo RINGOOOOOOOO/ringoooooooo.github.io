@@ -6,7 +6,7 @@
     <title>Jinhao Xu's Desktop</title>
     <link rel="stylesheet" href="windowxp.css" />
     <script src="windowxp.js"></script>
-    <!-- <script>
+    <script>
       document.addEventListener("contextmenu", function (event) {
         event.preventDefault();
       });
@@ -18,7 +18,7 @@
           event.preventDefault();
         }
       });
-    </script> -->
+    </script>
   </head>
 
   <body>
@@ -30,7 +30,7 @@
         <div style="margin-left: 50px; margin-top: 50px">
           <a href="project.html"><img src="asset/ProjectFolder.png" / ></a>
           <div class="desc">
-            <p1>My Project</p1>
+            <p1 style="user-select: none">My Project</p1>
           </div>
         </div>
         <div class="AboutMeBrowser" id="popup-window">
@@ -46,15 +46,22 @@
       </div>
       <div class="Taskbarline"></div>
       <div class="AboutMeTask" id="aboutMeTask">
-        <h1
-          id="aboutMeButton"
-          style="margin-left: 50px; font-size: 20px; top: -1px; cursor: pointer"
-        >
-          About Me
-        </h1>
+        <span id="aboutMeButton"
+          ><h1
+            style="
+              margin-left: 50px;
+              font-size: 20px;
+              top: -1px;
+              cursor: pointer;
+              user-select: none;
+            "
+          >
+            About Me
+          </h1>
+        </span>
       </div>
       <div class="Start"></div>
-      <div class="StartMenu">
+      <div class="StartMenu" style="user-select: none">
         <div class="StartMenu-item">
           <div class="menu-item">
             <img src="asset/AboutMeWeb.png" />
@@ -88,9 +95,9 @@
           <a href="index.html"><img src="asset/HomeButton.png" /></a>
         </div>
       </div>
-      <div class="Language"><h1>EN</h1></div>
+      <div class="Language"><h1 style="user-select: none">EN</h1></div>
       <div class="Time">
-        <div id="clock"></div>
+        <div id="clock" style="user-select: none"></div>
       </div>
     </div>
   </body>

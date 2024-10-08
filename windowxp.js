@@ -40,21 +40,24 @@ document.addEventListener("DOMContentLoaded", function () {
     popupWindow.classList.add("visible");
   });
 
-  aboutMeButton.addEventListener("click", function () {
-    if (popupWindow.classList.contains("visible")) {
-      popupWindow.classList.remove("visible");
-      setTimeout(() => {
-        popupWindow.classList.add("hidden");
-      }, 500);
-      aboutMeTask.style.backgroundImage = "url('asset/AboutmeTasklit.png')";
-    } else {
-      popupWindow.classList.remove("hidden");
-      setTimeout(() => {
-        popupWindow.classList.add("visible");
-      }, 10);
-      aboutMeTask.style.backgroundImage = "url('asset/AboutMeTask.png')";
-    }
-  });
+  // aboutMeButton.addEventListener("click", function ()
+  document
+    .getElementById("aboutMeButton")
+    .addEventListener("click", function () {
+      if (popupWindow.classList.contains("visible")) {
+        popupWindow.classList.remove("visible");
+        setTimeout(() => {
+          popupWindow.classList.add("hidden");
+        }, 500);
+        aboutMeTask.style.backgroundImage = "url('asset/AboutmeTasklit.png')";
+      } else {
+        popupWindow.classList.remove("hidden");
+        setTimeout(() => {
+          popupWindow.classList.add("visible");
+        }, 10);
+        aboutMeTask.style.backgroundImage = "url('asset/AboutMeTask.png')";
+      }
+    });
 
   const browserArea = document.querySelector(".Browser");
 
