@@ -118,7 +118,7 @@ p1 {
 
 .AboutMeTask {
   grid-area: 3 / 2 / 4 / 4;
-  background-image: url("../asset/AboutMeTask.png");
+  background-image: url("asset/AboutMeTask.png");
   height: 100%;
   z-index: 0;
   margin: 7px -10px;
