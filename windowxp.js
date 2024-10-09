@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         popupWindow.classList.add("visible");
       }, 10);
-      aboutMeTask.style.backgroundImage = "url('asset/AboutMeTask.png')";
+      aboutMeTask.style.backgroundImage = "url('asset/AboutMeTaskButton.png')";
     }
   });
 
