@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startMenu.classList.toggle("visible");
 
     if (startMenu.classList.contains("visible")) {
-      startButton.style.backgroundImage = "url('asset/startbutton.png')";
+      startButton.style.backgroundImage = "url('asset/StartButton.png')";
       console.log("Start Menu is now visible");
     } else {
       startButton.style.backgroundImage =
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         popupWindow.classList.add("hidden");
       }, 500);
-      aboutMeTask.style.backgroundImage = "url('asset/AboutmeTasklit.png')";
+      aboutMeTask.style.backgroundImage = "url('asset/AboutMeTasklit.png')";
     } else {
       popupWindow.classList.remove("hidden");
       setTimeout(() => {
