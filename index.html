@@ -9,9 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="cursor.js"></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <div class="container">
       <div class="left column">
         <div class="leftheader">
@@ -25,7 +25,11 @@
             <br />
             <br />
             <a href="windowxp.html"
-              ><img src="indexAsset/pc.png" alt="pc" style="z-index: -1"
+              ><img
+                src="indexAsset/pc.png"
+                alt="pc"
+                class="pc-image"
+                style="z-index: -1"
             /></a>
           </div>
         </div>
@@ -33,12 +37,11 @@
       <div class="right column">
         <nav class="menu">
           <a href="#home" class="hover-this"><span>Home</span></a>
-          <a href="#project" class="hover-this"><span>Project</span></a>
+          <a href="#project" class="hover-this"><span>Works</span></a>
           <a href="#about" class="hover-this"><span>About</span></a>
           <a href="#contact" class="hover-this"><span>Contact</span></a>
-          <div class="cursor"></div>
+          <!-- <div class="cursor"></div> -->
         </nav>
-
         <div class="header">
           <h1 class="name">JINHAO XU</h1>
         </div>
@@ -86,36 +89,6 @@
         0.1
       );
 
-      (function () {
-        const link = document.querySelectorAll("nav > .hover-this");
-        const cursor = document.querySelector(".cursor");
-        const image = document.querySelector("a > img");
-
-        const animateit = function (e) {
-          const span = this.querySelector("span");
-          const { offsetX: x, offsetY: y } = e,
-            { offsetWidth: width, offsetHeight: height } = this,
-            move = 25,
-            xMove = (x / width) * (move * 2) - move,
-            yMove = (y / height) * (move * 2) - move;
-
-          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
-          if (e.type === "mouseleave") span.style.transform = "";
-        };
-
-        const editCursor = (e) => {
-          const { clientX: x, clientY: y } = e;
-
-          cursor.style.left = x + "px";
-          cursor.style.top = y + "px";
-        };
-
-        link.forEach((b) => b.addEventListener("mousemove", animateit));
-        link.forEach((b) => b.addEventListener("mouseleave", animateit));
-        window.addEventListener("mousemove", editCursor);
-      })();
-
       document.addEventListener("DOMContentLoaded", () => {
         const menuItems = document.querySelectorAll(".hover-this");
 
@@ -148,9 +121,53 @@
         setTimeout(() => {
           // nameElement.style.display = "grid";
           nameElement.style.opacity = "1";
-          nameElement.style.transform = "translateY(0)"; // 恢复位置
+          nameElement.style.transform = "translateY(0)";
         }, 0);
       });
+
+      (function () {
+        const cursor = document.querySelector(".cursor");
+        const hoverElements = document.querySelectorAll(".hover-this");
+        const pcImage = document.querySelector(".pc-image");
+
+        const animateit = function (e) {
+          const span = this.querySelector("span");
+          const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+            move = 25,
+            xMove = (x / width) * (move * 2) - move,
+            yMove = (y / height) * (move * 2) - move;
+
+          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+          if (e.type === "mouseleave") span.style.transform = "";
+        };
+
+        const editCursor = (e) => {
+          const { clientX: x, clientY: y } = e;
+          cursor.style.left = x + "px";
+          cursor.style.top = y + "px";
+        };
+
+        const expandCursor = () => {
+          cursor.classList.add("expand");
+        };
+
+        const shrinkCursor = () => {
+          cursor.classList.remove("expand");
+        };
+
+        hoverElements.forEach((element) => {
+          element.addEventListener("mousemove", animateit);
+          element.addEventListener("mouseleave", animateit);
+          element.addEventListener("mouseenter", expandCursor);
+          element.addEventListener("mouseleave", shrinkCursor);
+        });
+
+        pcImage.addEventListener("mouseenter", expandCursor);
+        pcImage.addEventListener("mouseleave", shrinkCursor);
+
+        window.addEventListener("mousemove", editCursor);
+      })();
     </script>
   </body>
 </html>
