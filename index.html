@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="cursor.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="cursor"></div>
       <div class="left column">
         <div class="leftheader">
           <p>Welcome!</p>
@@ -21,44 +21,33 @@
             exploring.
           </p>
           <p>😊</p>
-          <img src="" />
         </div>
-        <!-- <div class="link"><a href="#">all products</a></div> -->
       </div>
       <div class="right column">
-        <div class="right column">
-          <div class="menu">
-            <ul>
-              <li>
-                <a href="#" class="hover"><span>Home</span></a>
-              </li>
-              <li>
-                <a href="#" class="hover"><span>Project</span></a>
-              </li>
-              <li>
-                <a href="#" class="hover"><span>About</span></a>
-              </li>
-              <li>
-                <a href="#" class="hover"><span>Contact</span></a>
-              </li>
-              <div class="cursor"></div>
-            </ul>
-          </div>
-        </div>
+        <nav class="menu">
+          <a href="#home" class="hover-this"><span>Home</span></a>
+          <a href="#project" class="hover-this"><span>Project</span></a>
+          <a href="#about" class="hover-this"><span>About</span></a>
+          <a href="#contact" class="hover-this"><span>Contact</span></a>
+
+          <div class="cursor"></div>
+        </nav>
+
         <div class="header">
-          <h1 class="ml12">JINHAO XU</h1>
+          <h1 class="name">JINHAO XU</h1>
         </div>
       </div>
     </div>
+
     <script>
-      var textWrapper = document.querySelector(".ml12");
+      var textWrapper = document.querySelector(".name");
       textWrapper.innerHTML = textWrapper.textContent.replace(
         /\S/g,
         "<span class='letter'>$&</span>"
       );
 
       anime.timeline().add({
-        targets: ".ml12 .letter",
+        targets: ".name .letter",
         translateY: [100, 0],
         translateZ: 0,
         opacity: [0, 1],
@@ -73,35 +62,11 @@
         delay: 2.9,
       });
 
-      TweenMax.from(".header h1", 3, {
+      TweenMax.from(".name", 3, {
         left: "-140%",
         ease: Expo.easeInOut,
         delay: 2.9,
       });
-
-      //   TweenMax.fromTo(
-      //     ".right",
-      //     0.6,
-      //     { borderWidth: "0px", borderColor: "transparent" },
-      //     {
-      //       borderWidth: "10px",
-      //       borderColor: "#803237",
-      //       ease: Power2.easeOut,
-      //       delay: 5.1,
-      //     }
-      //   );
-
-      //   TweenMax.fromTo(
-      //     ".left",
-      //     0.6,
-      //     { borderWidth: "0px", borderColor: "transparent" },
-      //     {
-      //       borderWidth: "25px",
-      //       borderColor: "#2f6a72",
-      //       ease: Power2.easeOut,
-      //       delay: 5.1,
-      //     }
-      //   );
 
       TweenMax.staggerFrom(
         ".leftheader p",
@@ -115,68 +80,35 @@
         0.1
       );
 
-      TweenMax.staggerFrom(
-        ".nav menu",
-        1,
-        {
-          y: 30,
-          opacity: 0,
-          ease: Power2.easeOut,
-          delay: 5.1,
-        },
-        0.2
-      );
 
-      TweenMax.staggerFrom(
-        ".header > p",
-        1,
-        {
-          y: "60",
-          opacity: 0,
-          ease: Power2.easeOut,
-          delay: 5.6,
-        },
-        0.2
-      );
+      (function () {
+        const link = document.querySelectorAll("nav > .hover-this");
+        const cursor = document.querySelector(".cursor");
 
-      TweenMax.from(".link", 1, {
-        opacity: 0,
-        ease: SteppedEase.config(1),
-        repeat: -1,
-        repeatDelay: 0.2,
-        delay: 5.6,
-      });
+        const animateit = function (e) {
+          const span = this.querySelector("span");
+          const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+            move = 25,
+            xMove = (x / width) * (move * 2) - move,
+            yMove = (y / height) * (move * 2) - move;
 
-      document.querySelectorAll("li").forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-          TweenMax.to(item, 0.6, {
-            y: -5,
-            // x: -5,
-            ease: Power1.easeInOut,
-            repeat: -1,
-            yoyo: true,
-          });
+          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
-          TweenMax.to(item, 0.6, {
-            color: "#803237",
-            ease: Power1.easeInOut,
-          });
-        });
+          if (e.type === "mouseleave") span.style.transform = "";
+        };
 
-        item.addEventListener("mouseleave", () => {
-          TweenMax.to(item, 0.6, {
-            y: 0,
-            // x: 0,
-            ease: Power1.easeOut,
-            clearProps: "all",
-          });
+        const editCursor = (e) => {
+          const { clientX: x, clientY: y } = e;
 
-          TweenMax.to(item, 0.6, {
-            color: "#ede5d0",
-            ease: Power1.easeInOut,
-          });
-        });
-      });
+          cursor.style.left = x + "px";
+          cursor.style.top = y + "px";
+        };
+
+        link.forEach((b) => b.addEventListener("mousemove", animateit));
+        link.forEach((b) => b.addEventListener("mouseleave", animateit));
+        window.addEventListener("mousemove", editCursor);
+      })();
     </script>
   </body>
 </html>
