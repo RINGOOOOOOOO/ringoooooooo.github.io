@@ -17,7 +17,8 @@
 html,
 body {
   /* background: #2f6a72; */
-  background-color: #803237;
+  /* background-color: #803237; */
+  background-color: #226197;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -46,10 +47,18 @@ body {
   background-size: cover;
   padding: 20px 30px;
   border: 45px solid;
-  border-color: #803237;
-  /* border-radius: 30px;
-  overflow: hidden; */
+  /* border-color: #803237; */
+  border-color: #226197;
+  border-radius: 30px;
+  /* overflow: hidden; */
 }
+
+/* .inner {
+  background-color:  #ede5d0; 
+  border: 0px solid;
+  border-radius: 30px; 
+  /* padding: 20px 30px;  
+} */
 
 .right {
   width: 25%;
@@ -113,6 +122,7 @@ nav a {
   padding: 20px 0;
   display: inline-block;
   cursor: none;
+  display: none;
 }
 
 span {
@@ -142,7 +152,8 @@ span {
 }
 
 .leftheader {
-  color: #803237;
+  /* color: #803237; */
+  color: #226197;
   text-transform: uppercase;
 }
 
@@ -154,6 +165,8 @@ span {
 
 .header {
   text-transform: uppercase;
+  /* background-color: #2f6a72; */
+  padding: 520px 0 120px;
 }
 
 .header h1 {
@@ -166,13 +179,14 @@ span {
 }
 
 .name {
-  padding: 520px 10px 120px;
-  margin-left: -20px;
+  margin-left: -30px;
   font-family: "FT";
   color: #803237;
   letter-spacing: 2px;
   font-size: 36px;
   max-width: 300px;
+  opacity: 0;
+  /* display: none; */
 }
 
 @media (min-width: 900px) {

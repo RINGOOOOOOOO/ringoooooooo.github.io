@@ -15,12 +15,19 @@
     <div class="container">
       <div class="left column">
         <div class="leftheader">
-          <p>Welcome!</p>
-          <p>
-            Please take a look at my personal website and have a wonderful time
-            exploring.
-          </p>
-          <p>😊</p>
+          <div class="inner">
+            <p>Welcome!</p>
+            <p>
+              Please take a look at my personal website and have a wonderful
+              time exploring.
+            </p>
+            <!-- <p>😎💃</p> -->
+            <br />
+            <br />
+            <a href="windowxp.html"
+              ><img src="indexAsset/pc.png" alt="pc" style="z-index: -1"
+            /></a>
+          </div>
         </div>
       </div>
       <div class="right column">
@@ -29,7 +36,6 @@
           <a href="#project" class="hover-this"><span>Project</span></a>
           <a href="#about" class="hover-this"><span>About</span></a>
           <a href="#contact" class="hover-this"><span>Contact</span></a>
-
           <div class="cursor"></div>
         </nav>
 
@@ -52,20 +58,20 @@
         translateZ: 0,
         opacity: [0, 1],
         easing: "easeOutExpo",
-        duration: 1800,
-        delay: (el, i) => 1800 + 60 * i,
+        duration: 1000,
+        delay: (el, i) => 1000 + 60 * i,
       });
 
       TweenMax.from(".left", 3, {
         left: "-140%",
         ease: Expo.easeInOut,
-        delay: 2.9,
+        delay: 1,
       });
 
       TweenMax.from(".name", 3, {
         left: "-140%",
         ease: Expo.easeInOut,
-        delay: 2.9,
+        delay: 1,
       });
 
       TweenMax.staggerFrom(
@@ -75,15 +81,15 @@
           y: 40,
           opacity: 0,
           ease: Power2.easeOut,
-          delay: 5,
+          delay: 3,
         },
         0.1
       );
 
-
       (function () {
         const link = document.querySelectorAll("nav > .hover-this");
         const cursor = document.querySelector(".cursor");
+        const image = document.querySelector("a > img");
 
         const animateit = function (e) {
           const span = this.querySelector("span");
@@ -109,6 +115,42 @@
         link.forEach((b) => b.addEventListener("mouseleave", animateit));
         window.addEventListener("mousemove", editCursor);
       })();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuItems = document.querySelectorAll(".hover-this");
+
+        setTimeout(() => {
+          menuItems.forEach((item) => {
+            item.style.display = "grid";
+            item.style.opacity = "0";
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          });
+        }, 3000);
+
+        setTimeout(() => {
+          menuItems.forEach((item, index) => {
+            item.style.display = "grid";
+            item.style.opacity = "0";
+            item.style.transform = "translateY(40px)";
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+            setTimeout(() => {
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }, index * 150);
+          });
+        }, 3100);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameElement = document.querySelector(".header .name");
+
+        setTimeout(() => {
+          // nameElement.style.display = "grid";
+          nameElement.style.opacity = "1";
+          nameElement.style.transform = "translateY(0)"; // 恢复位置
+        }, 0);
+      });
     </script>
   </body>
 </html>
