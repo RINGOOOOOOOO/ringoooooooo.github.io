@@ -17,9 +17,14 @@
 
 html,
 body {
-  background: #292d32;
-  /* background-color: #803237; */
-  /* background-color: #226197; */
+  background: linear-gradient(
+    184deg,
+    rgba(238, 198, 220, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(238, 198, 220, 1) 100%
+  );
   width: 100%;
   height: 100%;
   cursor: none;
@@ -47,9 +52,9 @@ body {
   /* background-color: #ede5d0; */
   /* background-color: #678c98; */
   padding: 25px;
-  background-color: #dadbc8;
-  border: solid;
-  border-color: #292d32;
+  /* background-color: #dadbc8; */
+  /* border: solid; */
+  /* border-color: #dadbc8; */
   border-radius: 25px;
   margin: auto;
   margin-left: 30px;
@@ -60,7 +65,7 @@ body {
   flex-grow: 1;
   position: relative;
   display: flex;
-  padding: 5% 2.5% 5% 5%;
+  padding: 5% 5% 5% 5%;
   /* padding: 35px 30px; */
   flex-direction: column;
   justify-content: space-between;
@@ -84,15 +89,15 @@ nav a {
 }
 
 .hover-this {
-  font-family: FT;
+  font-family: "Roboto Mono", monospace, sans-serif;
   transition: all 0.3s ease;
-  padding: 20px 0;
+  padding: 40px 0;
   display: inline-block;
   cursor: none;
   display: none;
-  font-size: 50px;
+  font-size: 16px;
   text-align: right;
-  color: #dadbc8;
+  color:  #037035;
 }
 
 span {
@@ -106,7 +111,7 @@ span {
   pointer-events: none;
   position: fixed;
   padding: 0.3rem;
-  background-color: #fff;
+  background-color: #037035;
   border-radius: 50%;
   mix-blend-mode: difference;
   transition: transform 0.3s ease;
@@ -125,14 +130,14 @@ span {
 .leftheader {
   /* color: #803237; */
   /* color: #226197; */
-  color: #292d32;
+  color: #037035;
   text-transform: uppercase;
 }
 
 .leftheader p {
   position: relative;
-  font-family: FT;
-  font-size: 36px;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-size: 25px;
 }
 
 .header {
@@ -154,11 +159,11 @@ span {
 
 .name {
   /* margin-left: -30px; */
-  font-family: "kilo";
-  color: #803237;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  color:  #037035;
   letter-spacing: 2px;
   text-align: right;
-  font-size: 65px;
+  font-size: 20px;
   opacity: 0;
   /* padding-bottom: 70px; */
 }
