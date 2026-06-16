@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Start Menu is now visible");
     } else {
       startButton.style.backgroundImage =
-        "url('asset/startbuttonunpressed.png')";
+        "url('asset/StartButtonUnpressed.png')";
       console.log("Start Menu is now hidden");
     }
   });
