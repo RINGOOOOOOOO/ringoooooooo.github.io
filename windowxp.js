@@ -1,3 +1,15 @@
+document.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+});
+document.addEventListener("keydown", function (event) {
+  if (
+    event.key === "F12" ||
+    (event.ctrlKey && event.shiftKey && event.key === "I")
+  ) {
+    event.preventDefault();
+  }
+});
+
 function updateTime() {
   const clockElement = document.getElementById("clock");
   const now = new Date();
