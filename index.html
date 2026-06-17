@@ -1,178 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="home page for Jinhao Xu's portfolio" >
-    <title>Jinhao Xu</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i"
-    rel="stylesheet">
-    <link rel="icon" href="asset/512x512.png" type="image/png" >
-  </head>
-  <body>
-    <div class="cursor"></div>
-    <div class="container">
-      <div class="left column">
-        <div class="leftheader">
-          <div class="inner">
-            <p>Welcome!</p>
-            <p>
-              Please take a look at my personal website and have a wonderful
-              time exploring.
-            </p>
-            <!-- <p>😎💃</p> -->
-            <br />
-            <br />
-            <a href="windowxp.html"
-              ><img
-                src="indexAsset/pc.png"
-                alt="pc"
-                class="pc-image"
-                style="z-index: -1"
-            /></a>
-          </div>
-        </div>
-      </div>
-      <div class="right column">
-        <nav class="menu">
-          <a href="https://b.parsons.edu/~xuj678/index.html" class="hover-this"><span>Home</span></a>
-          <a href="https://b.parsons.edu/~xuj678/pages/works.html" class="hover-this"><span>Works</span></a>
-          <a href="https://b.parsons.edu/~xuj678/pages/about.html" class="hover-this"><span>About</span></a>
-          <a href="#contact" class="hover-this"><span>Contact</span></a>
-          <!-- <div class="cursor"></div> -->
-        </nav>
-        <div class="header">
-          <h1 class="name">JINHAO XU</h1>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="home page for Jinhao Xu's portfolio" />
+  <title>Jinhao Xu</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="asset/512x512.png" type="image/png" />
+</head>
+
+<body>
+  <div class="loader">
+    <div class="revealer revealer-1">
+      <svg width="151" height="148" viewBox="0 0 151 148" fill="none">
+        <path d="M75.9817 0L77.25 34.2209C78.0259 55.1571 94.8249 71.9475 115.762 72.7127L150.982 74L115.762 75.2873C94.8249 76.0525 78.0259 92.8429 77.25 113.779L75.9817 148L74.7134 113.779C73.9375 92.8429 57.1385 76.0525 36.2019 75.2873L0.981689 74L36.2018 72.7127C57.1384 71.9475 73.9375 55.1571 74.7134 34.2209L75.9817 0Z" fill="#037035"/>
+      </svg>
     </div>
 
-    <script>
-      var textWrapper = document.querySelector(".name");
-      textWrapper.innerHTML = textWrapper.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
+    <div class="revealer revealer-2">
+      <svg width="151" height="148" viewBox="0 0 151 148" fill="none">
+        <path d="M75.9817 0L77.25 34.2209C78.0259 55.1571 94.8249 71.9475 115.762 72.7127L150.982 74L115.762 75.2873C94.8249 76.0525 78.0259 92.8429 77.25 113.779L75.9817 148L74.7134 113.779C73.9375 92.8429 57.1385 76.0525 36.2019 75.2873L0.981689 74L36.2018 72.7127C57.1384 71.9475 73.9375 55.1571 74.7134 34.2209L75.9817 0Z" fill="#EEC6DC"/>
+      </svg>
+    </div>
 
-      anime.timeline().add({
-        targets: ".name .letter",
-        translateY: [100, 0],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: "easeOutExpo",
-        duration: 1000,
-        delay: (el, i) => 1000 + 60 * i,
-      });
+    <div class="revealer revealer-3">
+      <svg width="151" height="148" viewBox="0 0 151 148" fill="none">
+        <defs>
+          <linearGradient id="pinkWhiteGradient" x1="75.5" y1="0" x2="75.5" y2="148" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#EEC6DC" />
+            <stop offset="30%" stop-color="#FFFFFF" />
+            <stop offset="50%" stop-color="#FFFFFF" />
+            <stop offset="70%" stop-color="#FFFFFF" />
+            <stop offset="100%" stop-color="#EEC6DC" />
+          </linearGradient>
+        </defs>
+        <path d="M75.9817 0L77.25 34.2209C78.0259 55.1571 94.8249 71.9475 115.762 72.7127L150.982 74L115.762 75.2873C94.8249 76.0525 78.0259 92.8429 77.25 113.779L75.9817 148L74.7134 113.779C73.9375 92.8429 57.1385 76.0525 36.2019 75.2873L0.981689 74L36.2018 72.7127C57.1384 71.9475 73.9375 55.1571 74.7134 34.2209L75.9817 0Z" fill="url(#pinkWhiteGradient)"/>
+      </svg>
+    </div>
+  </div>
 
-      TweenMax.from(".left", 3, {
-        left: "-140%",
-        ease: Expo.easeInOut,
-        delay: 1,
-      });
+  <div class="cursor"></div>
 
-      TweenMax.from(".name", 3, {
-        left: "-140%",
-        ease: Expo.easeInOut,
-        delay: 1,
-      });
+  <header>
+    <span id="site-name">
+      <a href="index.html" data-lang="en">Jinhao Xu</a>
+      <a href="index.html" data-lang="zh" style="display: none">徐金淏</a>
+    </span>
 
-      TweenMax.staggerFrom(
-        ".leftheader p",
-        3,
-        {
-          y: 40,
-          opacity: 0,
-          ease: Power2.easeOut,
-          delay: 3,
-        },
-        0.1
-      );
+    <nav>
+      <ul id="menu">
+        <li>
+          <a href="https://b.parsons.edu/~xuj678/pages/about.html" data-lang="en">about</a>
+          <a href="https://b.parsons.edu/~xuj678/pages/about.html" data-lang="zh" style="display: none">关于</a>
+        </li>
+        <li>
+          <a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="en">works</a>
+          <a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="zh" style="display: none">作品</a>
+        </li>
+        <!-- <li>
+          <a href="mailto:xuj678@newschool.com" data-lang="en">contact</a>
+          <a href="mailto:xuj678@newschool.com" data-lang="zh" style="display: none">联系</a>
+        </li> -->
+        <li>
+          <select id="languages" class="language-select">
+            <option value="en">en</option>
+            <option value="zh">中</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const menuItems = document.querySelectorAll(".hover-this");
+  <main class="container">
+    <div class="intro-text">
+      <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" />
 
-        setTimeout(() => {
-          menuItems.forEach((item) => {
-            item.style.display = "grid";
-            item.style.opacity = "0";
-            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          });
-        }, 3000);
+      <p class="intro-content">
+        <span class="name">Jinhao Xu</span>
+        <span class="intro-base">is a</span>
 
-        setTimeout(() => {
-          menuItems.forEach((item, index) => {
-            item.style.display = "grid";
-            item.style.opacity = "0";
-            item.style.transform = "translateY(40px)";
-            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        <a href="javascript:void(0)" class="hover-this intro-role">
+          <span>digital media producer</span>
+        </a>
+        <span class="intro-base">,</span>
 
-            setTimeout(() => {
-              item.style.opacity = "1";
-              item.style.transform = "translateY(0)";
-            }, index * 150);
-          });
-        }, 3100);
-      });
+        <br />
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const nameElement = document.querySelector(".header .name");
+        <a href="javascript:void(0)" class="hover-this intro-role">
+          <span>game designer</span>
+        </a>
+        <span class="intro-base">,</span>
 
-        setTimeout(() => {
-          // nameElement.style.display = "grid";
-          nameElement.style.opacity = "1";
-          nameElement.style.transform = "translateY(0)";
-        }, 0);
-      });
+        <br />
 
-      (function () {
-        const cursor = document.querySelector(".cursor");
-        const hoverElements = document.querySelectorAll(".hover-this");
-        const pcImage = document.querySelector(".pc-image");
+        <a href="javascript:void(0)" class="hover-this intro-role">
+          <span>creative programmer</span>
+        </a>
+        <span class="intro-base">, and</span>
 
-        const animateit = function (e) {
-          const span = this.querySelector("span");
-          const { offsetX: x, offsetY: y } = e,
-            { offsetWidth: width, offsetHeight: height } = this,
-            move = 25,
-            xMove = (x / width) * (move * 2) - move,
-            yMove = (y / height) * (move * 2) - move;
+        <a href="javascript:void(0)" class="hover-this intro-role">
+          <span>artist</span>
+        </a>
+        <span class="intro-base">.</span>
+      </p>
+    </div>
+  </main>
 
-          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-          if (e.type === "mouseleave") span.style.transform = "";
-        };
+  <footer>
+    <div class="marquee" data-lang="en">
+      <span>
+        <a href="mailto:xuj678@newschool.com">
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+        </a>
+      </span>
+    </div>
 
-        const editCursor = (e) => {
-          const { clientX: x, clientY: y } = e;
-          cursor.style.left = x + "px";
-          cursor.style.top = y + "px";
-        };
+    <div class="marquee-zh" data-lang="zh" style="display: none">
+      <span>
+        <a href="mailto:xuj678@newschool.com">
+          如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp; &nbsp;
+          如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp; &nbsp;
+          如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp;
+          如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp;
+        </a>
+      </span>
+    </div>
+  </footer>
 
-        const expandCursor = () => {
-          cursor.classList.add("expand");
-        };
-
-        const shrinkCursor = () => {
-          cursor.classList.remove("expand");
-        };
-
-        hoverElements.forEach((element) => {
-          element.addEventListener("mousemove", animateit);
-          element.addEventListener("mouseleave", animateit);
-          element.addEventListener("mouseenter", expandCursor);
-          element.addEventListener("mouseleave", shrinkCursor);
-        });
-
-        pcImage.addEventListener("mouseenter", expandCursor);
-        pcImage.addEventListener("mouseleave", shrinkCursor);
-
-        window.addEventListener("mousemove", editCursor);
-      })();
-    </script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
