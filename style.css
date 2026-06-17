@@ -76,8 +76,8 @@ header::after {
   left: 50%;
   transform: translateX(-50%);
 
-  width: 90%; 
-  height: 1.2px;  
+  width: 90%;
+  height: 1.2px;
 
   background: var(--green);
 }
@@ -87,7 +87,7 @@ header::after {
 }
 
 #site-name {
-  font-weight: 700;
+  font-weight: 00;
 }
 
 #site-name a,
@@ -147,6 +147,7 @@ footer span a:hover {
 
 .intro-text {
   position: absolute;
+  z-index: 10;
   top: 50%;
   left: 50%;
   width: 760px;
@@ -360,7 +361,6 @@ footer .marquee-zh span {
   footer .marquee span,
   footer .marquee-zh span {
     font-size: 18px;
-
   }
 }
 
@@ -383,4 +383,28 @@ footer {
 header::after,
 footer::before {
   width: 100%;
+}
+
+.role-preview {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 200px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* border: 1.2px solid var(--green); */
+  z-index: 5;
+}
+
+.preview-image,
+.preview-video {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-video {
+  display: none;
 }
