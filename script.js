@@ -288,6 +288,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  document.querySelectorAll(".intro-role").forEach((role) => {
+    role.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      document.querySelector(".next-page").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  });
+
   const languageSelect = document.getElementById("languages");
   const contentElements = document.querySelectorAll("[data-lang]");
 
@@ -303,6 +314,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const menuToggle = document.querySelector("#menu-toggle");
+  const mobileMenu = document.querySelector("#mobile-menu");
+  const mobileClose = document.querySelector(".mobile-close");
+  const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+  });
+
+  mobileClose?.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
 
   const preview = document.querySelector(".role-preview");
   const previewImg = document.querySelector(".preview-image");
@@ -376,23 +406,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!cursor) return;
 
-  const hoverElements = document.querySelectorAll(
-    ".hover-this, header a, header select, footer a, .project-img, .project-name-inner",
-  );
-
   const editCursor = (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
   };
 
-  const expandCursor = () => cursor.classList.add("expand");
-  const shrinkCursor = () => cursor.classList.remove("expand");
+  const expandCursor = () => {
+    cursor.classList.add("expand");
+  };
+
+  const shrinkCursor = () => {
+    cursor.classList.remove("expand");
+  };
+
+  const hoverElements = document.querySelectorAll(
+    ".hover-this, .name-main, .header-name-target, header a, header select, footer a, .project-img, .project-name-inner",
+  );
 
   function magneticMove(e) {
-    if (this.matches("select")) return;
+    if (
+      this.matches("select") ||
+      this.matches(".header-name-target") ||
+      this.matches(".project-name-inner")
+    ) {
+      return;
+    }
 
-    const target =
-      this.querySelector("span") || this.querySelector(".project-name-inner");
+    const target = this.querySelector("span") || this;
 
     if (!target) return;
 
