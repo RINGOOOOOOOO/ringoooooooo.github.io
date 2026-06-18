@@ -22,10 +22,10 @@
   --content-width: 90%;
   --header-height: 70px;
   --footer-height: 80px;
-  --line-height: 1.2px;
+  --line-height: 1px;
 
   --text-size: 16px;
-  --text-weight: 400;
+  --text-weight: 300;
   --footer-size: 28px;
   --footer-weight: 300;
   --letter-space: 1px;
@@ -503,7 +503,7 @@ footer .marquee-zh span {
     --footer-height: 64px;
 
     --text-size: 13px;
-    --text-weight: 300;
+    --text-weight: 400;
 
     --footer-size: 16px;
     --footer-weight: 300;
