@@ -216,7 +216,7 @@ footer span a:hover {
 .intro-text {
   position: absolute;
   z-index: 10;
-  top: 50%;
+  top: 47%;
   left: 52%;
   width: 760px;
   transform: translate(-50%, -50%);

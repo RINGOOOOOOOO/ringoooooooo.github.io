@@ -239,13 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const imgActivationThreshold = safeTop + safeHeight / 2;
 
-        const currentIndex = Math.min(Math.floor(progress * total) + 1, total);
-
-        projectIndex.textContent = `${String(currentIndex).padStart(
-          2,
-          "0",
-        )}/${String(total).padStart(2, "0")}`;
-
         gsap.set(projectIndex, {
           y: progress * moveDistanceIndex,
         });
@@ -254,35 +247,40 @@ document.addEventListener("DOMContentLoaded", () => {
           y: progress * moveDistanceImages,
         });
 
-        projectImgs.forEach((img) => {
+        let activeIndex = 0;
+        let closestDistance = Infinity;
+
+        projectImgs.forEach((img, index) => {
           const rect = img.getBoundingClientRect();
+          const imgCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(imgCenter - imgActivationThreshold);
 
-          const isActive =
-            rect.top <= imgActivationThreshold &&
-            rect.bottom >= imgActivationThreshold;
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            activeIndex = index;
+          }
+        });
 
+        projectIndex.textContent = `${String(activeIndex + 1).padStart(
+          2,
+          "0",
+        )}/${String(total).padStart(2, "0")}`;
+
+        projectImgs.forEach((img, index) => {
           gsap.set(img, {
-            opacity: isActive ? 1 : 0.35,
+            opacity: index === activeIndex ? 1 : 0.35,
           });
         });
 
         projectNames.forEach((p, index) => {
-          const start = index / total;
-          const end = (index + 1) / total;
-
-          const projectProgress = gsap.utils.clamp(
-            0,
-            1,
-            (progress - start) / (end - start),
-          );
-
           gsap.set(p, {
-            y: -projectProgress * moveDistanceNames,
             color:
-              projectProgress > 0 && projectProgress < 1
-                ? "var(--green)"
-                : "rgba(3, 112, 53, 0.35)",
+              index === activeIndex ? "var(--green)" : "rgba(3, 112, 53, 0.35)",
           });
+        });
+
+        gsap.set(projectNames, {
+          y: -activeIndex * 24,
         });
       },
     });
