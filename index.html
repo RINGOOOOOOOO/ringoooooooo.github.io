@@ -65,30 +65,23 @@
 
     <header>
       <span id="site-name">
-        <a href="index.html" data-lang="en">Jinhao Xu</a>
-        <a href="index.html" data-lang="zh" style="display: none">徐金淏</a>
+        <!-- <a href="index.html" data-lang="en">Jinhao Xu</a>
+        <a href="index.html" data-lang="zh" style="display: none">徐金淏</a> -->
+        <select id="languages" class="language-select">
+          <option value="en">EN</option>
+          <option value="zh">中</option>
+        </select>
       </span>
+
+      <div class="header-name-target">Jinhao Xu</div>
 
       <nav>
         <ul id="menu">
           <li>
             <a
-              href="https://b.parsons.edu/~xuj678/pages/about.html"
-              data-lang="en"
-              >about</a
-            >
-            <a
-              href="https://b.parsons.edu/~xuj678/pages/about.html"
-              data-lang="zh"
-              style="display: none"
-              >关于</a
-            >
-          </li>
-          <li>
-            <a
               href="https://b.parsons.edu/~xuj678/pages/works.html"
               data-lang="en"
-              >works</a
+              >Works</a
             >
             <a
               href="https://b.parsons.edu/~xuj678/pages/works.html"
@@ -97,54 +90,64 @@
               >作品</a
             >
           </li>
+          <li>
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/about.html"
+              data-lang="en"
+              >About</a
+            >
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/about.html"
+              data-lang="zh"
+              style="display: none"
+              >关于</a
+            >
+          </li>
           <!-- <li>
           <a href="mailto:xuj678@newschool.com" data-lang="en">contact</a>
           <a href="mailto:xuj678@newschool.com" data-lang="zh" style="display: none">联系</a>
         </li> -->
-          <li>
-            <select id="languages" class="language-select">
-              <option value="en">en</option>
-              <option value="zh">中</option>
-            </select>
-          </li>
         </ul>
       </nav>
     </header>
 
     <main class="container">
       <div class="intro-text">
-        <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" />
+        <!-- <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" /> -->
 
         <p class="intro-content">
-          <span class="name">Jinhao Xu</span>
-          <span class="name" data-lang="zh" style="display: none">徐金淏</span>
-          <span class="intro-base">is a</span>
-          <span class="intro-base" data-lang="zh" style="display: none"
-            >是一位</span
-          >
+          <span class="name-main">Jinhao Xu</span>
+          <span class="intro-base fade-on-scroll typing-isa"></span>
 
           <br />
 
           <a
             href="javascript:void(0)"
-            class="hover-this intro-role image-hover"
-            data-assets="indexAsset/4.png,indexAsset/2.png"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/Mise-en-scène.mp4,indexAsset/dogwash.mp4,indexAsset/duck.mp4"
           >
             <span>game developer</span>
           </a>
-          <span class="intro-base">,</span>
+
+          <span class="intro-base fade-on-scroll">,</span>
+
           <a
             href="javascript:void(0)"
-            class="hover-this intro-role image-hover"
-            data-assets="indexAsset/1.png,indexAsset/bg1.png,indexAsset/bg3.png"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/lying-smalle.gif,indexAsset/bg1.png,indexAsset/bg3.png"
           >
             <span>creative programmer</span>
           </a>
-          <span class="intro-base">, and</span>
+
+          <span class="intro-base fade-on-scroll">, and</span>
+
           <a
             href="javascript:void(0)"
-            class="hover-this intro-role image-hover"
-            data-assets="indexAsset/bg2.png,indexAsset/10.mp4"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/cow.png,indexAsset/10.mp4,indexAsset/512x512.png"
           >
             <span>digital media designer</span>
           </a>
@@ -152,7 +155,7 @@
           <!-- <a href="javascript:void(0)" class="hover-this intro-role">
           <span>illustrator</span>
         </a> -->
-          <span class="intro-base">.</span>
+          <span class="intro-base fade-on-scroll">.</span>
         </p>
       </div>
       <div class="role-preview">
@@ -160,6 +163,72 @@
         <video class="preview-video" muted loop playsinline></video>
       </div>
     </main>
+
+    <section class="next-page">
+      <div class="project-index">
+        <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" />
+        <h1>01/05</h1>
+      </div>
+
+      <div class="project-images">
+        <div class="project-img">
+          <img src="indexAsset/wecleanwhatremain.png" alt="" />
+          <!-- <video
+            muted
+            loop
+            playsinline
+            autoplay
+            src="indexAsset/cleaning.mp4"
+          ></video> -->
+        </div>
+        <div class="project-img">
+          <video
+            muted
+            loop
+            playsinline
+            autoplay
+            src="indexAsset/Labyrinth.mp4"
+          ></video>
+        </div>
+        <div class="project-img">
+          <video
+            muted
+            loop
+            playsinline
+            autoplay
+            src="indexAsset/Spinphony.mp4"
+          ></video>
+        </div>
+        <div class="project-img">
+          <video
+            muted
+            loop
+            playsinline
+            autoplay
+            src="indexAsset/office.mp4"
+          ></video>
+        </div>
+        <div class="project-img">
+          <video
+            muted
+            loop
+            playsinline
+            autoplay
+            src="indexAsset/laptop.mp4"
+          ></video>
+        </div>
+      </div>
+
+      <div class="project-names">
+        <p><span class="project-name-inner">We Clean What Remains</span></p>
+        <p><span class="project-name-inner">Labyrinth</span></p>
+        <p><span class="project-name-inner">Spinphony</span></p>
+        <p>
+          <span class="project-name-inner">Queen of Hearts in the Office</span>
+        </p>
+        <p><span class="project-name-inner">My Desktop</span></p>
+      </div>
+    </section>
 
     <footer>
       <div class="marquee" data-lang="en">
@@ -181,16 +250,17 @@
       <div class="marquee-zh" data-lang="zh" style="display: none">
         <span>
           <a href="mailto:xuj678@newschool.com">
-            如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp; &nbsp;
-            如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp; &nbsp;
-            如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp;
-            如果你感兴趣的话，请随时联系我：） &nbsp; / &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp;
           </a>
         </span>
       </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
