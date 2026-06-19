@@ -1,5 +1,28 @@
+function forceScrollTop() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+forceScrollTop();
+
+window.addEventListener("beforeunload", forceScrollTop);
+window.addEventListener("pageshow", forceScrollTop);
+window.addEventListener("load", forceScrollTop);
+
 document.addEventListener("DOMContentLoaded", () => {
+  forceScrollTop();
+
   gsap.registerPlugin(ScrollTrigger);
+
+  document.body.classList.add("is-loading");
+  forceScrollTop();
+
+  ScrollTrigger.clearScrollMemory();
 
   const name = document.querySelector(".name-main");
   const headerName = document.querySelector(".header-name-target");
@@ -69,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.8,
             ease: "power2.out",
             onComplete: () => {
+              forceScrollTop();
               document.querySelector(".loader")?.remove();
+              document.body.classList.remove("is-loading");
               playIntroAnimation();
             },
           });
@@ -259,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
             [titleEl, subtitleEl],
             { opacity: 0, y: 6 },
             {
-              opacity: (i) => (i === 0 ? 1 : 0.45),
+              opacity: (i) => (i === 0 ? 1 : 0.65),
               y: 0,
               duration: 0.22,
               ease: "power2.out",
@@ -385,6 +410,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", () => {
       updateIndicator(currentIndex);
     });
+
+    currentIndex = 0;
+    updateMiniOpacity(0);
+    updateIndicator(0);
+
+    titleEl.textContent = itemElements[0].dataset.title;
+    subtitleEl.innerHTML = itemElements[0].dataset.subtitle;
+
+    gsap.set(titleEl, { opacity: 1, y: 0 });
+    gsap.set(subtitleEl, { opacity: 0.65, y: 0 });
 
     updateMiniOpacity(0);
     updateIndicator(0);
@@ -585,4 +620,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
   });
+});
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 });
