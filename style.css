@@ -340,8 +340,19 @@ footer span a:hover {
 
 .gallery-subtitle {
   font-size: 12px;
-  /* opacity: 0.8; */
-  /* color: #000000; */
+  /* opacity: 0.6; */
+  color: var(--green);
+}
+
+.gallery-subtitle * {
+  color: inherit;
+}
+
+.z1,
+.z2,
+.z3 {
+  display: inline-block;
+  color: var(--green);
 }
 
 .z1 {
@@ -773,4 +784,9 @@ footer .marquee-zh span {
     transform: translateY(5px) rotate(45deg);
     opacity: 0;
   }
+}
+
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
 }
