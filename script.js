@@ -202,88 +202,192 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!section || section.dataset.ready === "true") return;
     section.dataset.ready = "true";
 
-    const projectIndex = document.querySelector(".project-index h1");
-    const projectImgs = document.querySelectorAll(".project-img");
-    const imagesContainer = document.querySelector(".project-images");
-    const projectNames = document.querySelectorAll(".project-names p");
-    const namesContainer = document.querySelector(".project-names");
+    const minimap = section.querySelector(".minimap");
+    const indicator = section.querySelector(".indicator");
+    const itemElements = section.querySelectorAll(".item");
+    const preview = section.querySelector(".img-preview");
+    const titleEl = section.querySelector(".gallery-title");
+    const subtitleEl = section.querySelector(".gallery-subtitle");
 
-    const total = projectNames.length;
+    let currentIndex = 0;
+    let isInsideGallery = false;
+    let isAnimating = false;
+    let lastWheelTime = 0;
+
+    const activeOpacity = 0.3;
+    const wheelCooldown = 550;
+
+    function isMobileGallery() {
+      return window.innerWidth <= 768;
+    }
+
+    function updateIndicator(index) {
+      const item = itemElements[0];
+      const itemSize = isMobileGallery()
+        ? item.getBoundingClientRect().width
+        : item.getBoundingClientRect().height;
+
+      gsap.to(indicator, {
+        x: isMobileGallery() ? index * itemSize : 0,
+        y: isMobileGallery() ? 0 : index * itemSize,
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    }
+
+    function updateMiniOpacity(index) {
+      itemElements.forEach((item, i) => {
+        const media = item.querySelector("img, video");
+        media.style.opacity = i === index ? activeOpacity : "1";
+      });
+    }
+
+    function updateText(index) {
+      const item = itemElements[index];
+
+      gsap.to([titleEl, subtitleEl], {
+        opacity: 0,
+        y: -6,
+        duration: 0.15,
+        ease: "power2.out",
+        onComplete: () => {
+          titleEl.textContent = item.dataset.title;
+          // subtitleEl.textContent = item.dataset.subtitle;
+          subtitleEl.innerHTML = item.dataset.subtitle;
+
+          gsap.fromTo(
+            [titleEl, subtitleEl],
+            { opacity: 0, y: 6 },
+            {
+              opacity: (i) => (i === 0 ? 1 : 0.45),
+              y: 0,
+              duration: 0.22,
+              ease: "power2.out",
+            },
+          );
+        },
+      });
+    }
+
+    function updatePreview(index) {
+      const item = itemElements[index];
+      const media = item.querySelector("img, video");
+      const clone = media.cloneNode(true);
+
+      clone.muted = true;
+      clone.loop = true;
+      clone.playsInline = true;
+      clone.autoplay = true;
+
+      gsap.to(preview, {
+        opacity: 0,
+        duration: 0.12,
+        ease: "power2.out",
+        onComplete: () => {
+          preview.innerHTML = "";
+          preview.appendChild(clone);
+
+          if (clone.tagName.toLowerCase() === "video") {
+            clone.play();
+          }
+
+          gsap.to(preview, {
+            opacity: 1,
+            duration: 0.2,
+            ease: "power2.out",
+          });
+        },
+      });
+    }
+
+    function setProject(index) {
+      if (isAnimating) return;
+      if (index < 0 || index >= itemElements.length) return;
+      if (index === currentIndex) return;
+
+      isAnimating = true;
+      currentIndex = index;
+
+      updateMiniOpacity(index);
+      updateIndicator(index);
+      updateText(index);
+      updatePreview(index);
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, wheelCooldown);
+    }
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top bottom",
+      end: "top top",
+      scrub: true,
+      onUpdate: (self) => {
+        gsap.set(minimap, {
+          opacity: self.progress,
+        });
+      },
+    });
 
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: () => `+=${window.innerHeight * 4}`,
+      end: () => `+=${window.innerHeight * 2}`,
       pin: true,
-      scrub: 1,
+      pinSpacing: true,
       invalidateOnRefresh: true,
 
-      onUpdate: (self) => {
-        const progress = self.progress;
-
-        const rootStyle = getComputedStyle(document.documentElement);
-        const headerH = parseFloat(
-          rootStyle.getPropertyValue("--header-height"),
-        );
-        const footerH = parseFloat(
-          rootStyle.getPropertyValue("--footer-height"),
-        );
-
-        const safeTop = headerH + 55;
-        const safeBottom = footerH + 55;
-        const safeHeight = window.innerHeight - safeTop - safeBottom;
-
-        const moveDistanceIndex = safeHeight - projectIndex.offsetHeight;
-        const moveDistanceNames = safeHeight - namesContainer.offsetHeight;
-        const moveDistanceImages = safeHeight - imagesContainer.scrollHeight;
-
-        const imgActivationThreshold = safeTop + safeHeight / 2;
-
-        gsap.set(projectIndex, {
-          y: progress * moveDistanceIndex,
-        });
-
-        gsap.set(imagesContainer, {
-          y: progress * moveDistanceImages,
-        });
-
-        let activeIndex = 0;
-        let closestDistance = Infinity;
-
-        projectImgs.forEach((img, index) => {
-          const rect = img.getBoundingClientRect();
-          const imgCenter = rect.top + rect.height / 2;
-          const distance = Math.abs(imgCenter - imgActivationThreshold);
-
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            activeIndex = index;
-          }
-        });
-
-        projectIndex.textContent = `${String(activeIndex + 1).padStart(
-          2,
-          "0",
-        )}/${String(total).padStart(2, "0")}`;
-
-        projectImgs.forEach((img, index) => {
-          gsap.set(img, {
-            opacity: index === activeIndex ? 1 : 0.35,
-          });
-        });
-
-        projectNames.forEach((p, index) => {
-          gsap.set(p, {
-            color:
-              index === activeIndex ? "var(--green)" : "rgba(3, 112, 53, 0.35)",
-          });
-        });
-
-        gsap.set(projectNames, {
-          y: -activeIndex * 24,
-        });
+      onEnter: () => {
+        isInsideGallery = true;
+      },
+      onEnterBack: () => {
+        isInsideGallery = true;
+      },
+      onLeave: () => {
+        isInsideGallery = false;
+      },
+      onLeaveBack: () => {
+        isInsideGallery = false;
       },
     });
+
+    section.addEventListener(
+      "wheel",
+      (e) => {
+        if (!isInsideGallery) return;
+
+        if (e.deltaY < 0 && currentIndex === 0) {
+          return;
+        }
+
+        e.preventDefault();
+
+        const now = Date.now();
+        if (now - lastWheelTime < wheelCooldown) return;
+        lastWheelTime = now;
+
+        if (e.deltaY > 8) {
+          setProject(currentIndex + 1);
+        } else if (e.deltaY < -8) {
+          setProject(currentIndex - 1);
+        }
+      },
+      { passive: false },
+    );
+
+    itemElements.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        setProject(index);
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      updateIndicator(currentIndex);
+    });
+
+    updateMiniOpacity(0);
+    updateIndicator(0);
   }
 
   document.querySelectorAll(".intro-role").forEach((role) => {
@@ -418,28 +522,31 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const hoverElements = document.querySelectorAll(
-    ".hover-this, .name-main, .header-name-target, header a, header select, footer a, .project-img, .project-name-inner",
+    ".hover-this, .name-main, .header-name-target, header a, header select, footer a, .item, .gallery-title, .img-preview",
   );
 
   function magneticMove(e) {
     if (
       this.matches("select") ||
       this.matches(".header-name-target") ||
-      this.matches(".project-name-inner")
+      this.matches(".item") ||
+      this.matches(".gallery-title") ||
+      this.matches(".img-preview")
     ) {
       return;
     }
 
     const target = this.querySelector("span") || this;
-
     if (!target) return;
 
-    const { offsetX: x, offsetY: y } = e;
-    const { offsetWidth: width, offsetHeight: height } = this;
+    const rect = this.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
     const move = 25;
-    const xMove = (x / width) * (move * 2) - move;
-    const yMove = (y / height) * (move * 2) - move;
+    const xMove = (x / rect.width) * (move * 2) - move;
+    const yMove = (y / rect.height) * (move * 2) - move;
 
     target.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
