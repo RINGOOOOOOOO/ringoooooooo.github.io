@@ -64,16 +64,13 @@
 
     <header>
       <span id="site-name">
-        <!-- <a href="index.html" data-lang="en">Jinhao Xu</a>
-        <a href="index.html" data-lang="zh" style="display: none">徐金淏</a> -->
-        <!-- <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" /> -->
         <select id="languages" class="language-select">
           <option value="en">EN</option>
           <option value="zh">中</option>
         </select>
       </span>
 
-      <div class="header-name-target">Jinhao Xu</div>
+      <div class="header-name-target" data-lang="en">Jinhao Xu</div>
 
       <nav>
         <ul id="menu">
@@ -103,7 +100,12 @@
         </ul>
       </nav>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Open menu"
+        data-lang="en"
+      >
         Menu
       </button>
     </header>
@@ -236,7 +238,7 @@
           <div
             class="item"
             data-title="Queen of Hearts in the Office"
-            data-subtitle="a <s>horror</s> cozy story set during a drowsy overtime shiftzzzzzz"
+            data-subtitle="a <s>horror</s> cozy story set during a drowsy overtime shiftzzz"
           >
             <video
               muted
