@@ -509,9 +509,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const rect = item.getBoundingClientRect();
 
+      // gsap.set(preview, {
+      //   x: rect.left + gsap.utils.random(-200, 200),
+      //   y: rect.top + gsap.utils.random(-200, 200),
+      //   scale: 0.85,
+      // });
+      const previewW = 260;
+      const previewH = 200;
+
+      const x = gsap.utils.clamp(
+        12,
+        window.innerWidth - previewW - 12,
+        rect.left + gsap.utils.random(-120, 120),
+      );
+
+      const y = gsap.utils.clamp(
+        12,
+        window.innerHeight - previewH - 12,
+        rect.top + gsap.utils.random(-120, 120),
+      );
+
       gsap.set(preview, {
-        x: rect.left + gsap.utils.random(-200, 200),
-        y: rect.top + gsap.utils.random(-200, 200),
+        x,
+        y,
         scale: 0.85,
       });
 

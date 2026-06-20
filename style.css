@@ -39,8 +39,13 @@
 
 html,
 body {
+  /* width: 100%;
+  min-height: 100%; */
   width: 100%;
+  max-width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
+
   font-family: var(--mono);
   font-size: var(--text-size);
   font-weight: var(--text-weight);
@@ -59,6 +64,17 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+body {
+  position: relative;
+}
+
+.container,
+.next-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 a {
@@ -209,7 +225,7 @@ footer span a:hover {
 
 .container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -262,7 +278,7 @@ footer span a:hover {
 
 /* Hover preview */
 
-.role-preview {
+/* .role-preview {
   position: fixed;
   left: 0;
   top: 0;
@@ -272,13 +288,28 @@ footer span a:hover {
   pointer-events: none;
   overflow: hidden;
   z-index: 5;
+} */
+
+.role-preview {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  max-width: 260px;
+  height: 200px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
 }
 
 .preview-image,
 .preview-video {
-  width: auto;
+  /* width: auto; */
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
+  object-fit: contain;
 }
 
 .preview-video {
