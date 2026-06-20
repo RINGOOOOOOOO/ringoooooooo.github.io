@@ -24,6 +24,8 @@
   --footer-height: 80px;
   --line-height: 1px;
 
+  --app-height: 100dvh;
+
   --text-size: 16px;
   --text-weight: 300;
   --footer-size: 28px;
@@ -35,6 +37,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 html,
@@ -69,7 +80,7 @@ body {
 }
 
 body.is-loading {
-  height: 100vh;
+  height: var(--app-height);
   overflow: hidden;
 }
 
@@ -233,7 +244,7 @@ footer span a:hover {
 
 .container {
   position: relative;
-  height: 100vh;
+  height: var(--app-height);
 }
 
 .intro-text {
@@ -308,7 +319,7 @@ footer span a:hover {
 
 .next-page {
   position: relative;
-  height: 100vh;
+  height: var(--app-height);
   overflow: hidden;
 
   color: var(--green);
@@ -330,14 +341,16 @@ footer span a:hover {
 .gallery-info,
 .img-preview,
 .minimap {
-  max-height: calc(100vh - var(--header-height) - var(--footer-height));
+  max-height: calc(
+    var(--app-height) - var(--header-height) - var(--footer-height)
+  );
 }
 
 .gallery-info {
   position: absolute;
   top: calc(
     var(--header-height) +
-      (100vh - var(--header-height) - var(--footer-height)) / 2
+      (var(--app-height) - var(--header-height) - var(--footer-height)) / 2
   );
   right: 6vw;
   width: 250px;
@@ -399,11 +412,12 @@ footer span a:hover {
   position: absolute;
   top: calc(
     var(--header-height) +
-      (100vh - var(--header-height) - var(--footer-height)) / 2
+      (var(--app-height) - var(--header-height) - var(--footer-height)) / 2
   );
+
+  height: calc(var(--app-height) - var(--header-height) - var(--footer-height));
   left: 50%;
   width: 46vw;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
   max-height: 58vh;
   transform: translate(-50%, -50%);
 
@@ -423,7 +437,7 @@ footer span a:hover {
   position: absolute;
   top: calc(
     var(--header-height) +
-      (100vh - var(--header-height) - var(--footer-height)) / 2
+      (var(--app-height) - var(--header-height) - var(--footer-height)) / 2
   );
   left: 5vw;
   width: 80px;
@@ -481,8 +495,12 @@ footer {
   position: fixed;
   left: 50%;
   bottom: 0;
+
   width: var(--content-width);
-  height: var(--footer-height);
+
+  height: calc(var(--footer-height) + env(safe-area-inset-bottom));
+
+  padding-bottom: env(safe-area-inset-bottom);
   transform: translateX(-50%);
 
   display: flex;
@@ -739,10 +757,11 @@ footer .marquee-zh span {
 
   .next-page {
     position: relative;
-    height: 100vh;
+    height: var(--app-height);
     overflow: hidden;
     padding-top: var(--header-height);
-    padding-bottom: var(--footer-height);
+
+    padding-bottom: calc(var(--footer-height) + env(safe-area-inset-bottom));
   }
 
   .gallery-info {
