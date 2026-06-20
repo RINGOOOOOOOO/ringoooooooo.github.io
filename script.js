@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.classList.add("is-loading");
   forceScrollTop();
-
   ScrollTrigger.clearScrollMemory();
+
+  const languageSelect = document.getElementById("languages");
+  const contentElements = document.querySelectorAll("[data-lang]");
 
   const name = document.querySelector(".name-main");
   const headerName = document.querySelector(".header-name-target");
@@ -34,14 +36,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let rolesReady = false;
   let introScrollTrigger = null;
+  let galleryLanguageUpdater = null;
+
   const isaText = " is a";
 
-  name.innerHTML = name.textContent.replace(
-    /\S/g,
-    "<span class='letter'>$&</span>",
-  );
+  function getCurrentLanguage() {
+    return languageSelect ? languageSelect.value : "en";
+  }
 
-  isaEl.textContent = "";
+  function applyLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    contentElements.forEach((element) => {
+      element.style.display =
+        element.getAttribute("data-lang") === lang ? "" : "none";
+    });
+
+    if (galleryLanguageUpdater) {
+      galleryLanguageUpdater();
+    }
+
+    ScrollTrigger.refresh();
+  }
+
+  if (name) {
+    name.innerHTML = name.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>",
+    );
+  }
+
+  if (isaEl) {
+    isaEl.textContent = "";
+  }
 
   gsap.set(".intro-text", { opacity: 0 });
   gsap.set(".revealer svg", { scale: 0 });
@@ -67,8 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  name.addEventListener("click", scrollToTop);
-  headerName.addEventListener("click", scrollToTop);
+  name?.addEventListener("click", scrollToTop);
+  headerName?.addEventListener("click", scrollToTop);
 
   roles.forEach((role) => {
     role.addEventListener("click", (e) => {
@@ -104,6 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function typeText(el, text, speed = 70, onComplete) {
+    if (!el) {
+      if (onComplete) onComplete();
+      return;
+    }
+
     let i = 0;
     el.textContent = "";
 
@@ -147,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
               rolesReady = true;
               initScrollAnimation();
               initGalleryAnimation();
+              applyLanguage(getCurrentLanguage());
               ScrollTrigger.refresh();
             },
           });
@@ -160,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = document.querySelector(".header-name-target");
     const fadeEls = document.querySelectorAll(".fade-on-scroll, .profile-img");
 
+    if (!nameMain || !target) return;
     if (introScrollTrigger) introScrollTrigger.kill();
 
     const getMove = () => {
@@ -234,6 +268,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleEl = section.querySelector(".gallery-title");
     const subtitleEl = section.querySelector(".gallery-subtitle");
 
+    if (!minimap || !indicator || !preview || !titleEl || !subtitleEl) return;
+    if (!itemElements.length) return;
+
     let currentIndex = 0;
     let isInsideGallery = false;
     let isAnimating = false;
@@ -263,12 +300,40 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateMiniOpacity(index) {
       itemElements.forEach((item, i) => {
         const media = item.querySelector("img, video");
+        if (!media) return;
         media.style.opacity = i === index ? activeOpacity : "1";
       });
     }
 
-    function updateText(index) {
+    function getProjectText(item) {
+      const lang = getCurrentLanguage();
+
+      const title =
+        lang === "zh"
+          ? item.dataset.titleZh || item.dataset.title
+          : item.dataset.titleEn || item.dataset.title;
+
+      const subtitle =
+        lang === "zh"
+          ? item.dataset.subtitleZh || item.dataset.subtitle
+          : item.dataset.subtitleEn || item.dataset.subtitle;
+
+      return { title, subtitle };
+    }
+
+    function updateText(index, animate = true) {
       const item = itemElements[index];
+      if (!item) return;
+
+      const { title, subtitle } = getProjectText(item);
+
+      if (!animate) {
+        titleEl.textContent = title;
+        subtitleEl.innerHTML = subtitle;
+        gsap.set(titleEl, { opacity: 1, y: 0 });
+        gsap.set(subtitleEl, { opacity: 0.65, y: 0 });
+        return;
+      }
 
       gsap.to([titleEl, subtitleEl], {
         opacity: 0,
@@ -276,9 +341,8 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.15,
         ease: "power2.out",
         onComplete: () => {
-          titleEl.textContent = item.dataset.title;
-          // subtitleEl.textContent = item.dataset.subtitle;
-          subtitleEl.innerHTML = item.dataset.subtitle;
+          titleEl.textContent = title;
+          subtitleEl.innerHTML = subtitle;
 
           gsap.fromTo(
             [titleEl, subtitleEl],
@@ -297,6 +361,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function updatePreview(index) {
       const item = itemElements[index];
       const media = item.querySelector("img, video");
+      if (!media) return;
+
       const clone = media.cloneNode(true);
 
       clone.muted = true;
@@ -343,6 +409,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }, wheelCooldown);
     }
 
+    galleryLanguageUpdater = () => {
+      updateText(currentIndex, false);
+    };
+
     ScrollTrigger.create({
       trigger: section,
       start: "top bottom",
@@ -382,9 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (e) => {
         if (!isInsideGallery) return;
 
-        if (e.deltaY < 0 && currentIndex === 0) {
-          return;
-        }
+        if (e.deltaY < 0 && currentIndex === 0) return;
 
         e.preventDefault();
 
@@ -411,46 +479,29 @@ document.addEventListener("DOMContentLoaded", () => {
       updateIndicator(currentIndex);
     });
 
-    currentIndex = 0;
     updateMiniOpacity(0);
     updateIndicator(0);
-
-    titleEl.textContent = itemElements[0].dataset.title;
-    subtitleEl.innerHTML = itemElements[0].dataset.subtitle;
-
-    gsap.set(titleEl, { opacity: 1, y: 0 });
-    gsap.set(subtitleEl, { opacity: 0.65, y: 0 });
-
-    updateMiniOpacity(0);
-    updateIndicator(0);
+    updateText(0, false);
   }
 
   document.querySelectorAll(".intro-role").forEach((role) => {
     role.addEventListener("click", (e) => {
       e.preventDefault();
 
-      document.querySelector(".next-page").scrollIntoView({
+      document.querySelector(".next-page")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     });
   });
 
-  const languageSelect = document.getElementById("languages");
-  const contentElements = document.querySelectorAll("[data-lang]");
-
   if (languageSelect) {
     languageSelect.addEventListener("change", (event) => {
-      const selectedLanguage = event.target.value;
-
-      contentElements.forEach((element) => {
-        element.style.display =
-          element.getAttribute("data-lang") === selectedLanguage
-            ? "inline"
-            : "none";
-      });
+      applyLanguage(event.target.value);
     });
   }
+
+  applyLanguage(getCurrentLanguage());
 
   const menuToggle = document.querySelector("#menu-toggle");
   const mobileMenu = document.querySelector("#mobile-menu");
@@ -458,16 +509,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileLinks = document.querySelectorAll(".mobile-menu a");
 
   menuToggle?.addEventListener("click", () => {
-    mobileMenu.classList.add("active");
+    mobileMenu?.classList.add("active");
   });
 
   mobileClose?.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+    mobileMenu?.classList.remove("active");
   });
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
+      mobileMenu?.classList.remove("active");
     });
   });
 
@@ -482,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   imageHoverItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
-      if (!rolesReady) return;
+      if (!rolesReady || !preview || !previewImg || !previewVideo) return;
 
       const assets = item.dataset.assets
         .split(",")
@@ -508,12 +559,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const rect = item.getBoundingClientRect();
-
-      // gsap.set(preview, {
-      //   x: rect.left + gsap.utils.random(-200, 200),
-      //   y: rect.top + gsap.utils.random(-200, 200),
-      //   scale: 0.85,
-      // });
       const previewW = 260;
       const previewH = 200;
 
@@ -544,7 +589,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     item.addEventListener("mouseleave", () => {
-      previewVideo.pause();
+      previewVideo?.pause();
+
+      if (!preview) return;
 
       gsap.to(preview, {
         opacity: 0,
@@ -577,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const hoverElements = document.querySelectorAll(
-    ".hover-this, .name-main, .header-name-target, header a, header select, footer a, .item, .gallery-title, .img-preview",
+    ".hover-this, .magnetic-name, .header-name-target, header a, header select, footer a, .item, .gallery-title, .img-preview",
   );
 
   function magneticMove(e) {

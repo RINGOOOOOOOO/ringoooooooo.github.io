@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="home page for Jinhao Xu's portfolio" />
+
     <title>Jinhao Xu</title>
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="asset/512x512.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
       rel="stylesheet"
     />
-    <link rel="icon" href="asset/512x512.png" type="image/png" />
   </head>
 
   <body>
@@ -52,6 +54,7 @@
               <stop offset="100%" stop-color="#EEC6DC" />
             </linearGradient>
           </defs>
+
           <path
             d="M75.9817 0L77.25 34.2209C78.0259 55.1571 94.8249 71.9475 115.762 72.7127L150.982 74L115.762 75.2873C94.8249 76.0525 78.0259 92.8429 77.25 113.779L75.9817 148L74.7134 113.779C73.9375 92.8429 57.1385 76.0525 36.2019 75.2873L0.981689 74L36.2018 72.7127C57.1384 71.9475 73.9375 55.1571 74.7134 34.2209L75.9817 0Z"
             fill="url(#pinkWhiteGradient)"
@@ -70,7 +73,10 @@
         </select>
       </span>
 
-      <div class="header-name-target" data-lang="en">Jinhao Xu</div>
+      <div class="header-name-target">
+        <span data-lang="en">Jinhao Xu</span>
+        <span data-lang="zh" style="display: none">徐金淏</span>
+      </div>
 
       <nav>
         <ul id="menu">
@@ -78,60 +84,75 @@
             <a href="works.html" data-lang="en">Works</a>
             <a href="works.html" data-lang="zh" style="display: none">作品</a>
           </li>
+
           <li>
             <a href="about.html" data-lang="en">About</a>
             <a href="about.html" data-lang="zh" style="display: none">关于</a>
           </li>
+
           <li>
             <a
               href="https://b.parsons.edu/~xuj678/pages/works.html"
               data-lang="en"
-              >Ephemera</a
             >
+              Ephemera
+            </a>
             <a
               href="https://b.parsons.edu/~xuj678/pages/works.html"
               data-lang="zh"
               style="display: none"
-              >拾遗</a
             >
-            <!-- <a href="mailto:xuj678@newschool.com" data-lang="en">contact</a>
-          <a href="mailto:xuj678@newschool.com" data-lang="zh" style="display: none">联系</a> -->
+              拾遗
+            </a>
           </li>
         </ul>
       </nav>
 
-      <button
-        id="menu-toggle"
-        class="menu-toggle"
-        aria-label="Open menu"
-        data-lang="en"
-      >
-        Menu
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+        <span data-lang="en">Menu</span>
+        <span data-lang="zh" style="display: none">菜单</span>
       </button>
     </header>
 
     <div id="mobile-menu" class="mobile-menu">
-      <button class="mobile-close">Close</button>
+      <button class="mobile-close">
+        <span data-lang="en">Close</span>
+        <span data-lang="zh" style="display: none">关闭</span>
+      </button>
 
       <ul>
         <li>
-          <a href="works.html">Works</a>
+          <a href="works.html" data-lang="en">Works</a>
+          <a href="works.html" data-lang="zh" style="display: none">作品</a>
         </li>
+
         <li>
-          <a href="about.html">About</a>
+          <a href="about.html" data-lang="en">About</a>
+          <a href="about.html" data-lang="zh" style="display: none">关于</a>
         </li>
+
         <li>
-          <a href="https://b.parsons.edu/~xuj678/pages/works.html">Ephemera</a>
+          <a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="en"
+          >
+            Ephemera
+          </a>
+          <a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="zh"
+            style="display: none"
+          >
+            拾遗
+          </a>
         </li>
       </ul>
     </div>
 
     <main class="container">
       <div class="intro-text">
-        <!-- <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" /> -->
-
-        <p class="intro-content">
-          <span class="name-main">Jinhao Xu</span>
+        <p class="intro-content" data-lang="en">
+          <span class="name-main magnetic-name">Jinhao Xu</span>
           <span class="intro-base fade-on-scroll typing-isa"></span>
 
           <br />
@@ -167,15 +188,50 @@
             <span>digital media designer</span>
           </a>
 
-          <!-- <a href="javascript:void(0)" class="hover-this intro-role">
-          <span>illustrator</span>
-        </a> -->
-          <span class="intro-base fade-on-scroll">
-            .
-            <!-- <span class="scroll-down"></span> -->
-          </span>
+          <span class="intro-base fade-on-scroll">.</span>
+        </p>
+
+        <p class="intro-content" data-lang="zh" style="display: none">
+          <span class="name-main">徐金淏</span>
+          <span class="intro-base fade-on-scroll">是一位</span>
+
+          <br />
+
+          <a
+            href="javascript:void(0)"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/Mise-en-scène.mp4,indexAsset/dogwash.mp4,indexAsset/duck.mp4"
+          >
+            <span>游戏开发者</span>
+          </a>
+
+          <span class="intro-base fade-on-scroll">、</span>
+
+          <a
+            href="javascript:void(0)"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/lying-smalle.gif,indexAsset/bg1.png,indexAsset/bg3.png"
+          >
+            <span>创意编程者</span>
+          </a>
+
+          <span class="intro-base fade-on-scroll">和</span>
+
+          <a
+            href="javascript:void(0)"
+            class="hover-this intro-role image-hover fade-on-scroll"
+            data-scroll-gallery="true"
+            data-assets="indexAsset/cow.png,indexAsset/10.mp4,indexAsset/512x512.png"
+          >
+            <span>数媒产品设计师</span>
+          </a>
+
+          <span class="intro-base fade-on-scroll">。</span>
         </p>
       </div>
+
       <div class="role-preview">
         <img class="preview-image" src="" alt="" />
         <video class="preview-video" muted loop playsinline></video>
@@ -183,92 +239,118 @@
     </main>
 
     <section class="next-page">
-      <div class="gallery-info">
-        <!-- <p class="gallery-count">01 / 05</p> -->
-        <!-- <p class="gallery-title">We Clean What Remains</p>
-        <p class="gallery-subtitle">
-          ughhhhppprove to ur mentor that uv ready to graduateuuugh?!@@!!
-        </p> -->
-        <p class="gallery-title"></p>
-        <p class="gallery-subtitle"></p>
-      </div>
+      <div class="next-page-inner">
+        <div class="gallery-info">
+          <p class="gallery-title"></p>
+          <p class="gallery-subtitle"></p>
+        </div>
 
-      <div class="img-preview">
-        <img src="indexAsset/wecleanwhatremain.png" alt="" />
-      </div>
+        <div class="img-preview">
+          <img
+            src="indexAsset/wecleanwhatremain.png"
+            alt="We Clean What Remains"
+          />
+        </div>
 
-      <div class="minimap">
-        <div class="indicator"></div>
+        <div class="minimap">
+          <div class="indicator"></div>
 
-        <div class="items">
-          <div
-            class="item"
-            data-title="We Clean What Remains"
-            data-subtitle="ughhhhppprove to ur mentor that uv ready to graduateuuugh?!@@!!"
-          >
-            <img src="indexAsset/wecleanwhatremain.png" alt="" />
-          </div>
+          <div class="items">
+            <div
+              class="item"
+              data-title="We Clean What Remains"
+              data-subtitle="ughhhhppprove to ur mentor that uv ready to graduateuuugh?!@@!!"
+              data-title-en="We Clean What Remains"
+              data-title-zh="我们清理残余物"
+              data-subtitle-en="ughhhhppprove to ur mentor that uv ready to graduateuuugh?!@@!!"
+              data-subtitle-zh="呃呃向导师证明你已经已经可以毕业了……"
+            >
+              <img
+                src="indexAsset/wecleanwhatremain.png"
+                alt="We Clean What Remains"
+              />
+            </div>
 
-          <div
-            class="item"
-            data-title="LABYRINTH"
-            data-subtitle="unity + arduino"
-          >
-            <video
-              muted
-              loop
-              playsinline
-              autoplay
-              src="indexAsset/Labyrinth.mp4"
-            ></video>
-          </div>
+            <div
+              class="item"
+              data-title="LABYRINTH"
+              data-subtitle="unity + arduino"
+              data-title-en="LABYRINTH"
+              data-title-zh="LABYRINTH|迷宫"
+              data-subtitle-en="unity + arduino"
+              data-subtitle-zh="Unity + Arduino"
+            >
+              <video
+                src="indexAsset/Labyrinth.mp4"
+                muted
+                loop
+                playsinline
+                autoplay
+              ></video>
+            </div>
 
-          <div
-            class="item"
-            data-title="Spinphony"
-            data-subtitle="unity + arduino"
-          >
-            <video
-              muted
-              loop
-              playsinline
-              autoplay
-              src="indexAsset/Spinphony.mp4"
-            ></video>
-          </div>
+            <div
+              class="item"
+              data-title="Spinphony"
+              data-subtitle="unity + arduino"
+              data-title-en="Spinphony"
+              data-title-zh="Spinphony|旋转交响"
+              data-subtitle-en="unity + arduino"
+              data-subtitle-zh="Unity + Arduino"
+            >
+              <video
+                src="indexAsset/Spinphony.mp4"
+                muted
+                loop
+                playsinline
+                autoplay
+              ></video>
+            </div>
 
-          <div
-            class="item"
-            data-title="Queen of Hearts in the Office"
-            data-subtitle="a <s>horror</s> cozy story set during a drowsy overtime shift<span class='zzz z1'>z</span><span class='zzz z2'>z</span><span class='zzz z3'>z</span>"
-          >
-            <video
-              muted
-              loop
-              playsinline
-              autoplay
-              src="indexAsset/office.mp4"
-            ></video>
-          </div>
+            <div
+              class="item"
+              data-title="Queen of Hearts in the Office"
+              data-subtitle="a <s>horror</s> cozy story set during a drowsy overtime shift<span class='zzz z1'>z</span><span class='zzz z2'>z</span><span class='zzz z3'>z</span>"
+              data-title-en="Queen of Hearts in the Office"
+              data-title-zh="红心皇后办公室加班"
+              data-subtitle-en="a <s>horror</s> cozy story set during a drowsy overtime shift<span class='zzz z1'>z</span><span class='zzz z2'>z</span><span class='zzz z3'>z</span>"
+              data-subtitle-zh="一个发生在困倦加班夜里的<s>恐怖</s>温馨故事<span class='zzz z1'>z</span><span class='zzz z2'>z</span><span class='zzz z3'>z</span>"
+            >
+              <video
+                src="indexAsset/office.mp4"
+                muted
+                loop
+                playsinline
+                autoplay
+              ></video>
+            </div>
 
-          <div
-            class="item"
-            data-title="Desktop??"
-            data-subtitle="the cutest portfolio ever made (but still under construction)"
-          >
-            <video
-              muted
-              loop
-              playsinline
-              autoplay
-              src="indexAsset/laptop.mp4"
-            ></video>
+            <div
+              class="item"
+              data-title="Desktop??"
+              data-subtitle="the cutest portfolio ever made (but still under construction)"
+              data-title-en="Desktop??"
+              data-title-zh="桌面？？"
+              data-subtitle-en="the cutest portfolio ever made (but still under construction)"
+              data-subtitle-zh="可能是我最可爱的portfolio，不过还在施工中"
+            >
+              <video
+                src="indexAsset/laptop.mp4"
+                muted
+                loop
+                playsinline
+                autoplay
+              ></video>
+            </div>
           </div>
         </div>
+
+        <a href="works.html" class="view-more-projects">
+          <span data-lang="en">view more projects</span>
+          <span data-lang="zh" style="display: none">查看更多项目</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
-      <a href="works.html" class="view-more-projects">
-        view more projects <span class="arrow">→</span>
-      </a>
     </section>
 
     <footer>
@@ -293,8 +375,10 @@
           <a href="mailto:xuj678@newschool.com">
             如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
             如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
-            如果感兴趣的话，请联系我：） &nbsp; / &nbsp;
-            如果感兴趣的话，请联系我：） &nbsp; / &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
           </a>
         </span>
       </div>
