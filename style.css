@@ -384,6 +384,10 @@ footer span a:hover {
   color: inherit;
 }
 
+.gallery-subtitle.subtitle-zh {
+  max-width: 190px;
+}
+
 .z1,
 .z2,
 .z3 {
@@ -785,6 +789,10 @@ footer .marquee-zh span {
   .gallery-subtitle {
     font-size: 11px;
     line-height: 1.5;
+  }
+
+  .gallery-subtitle.subtitle-zh {
+    max-width: 350px;
   }
 
   .img-preview {
