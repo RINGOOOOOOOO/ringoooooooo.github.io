@@ -75,6 +75,46 @@ body {
   background-size: 100% 100%;
 }
 
+.header-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: var(--header-height);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  background: transparent;
+
+  pointer-events: none;
+  z-index: 20;
+}
+
+.footer-bg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100vw;
+
+  height: calc(var(--footer-height) + env(safe-area-inset-bottom));
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  background: transparent;
+
+  pointer-events: none;
+  z-index: 20;
+}
+
+header,
+footer {
+  z-index: 60;
+}
+
 body {
   position: relative;
 }
@@ -186,7 +226,7 @@ footer span a:hover {
 
   opacity: 0;
   pointer-events: auto;
-  z-index: 60;
+  z-index: 80;
 
   font-family: inherit;
   font-size: inherit;
@@ -245,6 +285,7 @@ footer span a:hover {
 .container {
   position: relative;
   height: var(--app-height);
+  z-index: 40;
 }
 
 .intro-text {
@@ -259,7 +300,7 @@ footer span a:hover {
   gap: 40px;
 
   line-height: 3;
-  z-index: 10;
+  z-index: 1;
 }
 
 .intro-content {
@@ -321,6 +362,7 @@ footer span a:hover {
   position: relative;
   height: var(--app-height);
   overflow: hidden;
+  z-index: 10;
 
   color: var(--green);
   background: transparent;
