@@ -850,13 +850,13 @@ footer .marquee-zh span {
 
   .minimap {
     position: absolute;
-    top: calc(50% + min(34vh, 330px) / 2 + 5vh);
+    top: calc(50% + min(34vh, 330px) / 2 + 1vh);
     left: 50%;
     right: auto;
     bottom: auto;
 
     width: max-content;
-    height: 50px;
+    height: 45px;
     transform: translateX(-50%);
   }
 
@@ -882,9 +882,9 @@ footer .marquee-zh span {
     display: block;
     position: absolute;
 
+    top: calc(50% + min(34vh, 330px) / 2 + 12vh);
     left: 50%;
-    bottom: calc(var(--footer-height) + env(safe-area-inset-bottom) + 50px);
-
+    bottom: auto;
     transform: translateX(-50%);
 
     margin: 0;
