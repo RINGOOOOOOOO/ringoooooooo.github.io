@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="works page for Jinhao Xu's portfolio" />
+
+    <title>Works | Jinhao Xu</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="works.css" />
+    <link rel="icon" href="asset/512x512.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page">
+    <div class="header-bg"></div>
+    <div class="footer-bg"></div>
+    <div class="cursor"></div>
+
+    <header>
+      <span id="site-name">
+        <select id="languages" class="language-select">
+          <option value="en">EN</option>
+          <option value="zh">中</option>
+        </select>
+      </span>
+
+      <div class="header-name-target works-header-name">
+        <a href="index.html" data-lang="en">Jinhao Xu</a>
+        <a href="index.html" data-lang="zh" style="display: none">徐金淏</a>
+      </div>
+
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="works.html" data-lang="en">Works</a>
+            <a href="works.html" data-lang="zh" style="display: none">作品</a>
+          </li>
+
+          <li>
+            <a href="about.html" data-lang="en">About</a>
+            <a href="about.html" data-lang="zh" style="display: none">关于</a>
+          </li>
+
+          <li>
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              data-lang="en"
+            >
+              Ephemera
+            </a>
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              data-lang="zh"
+              style="display: none"
+            >
+              拾遗
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+        <span data-lang="en">Menu</span>
+        <span data-lang="zh" style="display: none">菜单</span>
+      </button>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <button class="mobile-close">
+        <span data-lang="en">Close</span>
+        <span data-lang="zh" style="display: none">关闭</span>
+      </button>
+
+      <ul>
+        <li>
+          <a href="works.html" data-lang="en">Works</a>
+          <a href="works.html" data-lang="zh" style="display: none">作品</a>
+        </li>
+
+        <li>
+          <a href="about.html" data-lang="en">About</a>
+          <a href="about.html" data-lang="zh" style="display: none">关于</a>
+        </li>
+
+        <li>
+          <a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="en"
+          >
+            Ephemera
+          </a>
+          <a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="zh"
+            style="display: none"
+          >
+            拾遗
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <main class="works-layout">
+      <aside class="works-sidebar">
+        <button class="work-filter active" data-filter="all">
+          <span data-lang="en">all projects</span>
+          <span data-lang="zh" style="display: none">全部项目</span>
+        </button>
+
+        <button class="work-filter" data-filter="games">
+          <span data-lang="en">games</span>
+          <span data-lang="zh" style="display: none">游戏</span>
+        </button>
+
+        <button class="work-filter" data-filter="others">
+          <span data-lang="en">others</span>
+          <span data-lang="zh" style="display: none">其他</span>
+        </button>
+      </aside>
+
+      <section class="works-scroll">
+        <a href="#" class="work-card" data-category="games">
+          <div class="work-thumb">
+            <img
+              src="indexAsset/wecleanwhatremain.png"
+              alt="We Clean What Remains"
+            />
+          </div>
+
+          <div class="work-info">
+            <h2 data-lang="en">We Clean What Remains</h2>
+            <h2 data-lang="zh" style="display: none">我们清理残余物</h2>
+
+            <div class="work-bottom">
+              <p class="work-meta" data-lang="en">
+                Game / Unity / Voice Interaction
+              </p>
+              <p class="work-meta" data-lang="zh" style="display: none">
+                游戏 / Unity / 语音交互
+              </p>
+
+              <p class="work-date">2026</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="work-card" data-category="games">
+          <div class="work-thumb">
+            <video
+              src="indexAsset/Labyrinth.mp4"
+              muted
+              loop
+              playsinline
+              autoplay
+            ></video>
+          </div>
+
+          <div class="work-info">
+            <h2>LABYRINTH</h2>
+
+            <div class="work-bottom">
+              <p class="work-meta" data-lang="en">Game / Unity / Arduino</p>
+              <p class="work-meta" data-lang="zh" style="display: none">
+                游戏 / Unity / Arduino
+              </p>
+
+              <p class="work-date">2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="work-card" data-category="games">
+          <div class="work-thumb">
+            <video
+              src="indexAsset/Spinphony.mp4"
+              muted
+              loop
+              playsinline
+              autoplay
+            ></video>
+          </div>
+
+          <div class="work-info">
+            <h2>Spinphony</h2>
+
+            <div class="work-bottom">
+              <p class="work-meta" data-lang="en">
+                Game / Physical Interaction
+              </p>
+              <p class="work-meta" data-lang="zh" style="display: none">
+                游戏 / 实体交互
+              </p>
+
+              <p class="work-date">2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="work-card" data-category="games">
+          <div class="work-thumb">
+            <video
+              src="indexAsset/office.mp4"
+              muted
+              loop
+              playsinline
+              autoplay
+            ></video>
+          </div>
+
+          <div class="work-info">
+            <h2 data-lang="en">Queen of Hearts in the Office</h2>
+            <h2 data-lang="zh" style="display: none">红心皇后办公室加班</h2>
+
+            <div class="work-bottom">
+              <p class="work-meta" data-lang="en">
+                Game / Narrative Experience
+              </p>
+              <p class="work-meta" data-lang="zh" style="display: none">
+                游戏 / 叙事体验
+              </p>
+
+              <p class="work-date">2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="work-card" data-category="others">
+          <div class="work-thumb">
+            <video
+              src="indexAsset/laptop.mp4"
+              muted
+              loop
+              playsinline
+              autoplay
+            ></video>
+          </div>
+
+          <div class="work-info">
+            <h2>Desktop??</h2>
+
+            <div class="work-bottom">
+              <p class="work-meta" data-lang="en">Web / Interface</p>
+              <p class="work-meta" data-lang="zh" style="display: none">
+                网页 / 界面
+              </p>
+
+              <p class="work-date">2025</p>
+            </div>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="marquee" data-lang="en">
+        <span>
+          <a href="mailto:xuj678@newschool.com">
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+          </a>
+        </span>
+      </div>
+
+      <div class="marquee-zh" data-lang="zh" style="display: none">
+        <span>
+          <a href="mailto:xuj678@newschool.com">
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <script src="works.js"></script>
+  </body>
+</html>
