@@ -167,22 +167,24 @@
   text-align: right;
 }
 
-.works-page .works-scroll {
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 6%,
-    black 94%,
-    transparent 100%
-  );
+@media (min-width: 769px) {
+  .works-page .works-scroll {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 6%,
+      black 94%,
+      transparent 100%
+    );
 
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 6%,
-    black 94%,
-    transparent 100%
-  );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 6%,
+      black 94%,
+      transparent 100%
+    );
+  }
 }
 
 @media (max-width: 768px) {
@@ -242,8 +244,10 @@
 
     padding: 0;
 
-    mask-image: none;
-    -webkit-mask-image: none;
+    mask: none !important;
+    mask-image: none !important;
+    -webkit-mask: none !important;
+    -webkit-mask-image: none !important;
   }
 
   .works-page .work-card {
