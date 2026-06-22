@@ -105,4 +105,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("mousemove", editCursor);
+
+  const worksScroll = document.querySelector(".works-scroll");
+  const progressFill = document.querySelector(".works-progress-fill");
+  const progressNumber = document.querySelector(".works-progress-number");
+
+  function updateWorksProgress() {
+    if (!worksScroll || !progressFill || !progressNumber) return;
+
+    const maxScroll = worksScroll.scrollHeight - worksScroll.clientHeight;
+    const progress =
+      maxScroll > 0 ? (worksScroll.scrollTop / maxScroll) * 100 : 0;
+
+    progressFill.style.height = `${progress}%`;
+    progressNumber.textContent = `${Math.round(progress)}%`;
+  }
+
+  worksScroll?.addEventListener("scroll", updateWorksProgress);
+  window.addEventListener("resize", updateWorksProgress);
+  updateWorksProgress();
 });
