@@ -1,0 +1,254 @@
+.works-page {
+  overflow: hidden;
+}
+
+.works-page .cursor {
+  display: block;
+}
+
+.works-page .works-header-name {
+  opacity: 1;
+}
+
+.works-page .works-layout {
+  position: relative;
+  z-index: 10;
+
+  height: calc(100dvh - var(--header-height) - var(--footer-height));
+  margin-top: var(--header-height);
+  margin-bottom: var(--footer-height);
+
+  display: grid;
+  grid-template-columns: 38vw 50vw;
+  column-gap: 0;
+  justify-content: start;
+  align-items: center;
+
+  padding-left: 4vw;
+  padding-right: 0;
+}
+
+.works-page .works-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+
+  padding-left: 4vw;
+}
+
+.works-page .work-filter {
+  width: fit-content;
+  border: 0;
+  background: transparent;
+
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--green);
+
+  cursor: none;
+  opacity: 0.85;
+}
+
+.works-page .work-filter.active,
+.works-page .work-filter:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.works-page .works-scroll {
+  width: 50vw;
+  height: 100%;
+  overflow-y: auto;
+
+  padding: 0;
+  scrollbar-width: none;
+}
+
+.works-page .works-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.works-page .work-card {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 1.6rem;
+  align-items: center;
+
+  height: calc((100dvh - var(--header-height) - var(--footer-height)) / 2);
+  min-height: 0;
+  padding: 0 1rem 0 0;
+
+  border-bottom: 1px solid var(--green);
+
+  color: var(--green);
+  text-decoration: none;
+  cursor: none;
+}
+
+.works-page .work-card:first-child {
+  border-top: none;
+}
+
+.works-page .work-card:last-child {
+  border-bottom: none;
+}
+
+.works-page .work-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  background: transparent;
+}
+
+.works-page .work-thumb img,
+.works-page .work-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* filter: blur(1.5px); */
+  /* opacity: 0.8; */
+
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.works-page .work-card:hover .work-thumb img,
+.works-page .work-card:hover .work-thumb video {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.works-page .work-info {
+  min-height: 140px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.works-page .work-info h2 {
+  margin: 0;
+
+  font-family: var(--mono);
+  font-size: clamp(1rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+
+  color: var(--green);
+}
+
+.works-page .work-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.works-page .work-meta,
+.works-page .work-date {
+  margin: 0;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.works-page .work-date {
+  text-align: right;
+}
+
+.works-page .works-scroll {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .works-page {
+    overflow: auto;
+  }
+
+  .works-page .cursor {
+    display: none !important;
+  }
+
+  .works-page .works-layout {
+    height: auto;
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+
+    display: block;
+    margin: 0;
+    padding: calc(var(--header-height) + 2rem) 1.2rem
+      calc(var(--footer-height) + 2rem);
+  }
+
+  .works-page .works-sidebar {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 20;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.2rem;
+
+    margin-bottom: 2rem;
+    padding: 0.8rem 0;
+  }
+
+  .works-page .work-filter {
+    font-size: 0.85rem;
+    cursor: auto;
+  }
+
+  .works-page .works-scroll {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .works-page .work-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    min-height: auto;
+    padding: 1rem 0 1.5rem;
+
+    cursor: auto;
+  }
+
+  .works-page .work-info {
+    min-height: auto;
+    gap: 1.2rem;
+  }
+
+  .works-page .work-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .works-page .work-bottom {
+    grid-template-columns: 1fr auto;
+  }
+}
