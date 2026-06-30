@@ -152,6 +152,29 @@ select,
   overflow-x: clip;
 }
 
+/* Fixed Copyright */
+
+.works-page .works-copyright {
+  position: fixed;
+  top: 50%;
+  /* right: calc(var(--works-side-width) / 2); */
+  right: 1.7rem;
+  z-index: 60;
+
+  transform: translate(50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1;
+
+  color: var(--green);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 /* Header */
 
 header {
