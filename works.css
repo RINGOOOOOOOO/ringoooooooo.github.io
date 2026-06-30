@@ -160,7 +160,7 @@
   position: fixed;
   top: 50%;
   /* right: calc(var(--works-side-width) / 2); */
-  right: 2rem;
+  right: 1.7rem;
   z-index: 60;
 
   transform: translate(50%, -50%) rotate(-90deg);
