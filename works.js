@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const hoverElements = document.querySelectorAll(
-    "header a, header select, footer a, .header-name-target, .work-card, .work-filter",
+    "header a, header select, footer a, .header-name-target, .work-thumb, .work-info h2, .work-filter",
   );
 
   hoverElements.forEach((element) => {

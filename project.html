@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="icon" href="asset/512x512.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
+      rel="stylesheet"
+    />
   </head>
   <body class="project-page">
     <div class="header-bg"></div>
@@ -29,40 +32,83 @@
       </div>
       <nav>
         <ul id="menu">
-          <li><a href="works.html" data-lang="en">Works</a><a href="works.html" data-lang="zh" style="display: none">作品</a></li>
-          <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="zh" style="display: none">关于</a></li>
           <li>
-            <a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="en">Ephemera</a>
-            <a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="zh" style="display: none">拾遗</a>
+            <a href="works.html" data-lang="en">Works</a
+            ><a href="works.html" data-lang="zh" style="display: none">作品</a>
+          </li>
+          <li>
+            <a href="about.html" data-lang="en">About</a
+            ><a href="about.html" data-lang="zh" style="display: none">关于</a>
+          </li>
+          <li>
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              data-lang="en"
+              >Ephemera</a
+            >
+            <a
+              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              data-lang="zh"
+              style="display: none"
+              >拾遗</a
+            >
           </li>
         </ul>
       </nav>
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
-        <span data-lang="en">Menu</span><span data-lang="zh" style="display: none">菜单</span>
+        <span data-lang="en">Menu</span
+        ><span data-lang="zh" style="display: none">菜单</span>
       </button>
     </header>
 
     <div id="mobile-menu" class="mobile-menu">
-      <button class="mobile-close"><span data-lang="en">Close</span><span data-lang="zh" style="display: none">关闭</span></button>
+      <button class="mobile-close">
+        <span data-lang="en">Close</span
+        ><span data-lang="zh" style="display: none">关闭</span>
+      </button>
       <ul>
-        <li><a href="works.html" data-lang="en">Works</a><a href="works.html" data-lang="zh" style="display: none">作品</a></li>
-        <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="zh" style="display: none">关于</a></li>
-        <li><a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="en">Ephemera</a><a href="https://b.parsons.edu/~xuj678/pages/works.html" data-lang="zh" style="display: none">拾遗</a></li>
+        <li>
+          <a href="works.html" data-lang="en">Works</a
+          ><a href="works.html" data-lang="zh" style="display: none">作品</a>
+        </li>
+        <li>
+          <a href="about.html" data-lang="en">About</a
+          ><a href="about.html" data-lang="zh" style="display: none">关于</a>
+        </li>
+        <li>
+          <a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="en"
+            >Ephemera</a
+          ><a
+            href="https://b.parsons.edu/~xuj678/pages/works.html"
+            data-lang="zh"
+            style="display: none"
+            >拾遗</a
+          >
+        </li>
       </ul>
     </div>
 
     <main class="project-layout">
       <section class="project-details">
-        <a class="project-close" href="works.html"><span data-lang="en">← Close Project</span><span data-lang="zh" style="display: none">← 关闭项目</span></a>
+        <a class="project-close" href="works.html"
+          ><span data-lang="en">← Close Project</span
+          ><span data-lang="zh" style="display: none">← 返回项目</span></a
+        >
         <div class="project-heading">
           <h1 id="project-title"></h1>
           <p id="project-meta" class="project-meta"></p>
+          <ul id="project-tags" class="project-tags"></ul>
         </div>
         <div id="project-description" class="project-description"></div>
+        <div id="project-description2" class="project-description"></div>
       </section>
 
       <div class="project-progress" aria-hidden="true">
-        <div class="project-progress-track"><div class="project-progress-fill"></div></div>
+        <div class="project-progress-track">
+          <div class="project-progress-fill"></div>
+        </div>
         <div class="project-progress-number">0%</div>
       </div>
 
@@ -71,8 +117,25 @@
     </main>
 
     <footer>
-      <div class="marquee" data-lang="en"><span><a href="mailto:xuj678@newschool.com">&nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;</a></span></div>
-      <div class="marquee-zh" data-lang="zh" style="display: none"><span><a href="mailto:xuj678@newschool.com">如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp; 如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp; 如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;</a></span></div>
+      <div class="marquee" data-lang="en">
+        <span
+          ><a href="mailto:xuj678@newschool.com"
+            >&nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;
+            &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;</a
+          ></span
+        >
+      </div>
+      <div class="marquee-zh" data-lang="zh" style="display: none">
+        <span
+          ><a href="mailto:xuj678@newschool.com"
+            >如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;
+            如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;</a
+          ></span
+        >
+      </div>
     </footer>
     <script src="project.js"></script>
   </body>

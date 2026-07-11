@@ -327,15 +327,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const { title, subtitle } = getProjectText(item);
 
+      function updateSubtitleClasses() {
+        subtitleEl.classList.toggle(
+          "subtitle-zh",
+          getCurrentLanguage() === "zh",
+        );
+      }
+
       if (!animate) {
         titleEl.textContent = title;
         subtitleEl.innerHTML = subtitle;
-
-        if (getCurrentLanguage() === "zh") {
-          subtitleEl.classList.add("subtitle-zh");
-        } else {
-          subtitleEl.classList.remove("subtitle-zh");
-        }
+        updateSubtitleClasses();
         gsap.set(titleEl, { opacity: 1, y: 0 });
         gsap.set(subtitleEl, { opacity: 0.65, y: 0 });
         return;
@@ -349,12 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
         onComplete: () => {
           titleEl.textContent = title;
           subtitleEl.innerHTML = subtitle;
-
-          if (getCurrentLanguage() === "zh") {
-            subtitleEl.classList.add("subtitle-zh");
-          } else {
-            subtitleEl.classList.remove("subtitle-zh");
-          }
+          updateSubtitleClasses();
 
           gsap.fromTo(
             [titleEl, subtitleEl],

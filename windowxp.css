@@ -53,7 +53,7 @@ p1 {
   font-size: 18px;
   margin-left: 10px;
   margin-bottom: 25px;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .menu-button img {
@@ -183,7 +183,7 @@ p1 {
   font-family: smalle;
   color: #f5f8fb;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 300;
   padding: 20px;
   text-shadow: 1px 1px 2px black;
   position: relative;
@@ -200,7 +200,7 @@ p1 {
 #yt-link:hover,
 #yt-link:focus {
   color: grey;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 .AboutMeBrowser {
