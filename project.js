@@ -122,6 +122,7 @@ const projects = {
       },
       {
         type: "media-row",
+        className: "wcwr-navigation-row",
         items: [
           {
             type: "video",
@@ -145,6 +146,10 @@ const projects = {
     tags: {
       en: ["physical interaction", "game"],
       zh: ["实体交互", "游戏"],
+    },
+    team: {
+      en: "Team: Jinhao Xu, Carla Budar, Ziye An, Jaiden Brown",
+      zh: "团队：Jinhao Xu、Carla Budar、Ziye An、Jaiden Brown",
     },
     description: {
       en: "Inspired by the myth of the Minotaur, LABYRINTH is a two-player asymmetric hide-and-seek game played through physical controllers. Inside a dark maze, one player becomes the Hider trying to escape, while the other becomes the Seeker, a ghostly entity that hunts through sound.",
@@ -250,6 +255,85 @@ const projects = {
           { type: "video", src: "mazeassets/test3.mp4" },
         ],
       },
+      { type: "heading", text: { en: "Model Design", zh: "模型设计" } },
+      {
+        type: "media-row",
+        className: "maze-model-row",
+        items: [
+          {
+            type: "image",
+            src: "mazeassets/3d1.png",
+            alt: { en: "Maze model angled view", zh: "迷宫模型斜视图" },
+          },
+          {
+            type: "image",
+            src: "mazeassets/3d2.png",
+            alt: { en: "Maze model front view", zh: "迷宫模型正视图" },
+          },
+          {
+            type: "image",
+            src: "mazeassets/3d3.png",
+            alt: { en: "Maze model side view", zh: "迷宫模型侧视图" },
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "mazeassets/3d6.png",
+        className: "no-border",
+        caption: {
+          en: "laser cut",
+          zh: "激光切割",
+        },
+      },
+      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
+      {
+        type: "media-row",
+        className: "maze-design-row",
+        items: [
+          {
+            type: "image",
+            src: "mazeassets/design1.png",
+            alt: { en: "Maze visual design one", zh: "迷宫视觉设计一" },
+          },
+          {
+            type: "image",
+            src: "mazeassets/design2.png",
+            alt: { en: "Maze visual design two", zh: "迷宫视觉设计二" },
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "mazeassets/artdesign.png",
+        className: "no-border",
+      },
+      // {
+      //   type: "media-row",
+      //   className: "maze-design-collage-row",
+      //   items: [
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design3.png",
+      //       alt: { en: "Maze visual design three", zh: "迷宫视觉设计三" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design4.png",
+      //       alt: { en: "Maze visual design four", zh: "迷宫视觉设计四" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design5.png",
+      //       alt: { en: "Maze visual design five", zh: "迷宫视觉设计五" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design6.png",
+      //       alt: { en: "Maze visual design six", zh: "迷宫视觉设计六" },
+      //     },
+      //   ],
+      // },
     ],
   },
   spinphony: {
@@ -302,6 +386,7 @@ const projects = {
           zh: "玩家实时聆听彼此并作出调整。",
         },
       },
+      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
     ],
   },
   office: {
@@ -566,6 +651,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return item;
       }),
     );
+    const team = document.getElementById("project-team");
+    team.textContent = translated(project.team);
+    team.hidden = !project.team;
     document.title = `${translated(project.title)} | Jinhao Xu`;
     article.replaceChildren(
       ...project.content.map(createContentBlock).filter(Boolean),
