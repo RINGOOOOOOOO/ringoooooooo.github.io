@@ -142,10 +142,13 @@ const projects = {
   },
   labyrinth: {
     title: { en: "LABYRINTH", zh: "LABYRINTH | 迷宫" },
-    meta: { en: "Unity + Arduino — 2025", zh: "Unity + Arduino — 2025" },
+    meta: {
+      en: "Unity + Arduino + Leap Motion — 2025",
+      zh: "Unity + Arduino + Leap Motion — 2025",
+    },
     tags: {
       en: ["physical interaction", "game"],
-      zh: ["实体交互", "游戏"],
+      zh: ["物理交互", "游戏"],
     },
     team: {
       en: "Team: Jinhao Xu, Carla Budar, Ziye An, Jaiden Brown",
@@ -255,6 +258,62 @@ const projects = {
           { type: "video", src: "mazeassets/test3.mp4" },
         ],
       },
+      {
+        type: "video",
+        src: "mazeassets/mazedesign.mp4",
+        caption: {
+          en: "unity+arduino test",
+          zh: "unity+arduino 测试",
+        },
+      },
+      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
+      {
+        type: "image",
+        src: "mazeassets/artdesign.png",
+        className: "no-border",
+      },
+      {
+        type: "media-row",
+        className: "maze-design-row",
+        items: [
+          {
+            type: "image",
+            src: "mazeassets/design1.png",
+            alt: { en: "Maze visual design one", zh: "迷宫视觉设计一" },
+          },
+          {
+            type: "image",
+            src: "mazeassets/design2.png",
+            alt: { en: "Maze visual design two", zh: "迷宫视觉设计二" },
+          },
+        ],
+      },
+      // {
+      //   type: "media-row",
+      //   className: "maze-design-collage-row",
+      //   items: [
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design3.png",
+      //       alt: { en: "Maze visual design three", zh: "迷宫视觉设计三" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design4.png",
+      //       alt: { en: "Maze visual design four", zh: "迷宫视觉设计四" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design5.png",
+      //       alt: { en: "Maze visual design five", zh: "迷宫视觉设计五" },
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "mazeassets/design6.png",
+      //       alt: { en: "Maze visual design six", zh: "迷宫视觉设计六" },
+      //     },
+      //   ],
+      // },
       { type: "heading", text: { en: "Model Design", zh: "模型设计" } },
       {
         type: "media-row",
@@ -286,54 +345,35 @@ const projects = {
           zh: "激光切割",
         },
       },
-      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
+      { type: "heading", text: { en: "User Testing", zh: "用户测试" } },
+      {
+        type: "video",
+        src: "mazeassets/MazeRunner.mp4",
+      },
       {
         type: "media-row",
-        className: "maze-design-row",
+        className: "maze-design-row maze-unity-model-row",
         items: [
           {
             type: "image",
-            src: "mazeassets/design1.png",
+            src: "mazeassets/3d9.png",
             alt: { en: "Maze visual design one", zh: "迷宫视觉设计一" },
           },
           {
             type: "image",
-            src: "mazeassets/design2.png",
+            src: "mazeassets/3d10.png",
             alt: { en: "Maze visual design two", zh: "迷宫视觉设计二" },
           },
         ],
       },
       {
-        type: "image",
-        src: "mazeassets/artdesign.png",
-        className: "no-border",
+        type: "paragraph",
+        text: { en: "", zh: "" },
+        link: {
+          text: { en: "View the Unity model", zh: "查看 Unity 模型" },
+          href: "https://ringooooo.itch.io/labyrinth-prototype",
+        },
       },
-      // {
-      //   type: "media-row",
-      //   className: "maze-design-collage-row",
-      //   items: [
-      //     {
-      //       type: "image",
-      //       src: "mazeassets/design3.png",
-      //       alt: { en: "Maze visual design three", zh: "迷宫视觉设计三" },
-      //     },
-      //     {
-      //       type: "image",
-      //       src: "mazeassets/design4.png",
-      //       alt: { en: "Maze visual design four", zh: "迷宫视觉设计四" },
-      //     },
-      //     {
-      //       type: "image",
-      //       src: "mazeassets/design5.png",
-      //       alt: { en: "Maze visual design five", zh: "迷宫视觉设计五" },
-      //     },
-      //     {
-      //       type: "image",
-      //       src: "mazeassets/design6.png",
-      //       alt: { en: "Maze visual design six", zh: "迷宫视觉设计六" },
-      //     },
-      //   ],
-      // },
     ],
   },
   spinphony: {

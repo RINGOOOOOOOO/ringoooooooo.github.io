@@ -337,6 +337,10 @@
   object-fit: cover;
 }
 
+.article-media-row.maze-unity-model-row {
+  margin-bottom: 0.75rem;
+}
+
 .article-media-row.maze-design-collage-row {
   display: grid;
   grid-template-columns: 2.15fr 1fr 1fr;
