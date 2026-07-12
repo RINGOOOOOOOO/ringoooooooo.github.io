@@ -80,6 +80,7 @@ const projects = {
         alt: { en: "Voice interaction in the game", zh: "游戏中的语音交互" },
       },
       // { type: "heading", text: { en: "Voice as a Tool", zh: "声音作为工具" } },
+      { type: "heading", text: { en: "Game Concept", zh: "项目理念" } },
       {
         type: "paragraph",
         text: {
@@ -110,51 +111,144 @@ const projects = {
         //   zh: "清洁并修复环境。",
         // },
       },
+      { type: "heading", text: { en: "Prototype", zh: "实验原型" } },
+      {
+        type: "image",
+        src: "wcwrassets/wcwr7.png",
+        caption: {
+          en: "shader test",
+          zh: "着色器测试",
+        },
+      },
+      {
+        type: "media-row",
+        items: [
+          {
+            type: "video",
+            src: "wcwrassets/wcwr6.mp4",
+          },
+          {
+            type: "image",
+            src: "wcwrassets/wcwr8.png",
+            alt: {
+              en: "Character navigation setup in Unity",
+              zh: "Unity 中的角色导航设置",
+            },
+          },
+        ],
+      },
     ],
   },
   labyrinth: {
-    title: { en: "LABYRINTH", zh: "迷宫" },
+    title: { en: "LABYRINTH", zh: "LABYRINTH | 迷宫" },
     meta: { en: "Unity + Arduino — 2025", zh: "Unity + Arduino — 2025" },
     tags: {
-      en: ["physical interaction", "maze", "Arduino"],
-      zh: ["实体交互", "迷宫", "Arduino"],
+      en: ["physical interaction", "game"],
+      zh: ["实体交互", "游戏"],
     },
     description: {
-      en: "A physical-digital game where a handmade controller turns the body into part of a shifting maze.",
-      zh: "一款实体与数字结合的游戏，手工控制器让身体成为不断变化的迷宫的一部分。",
+      en: "Inspired by the myth of the Minotaur, LABYRINTH is a two-player asymmetric hide-and-seek game played through physical controllers. Inside a dark maze, one player becomes the Hider trying to escape, while the other becomes the Seeker, a ghostly entity that hunts through sound.",
+      zh: "《LABYRINTH（迷宫）》灵感来自希腊神话弥诺陶洛斯的迷宫，是一款通过实体控制器进行的双人非对称捉迷藏游戏。在黑暗迷宫中，一名玩家作为 Hider 试图逃离，另一名玩家作为 Seeker，成为依靠声音追猎的幽灵般存在。",
     },
     content: [
       { type: "heading", text: { en: "Enter the Maze", zh: "进入迷宫" } },
       {
-        type: "paragraph",
-        text: {
-          en: "LABYRINTH is a spatial puzzle built around uncertainty and orientation. Every movement redraws the relationship between the player and the maze.",
-          zh: "《迷宫》是一个围绕不确定性与方向感构建的空间谜题。每次移动都重新描绘玩家与迷宫之间的关系。",
+        type: "video",
+        src: "mazeassets/Labyrinth.mp4",
+        controls: true,
+        autoplay: false,
+        muted: false,
+        loop: false,
+        // caption: {
+        //   en: "Gameplay",
+        //   zh: "游戏过程",
+        // },
+      },
+      // {
+      //   type: "paragraph",
+      //   text: {
+      //     en: "LABYRINTH is a spatial puzzle built around uncertainty and orientation. Every movement redraws the relationship between the player and the maze.",
+      //     zh: "《迷宫》是一个围绕不确定性与方向感构建的空间谜题。每次移动都重新描绘玩家与迷宫之间的关系。",
+      //   },
+      // },
+      { type: "heading", text: { en: "Roles & Gameplay", zh: "角色和玩法" } },
+      {
+        type: "image",
+        src: "mazeassets/maze1.png",
+        className: "no-border",
+        caption: {
+          en: "",
+          zh: "",
         },
       },
+      {
+        type: "two-column",
+        columns: [
+          {
+            title: {
+              en: "Player1: The Hider (Human)",
+              zh: "玩家1：躲藏者（人类）",
+            },
+            items: {
+              en: [
+                "Goal: Escape the maze",
+                "Tools: Physical flashlight (Arduino-controlled) + joystick",
+                "Actions: Walk to create smaller sounds, sprint to create louder sounds, and navigate using the flashlight beam",
+                "Challenge: Movement creates sound that the ghost can track",
+              ],
+              zh: [
+                "目标：逃离迷宫",
+                "工具：实体手电筒（Arduino 控制）+ 摇杆",
+                "行动：行走会制造较小的声音，奔跑会制造更大的声音，并通过手电筒光束探索路线",
+                "挑战：移动会产生可被幽灵追踪的声音",
+              ],
+            },
+          },
+          {
+            title: {
+              en: "Player2: The Seeker (Ghost)",
+              zh: "玩家2：追猎者（幽灵）",
+            },
+            items: {
+              en: [
+                "Goal: Catch the Hider",
+                "Tools: Headphones for sound tracking + joystick",
+                "Actions: Move through walls and chase based on the direction of the sound",
+                "Challenge: With no direct visuals, the Seeker must listen carefully and move strategically",
+              ],
+              zh: [
+                "目标：抓住躲藏者",
+                "工具：用于声音追踪的耳机 + 摇杆",
+                "行动：穿过墙壁，并根据声音方向进行追猎",
+                "挑战：没有直接视觉信息，必须仔细聆听并判断移动方向",
+              ],
+            },
+          },
+        ],
+      },
+      { type: "heading", text: { en: "Prototype", zh: "实验原型" } },
+      // {
+      //   type: "paragraph",
+      //   text: {
+      //     en: "A handmade Arduino controller connects gesture directly to the game world, making the player's body part of the navigation system.",
+      //     zh: "手工制作的 Arduino 控制器将动作直接连接到游戏世界，使玩家的身体成为导航系统的一部分。",
+      //   },
+      // },
       {
         type: "video",
-        src: "indexAsset/Labyrinth.mp4",
-        caption: {
-          en: "Gameplay and the shifting maze.",
-          zh: "游戏过程与不断变化的迷宫。",
-        },
-      },
-      { type: "heading", text: { en: "Physical Control", zh: "实体控制" } },
-      {
-        type: "paragraph",
-        text: {
-          en: "A handmade Arduino controller connects gesture directly to the game world, making the player's body part of the navigation system.",
-          zh: "手工制作的 Arduino 控制器将动作直接连接到游戏世界，使玩家的身体成为导航系统的一部分。",
-        },
+        src: "mazeassets/test1.mp4",
+        // caption: {
+        //   en: "Testing the connection between gesture and movement.",
+        //   zh: "测试动作与移动之间的联系。",
+        // },
       },
       {
-        type: "video",
-        src: "indexAsset/Labyrinth.mp4",
-        caption: {
-          en: "Testing the connection between gesture and movement.",
-          zh: "测试动作与移动之间的联系。",
-        },
+        type: "media-row",
+        className: "maze-test-row",
+        items: [
+          { type: "video", src: "mazeassets/test2.mp4" },
+          { type: "video", src: "mazeassets/test3.mp4" },
+        ],
       },
     ],
   },
@@ -354,18 +448,75 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       return paragraph;
     }
+    if (block.type === "two-column") {
+      const wrapper = document.createElement("section");
+      wrapper.className = "article-two-column";
+
+      block.columns.forEach((column) => {
+        const columnEl = document.createElement("div");
+        columnEl.className = "article-role-card";
+
+        const title = document.createElement("h3");
+        title.className = "article-role-title";
+        title.textContent = translated(column.title);
+
+        const list = document.createElement("ul");
+        list.className = "article-role-list";
+
+        translated(column.items).forEach((itemText) => {
+          const item = document.createElement("li");
+          item.textContent = itemText;
+          list.appendChild(item);
+        });
+
+        columnEl.append(title, list);
+        wrapper.appendChild(columnEl);
+      });
+
+      return wrapper;
+    }
+    if (block.type === "media-row") {
+      const row = document.createElement("section");
+      row.className = block.className
+        ? `article-media-row ${block.className}`
+        : "article-media-row";
+
+      block.items.forEach((item) => {
+        const media = document.createElement(
+          item.type === "video" ? "video" : "img",
+        );
+        media.src = item.src;
+
+        if (item.type === "video") {
+          media.muted = item.muted ?? true;
+          media.loop = item.loop ?? true;
+          media.playsInline = true;
+          media.autoplay = item.autoplay ?? true;
+          if (media.autoplay) media.play().catch(() => {});
+        } else {
+          media.alt = translated(item.alt);
+        }
+
+        row.appendChild(media);
+      });
+
+      return row;
+    }
     if (block.type === "image" || block.type === "video") {
       const figure = document.createElement("figure");
-      figure.className = "article-media";
+      figure.className = block.className
+        ? `article-media ${block.className}`
+        : "article-media";
       const media = document.createElement(
         block.type === "video" ? "video" : "img",
       );
       media.src = block.src;
       if (block.type === "video") {
-        media.muted = true;
-        media.loop = true;
+        media.controls = block.controls ?? false;
+        media.muted = block.muted ?? true;
+        media.loop = block.loop ?? true;
         media.playsInline = true;
-        media.autoplay = true;
+        media.autoplay = block.autoplay ?? true;
       } else {
         media.alt = translated(block.alt);
       }
@@ -376,7 +527,9 @@ document.addEventListener("DOMContentLoaded", () => {
         caption.textContent = translated(block.caption);
         figure.appendChild(caption);
       }
-      if (block.type === "video") media.play().catch(() => {});
+      if (block.type === "video" && media.autoplay) {
+        media.play().catch(() => {});
+      }
       return figure;
     }
     return null;

@@ -208,6 +208,10 @@
 .project-article::-webkit-scrollbar {
   display: none;
 }
+.article-media.no-border img,
+.article-media.no-border video {
+  border: none;
+}
 
 .article-heading {
   margin: 0 0 1.5rem;
@@ -221,6 +225,45 @@
   margin: 0 0 3rem;
   font-size: 13px;
   line-height: 1.75;
+}
+
+.article-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+
+  margin: 0 0 48px;
+}
+
+.article-role-card {
+  min-width: 0;
+}
+
+.article-role-title {
+  margin: 0 0 18px;
+
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.article-role-list {
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: circle;
+
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.article-role-list li {
+  margin-bottom: 8px;
 }
 
 .article-inline-link {
@@ -247,6 +290,23 @@
   transform: scaleX(1);
   transform-origin: left center;
 }
+
+.article-media-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: 16px;
+  height: min(28vw, 360px);
+  margin: 0 0 3rem;
+}
+
+.article-media-row img,
+.article-media-row video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--green-faint);
+}
+
 .article-media {
   margin: 0 0 3rem;
 }
@@ -345,6 +405,10 @@
     max-width: none;
     font-size: 18px;
   }
+  .project-description {
+    width: 100%;
+    max-width: none;
+  }
   .project-progress {
     display: none;
   }
@@ -371,11 +435,46 @@
   .article-media {
     margin-bottom: 2.2rem;
   }
+  .article-media-row {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-bottom: 2.2rem;
+  }
+  .article-media-row img,
+  .article-media-row video {
+    height: auto;
+  }
+  .article-media-row img[src="wcwrassets/wcwr8.png"] {
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .article-media-row.maze-test-row {
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+    height: 32vw;
+  }
+  .article-media-row.maze-test-row video {
+    height: 100%;
+  }
   .article-media img,
   .article-media video {
     max-height: none;
   }
   .project-copyright {
     display: none;
+  }
+
+  .article-two-column {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .article-role-title {
+    font-size: 15px;
+  }
+
+  .article-role-list {
+    font-size: 12px;
   }
 }
