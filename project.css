@@ -222,6 +222,31 @@
   font-size: 13px;
   line-height: 1.75;
 }
+
+.article-inline-link {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  color: var(--green);
+}
+
+.article-inline-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 1px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease;
+}
+
+.article-inline-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
 .article-media {
   margin: 0 0 3rem;
 }

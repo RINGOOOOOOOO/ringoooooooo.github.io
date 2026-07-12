@@ -478,9 +478,31 @@ document.addEventListener("DOMContentLoaded", () => {
       { passive: false },
     );
 
+    function openProject(item) {
+      if (item?.dataset.projectUrl) {
+        window.location.href = item.dataset.projectUrl;
+      }
+    }
+
     itemElements.forEach((item, index) => {
       item.addEventListener("click", () => {
-        setProject(index);
+        if (index === currentIndex) {
+          openProject(item);
+        } else {
+          setProject(index);
+        }
+      });
+
+      item.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openProject(item);
+      });
+    });
+
+    [preview, titleEl].forEach((element) => {
+      element.addEventListener("click", () => {
+        openProject(itemElements[currentIndex]);
       });
     });
 

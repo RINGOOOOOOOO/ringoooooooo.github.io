@@ -6,8 +6,8 @@ const projects = {
       zh: "Unity — 2026",
     },
     tags: {
-      en: ["game", "voice recognition", "AI"],
-      zh: ["游戏", "语音识别", "AI"],
+      en: ["game", "voice recognition", "API integration"],
+      zh: ["游戏", "语音识别", "API集成"],
     },
     description: {
       en: "A simple experiential game about sound and magic.\n\nWe Clean What Remains explores how cleaning, maintenance, and voice interaction can become meaningful forms of gameplay within fantasy environments. Through a stylized 3D game prototype, the project investigates whether players can emotionally connect with abandoned spaces through acts of restoration rather than combat. Players take on the role of a magic apprentice exploring forgotten environments, using voice-based spellcasting, environmental interaction, and magical cleaning mechanics to gradually bring ruined spaces back to life.",
@@ -79,18 +79,36 @@ const projects = {
         src: "wcwrassets/wcwr3.gif",
         alt: { en: "Voice interaction in the game", zh: "游戏中的语音交互" },
       },
-      { type: "heading", text: { en: "Voice as a Tool", zh: "声音作为工具" } },
+      // { type: "heading", text: { en: "Voice as a Tool", zh: "声音作为工具" } },
       {
         type: "paragraph",
         text: {
-          en: "Spoken input turns cleaning into a physical, performative act. The player must use their own voice to negotiate what disappears and what remains.",
-          zh: "语音输入让清理成为一种具身的表演行为。玩家必须用自己的声音决定什么消失、什么留下。",
+          en: "This interaction grew from a broader research question: can care, maintenance, and restoration become compelling forms of play? The concept paper traces the ideas and design research behind the project.",
+          zh: "这一交互源于一个更广泛的研究问题：照料、维护与修复能否成为引人投入的游戏方式？概念文档梳理了项目背后的思考与设计研究。",
+        },
+        link: {
+          text: {
+            en: "Read the concept paper",
+            zh: "阅读概念文档",
+          },
+          href: "wcwrassets/ThesisPaper-WeCleanWhatRemains.pdf",
         },
       },
       {
-        type: "image",
-        src: "wcwrassets/wcwr3.gif",
-        alt: { en: "Voice interaction in the game", zh: "游戏中的语音交互" },
+        type: "video",
+        src: "wcwrassets/wcwr5.mp4",
+        // caption: {
+        //   en: "Cleaning and restoring the environment.",
+        //   zh: "清洁并修复环境。",
+        // },
+      },
+      {
+        type: "video",
+        src: "wcwrassets/wcwr4.mp4",
+        // caption: {
+        //   en: "Cleaning and restoring the environment.",
+        //   zh: "清洁并修复环境。",
+        // },
       },
     ],
   },
@@ -320,6 +338,20 @@ document.addEventListener("DOMContentLoaded", () => {
           ? "article-standalone-caption"
           : "article-paragraph";
       paragraph.textContent = translated(block.text);
+      if (block.link) {
+        const link = document.createElement("a");
+        link.className = "article-inline-link";
+        link.href = block.link.href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        const label = document.createElement("span");
+        label.textContent = translated(block.link.text);
+        const arrow = document.createElement("span");
+        arrow.className = "arrow";
+        arrow.textContent = "→";
+        link.append(label, document.createTextNode(" "), arrow);
+        paragraph.append(document.createElement("br"), link);
+      }
       return paragraph;
     }
     if (block.type === "image" || block.type === "video") {
