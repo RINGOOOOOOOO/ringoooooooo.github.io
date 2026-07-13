@@ -84,13 +84,13 @@ const projects = {
       {
         type: "paragraph",
         text: {
-          en: "This interaction grew from a broader research question: can care, maintenance, and restoration become compelling forms of play? The concept paper traces the ideas and design research behind the project.",
-          zh: "这一交互源于一个更广泛的研究问题：照料、维护与修复能否成为引人投入的游戏方式？概念文档梳理了项目背后的思考与设计研究。",
+          en: "This interaction grew from a broader research question: can care, maintenance, and restoration become compelling forms of play?",
+          zh: "这一交互源于一个更广泛的研究问题：照料、维护与修复能否成为引人投入的游戏方式",
         },
         link: {
           text: {
-            en: "Read the concept paper",
-            zh: "阅读概念文档",
+            en: "view the more concept",
+            zh: "查看更多内容",
           },
           href: "wcwrassets/ThesisPaper-WeCleanWhatRemains.pdf",
         },
@@ -370,7 +370,7 @@ const projects = {
         type: "paragraph",
         text: { en: "", zh: "" },
         link: {
-          text: { en: "View the Unity model", zh: "查看 Unity 模型" },
+          text: { en: "view the Unity demo", zh: "查看 Unity demo" },
           href: "https://ringooooo.itch.io/labyrinth-prototype",
         },
       },
