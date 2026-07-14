@@ -417,13 +417,80 @@ const projects = {
           zh: "《Spinphony》是一款2D平台游戏，其中角色Do（一个丢失的音符）通过使用定制的唱机控制器解决谜题，与其他六个音符重聚。",
         },
       },
-      { type: "heading", text: { en: "A Shared Composition", zh: "共同创作" } },
       {
-        type: "paragraph",
-        text: {
-          en: "Each gesture adds another voice. The system rewards coordination, surprise, and improvisation rather than a single correct performance.",
-          zh: "每个动作都加入一个新的声部。系统鼓励协作、惊喜与即兴，而非唯一正确的演奏方式。",
+        type: "heading",
+        text: { en: "Hardware Design", zh: "硬件设计" },
+      },
+      {
+        type: "mechanics",
+        className: "spinphony-mechanics",
+        image: {
+          src: "Spinphonyassets/record.png",
+          alt: {
+            en: "Spinphony record player controller mechanics",
+            zh: "Spinphony 唱片机控制器机制说明",
+          },
         },
+        items: [
+          {
+            title: {
+              en: "Rotate the Record (rotary encoder):",
+              zh: "旋转唱片（旋转编码器）：",
+            },
+            text: {
+              en: "Scroll through the 7 musical notes",
+              zh: "在 7 个音符之间切换",
+            },
+          },
+          {
+            title: {
+              en: "Press the Record (Button Press):",
+              zh: "按下唱片（按钮输入）：",
+            },
+            text: {
+              en: "Play the selected note",
+              zh: "播放当前选中的音符",
+            },
+          },
+          {
+            title: {
+              en: "Arrow Buttons:",
+              zh: "方向键：",
+            },
+            text: {
+              en: "Move Do across platforms",
+              zh: "控制 Do 在平台之间移动",
+            },
+          },
+        ],
+      },
+      {
+        type: "mechanics",
+        className: "spinphony-components",
+        image: {
+          src: "Spinphonyassets/arduino.png",
+          alt: {
+            en: "Spinphony Arduino controller component connections",
+            zh: "Spinphony Arduino 控制器组件连接图",
+          },
+        },
+        items: [
+          {
+            title: { en: "Components:", zh: "组件：" },
+            text: {
+              en: "Rotary encoder\nButtons",
+              zh: "旋转编码器\n按钮",
+            },
+          },
+          {
+            title: { en: "Connection with Unity:", zh: "与 Unity 连接：" },
+            text: { en: "Ardity", zh: "Ardity" },
+          },
+          {
+            title: { en: "Case:", zh: "外壳：" },
+            text: { en: "Acrylic Lasercut", zh: "亚克力激光切割" },
+          },
+        ],
       },
       { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
       {
@@ -437,6 +504,37 @@ const projects = {
       {
         type: "video",
         src: "Spinphonyassets/visual2.mp4",
+      },
+      { type: "heading", text: { en: "Game Design", zh: "游戏设计" } },
+      {
+        type: "media-row",
+        className: "spinphony-game-design-row",
+        items: [
+          {
+            type: "video",
+            src: "indexAsset/10.mp4",
+          },
+          {
+            type: "image",
+            src: "Spinphonyassets/spinphony3.png",
+            alt: {
+              en: "Spinphony game design detail three",
+              zh: "Spinphony 游戏设计细节三",
+            },
+          },
+          {
+            type: "image",
+            src: "Spinphonyassets/spinphony2.png",
+            alt: {
+              en: "Spinphony game design detail two",
+              zh: "Spinphony 游戏设计细节二",
+            },
+          },
+        ],
+      },
+      {
+        type: "image",
+        src: "Spinphonyassets/spinphony1.png",
       },
     ],
   },
@@ -609,6 +707,46 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.appendChild(columnEl);
       });
 
+      return wrapper;
+    }
+    if (block.type === "mechanics") {
+      const wrapper = document.createElement("section");
+      wrapper.className = block.className
+        ? `article-mechanics ${block.className}`
+        : "article-mechanics";
+
+      const image = document.createElement("img");
+      image.className = "article-mechanics-image";
+      image.src = block.image.src;
+      image.alt = translated(block.image.alt);
+
+      const content = document.createElement("div");
+      content.className = "article-mechanics-content";
+
+      if (block.title) {
+        const title = document.createElement("h2");
+        title.className = "article-mechanics-title";
+        title.textContent = translated(block.title);
+        content.appendChild(title);
+      }
+
+      block.items.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "article-mechanics-card";
+
+        const cardTitle = document.createElement("p");
+        cardTitle.className = "article-mechanics-card-title";
+        cardTitle.textContent = translated(item.title);
+
+        const cardText = document.createElement("p");
+        cardText.className = "article-mechanics-card-text";
+        cardText.textContent = translated(item.text);
+
+        card.append(cardTitle, cardText);
+        content.appendChild(card);
+      });
+
+      wrapper.append(image, content);
       return wrapper;
     }
     if (block.type === "media-row") {

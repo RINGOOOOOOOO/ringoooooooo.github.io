@@ -298,6 +298,104 @@
   transform-origin: left center;
 }
 
+.article-mechanics {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  margin: 0 0 48px;
+}
+
+.article-mechanics-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+}
+
+.article-mechanics-content {
+  min-width: 0;
+}
+
+.article-mechanics-title {
+  margin: 0 0 24px;
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.article-mechanics-card {
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--green);
+  background: none;
+}
+
+.article-mechanics-card:last-child {
+  margin-bottom: 0;
+}
+
+.article-mechanics-card-title,
+.article-mechanics-card-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.article-mechanics-card-title {
+  font-weight: 400;
+}
+
+.article-mechanics-card-text {
+  font-weight: 300;
+  white-space: pre-line;
+}
+
+.article-mechanics.spinphony-components {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+}
+
+.spinphony-components .article-mechanics-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.spinphony-components .article-mechanics-image {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.article-media-row.spinphony-game-design-row {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: clamp(320px, 38vw, 500px);
+}
+
+.article-media-row.spinphony-game-design-row img,
+.article-media-row.spinphony-game-design-row video {
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-media-row.spinphony-game-design-row > :first-child {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.article-media-row.spinphony-game-design-row > :nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.article-media-row.spinphony-game-design-row > :nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 .article-media-row {
   display: grid;
   grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
@@ -510,6 +608,34 @@
   .article-media {
     margin-bottom: 2.2rem;
   }
+  .article-mechanics {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .article-mechanics.spinphony-components {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+  .spinphony-components .article-mechanics-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .spinphony-components .article-mechanics-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .article-mechanics-title {
+    margin-bottom: 18px;
+    font-size: 22px;
+  }
+  .article-mechanics-card {
+    margin-bottom: 8px;
+    padding: 0;
+  }
+  .article-mechanics-card-title,
+  .article-mechanics-card-text {
+    font-size: 11px;
+  }
   .article-media-row {
     grid-template-columns: 1fr;
     height: auto;
@@ -547,6 +673,15 @@
   }
   .article-media-row.maze-design-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .article-media-row.spinphony-game-design-row {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    height: 58vw;
+  }
+  .article-media-row.spinphony-game-design-row img,
+  .article-media-row.spinphony-game-design-row video {
+    height: 100%;
   }
   .article-media-row.maze-design-collage-row {
     grid-template-columns: 2.15fr 1fr 1fr;
