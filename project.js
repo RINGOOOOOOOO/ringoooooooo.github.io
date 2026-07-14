@@ -10,8 +10,8 @@ const projects = {
       zh: ["游戏", "语音识别", "API集成"],
     },
     description: {
-      en: "A simple experiential game about sound and magic.\n\nWe Clean What Remains explores how cleaning, maintenance, and voice interaction can become meaningful forms of gameplay within fantasy environments. Through a stylized 3D game prototype, the project investigates whether players can emotionally connect with abandoned spaces through acts of restoration rather than combat. Players take on the role of a magic apprentice exploring forgotten environments, using voice-based spellcasting, environmental interaction, and magical cleaning mechanics to gradually bring ruined spaces back to life.",
-      zh: "一款关于声音和魔法的语音交互体验游戏。\n\n《我们清理残余物》探索了在奇幻环境中，清洁、维护与语音交互如何转化为富有意义的游戏机制。项目通过一个风格化的 3D 游戏原型，研究玩家是否能够通过修复而非战斗，与被遗弃的空间建立情感联系。玩家将扮演一名魔法学徒，探索被遗忘的环境，运用语音施法、环境互动与魔法清洁机制，让破败的空间逐渐恢复生机。",
+      en: "A simple experiential game about sound and magic.\n\nWe Clean What Remains explores how cleaning, maintenance, and voice interaction can become meaningful forms of gameplay. Through a stylized 3D game prototype, the project investigates whether players can emotionally connect with abandoned spaces through acts of restoration rather than combat. Players take on the role of a magic apprentice exploring forgotten environments, using voice-based spellcasting, environmental interaction, and magical cleaning mechanics to gradually bring ruined spaces back to life.",
+      zh: "一款关于声音和魔法的语音交互体验游戏。\n\n《我们清理残余物》探索了如何将清洁、维护与语音交互转化为富有意义的游戏机制。项目通过一个风格化的 3D 游戏，研究玩家是否能够通过修复而非战斗，与被遗弃的空间建立情感联系。玩家将扮演一名魔法学徒，探索被遗忘的环境，运用语音施法、环境互动与魔法清洁机制，让破败的空间逐渐恢复生机。",
     },
     content: [
       { type: "heading", text: { en: "", zh: "" } },
@@ -147,16 +147,16 @@ const projects = {
       zh: "Unity + Arduino + Leap Motion — 2025",
     },
     tags: {
-      en: ["physical interaction", "game"],
-      zh: ["物理交互", "游戏"],
+      en: ["game", "interactive sensory"],
+      zh: ["游戏", "交互式感官"],
     },
     team: {
       en: "Team: Jinhao Xu, Carla Budar, Ziye An, Jaiden Brown",
       zh: "团队：Jinhao Xu、Carla Budar、Ziye An、Jaiden Brown",
     },
     description: {
-      en: "Inspired by the myth of the Minotaur, LABYRINTH is a two-player asymmetric hide-and-seek game played through physical controllers. Inside a dark maze, one player becomes the Hider trying to escape, while the other becomes the Seeker, a ghostly entity that hunts through sound.",
-      zh: "《LABYRINTH（迷宫）》灵感来自希腊神话弥诺陶洛斯的迷宫，是一款通过实体控制器进行的双人非对称捉迷藏游戏。在黑暗迷宫中，一名玩家作为 Hider 试图逃离，另一名玩家作为 Seeker，成为依靠声音追猎的幽灵般存在。",
+      en: "Inspired by the Greek myth of the Minotaur, a monster with a bull's head and a human body, LABYRINTH is a two-player asymmetric hide-and-seek game played through physical controllers. Inside a dark maze, one player becomes the Hider trying to escape, while the other becomes the Seeker, a ghostly entity that hunts through sound.",
+      zh: "《LABYRINTH（迷宫）》灵感来自希腊神话牛首人身怪弥诺陶洛斯的迷宫，是一款通过实体控制器进行的双人非对称捉迷藏游戏。在黑暗迷宫中，一名玩家作为 Hider 试图逃离，另一名玩家作为 Seeker，成为依靠声音追猎的幽灵般存在。",
     },
     content: [
       { type: "heading", text: { en: "Enter the Maze", zh: "进入迷宫" } },
@@ -377,37 +377,44 @@ const projects = {
     ],
   },
   spinphony: {
-    title: { en: "Spinphony", zh: "Spinphony" },
+    title: { en: "Spinphony", zh: "Spinphony | 旋转交响" },
     meta: {
-      en: "Game + physical interaction — 2025",
-      zh: "游戏 + 实体交互 — 2025",
+      en: "Unity + Arduino + Rotary Encoder — 2025",
+      zh: "Unity + Arduino + 轴编码器 — 2025",
     },
     tags: {
-      en: ["music", "rhythm", "collaboration"],
-      zh: ["音乐", "节奏", "协作"],
+      en: ["game", "physical computation", "hardware controller"],
+      zh: ["游戏", "物理运算", "实体控制器"],
     },
     description: {
-      en: "A playful music experience that transforms spinning, rhythm, and collective movement into a shared composition.",
-      zh: "一种趣味音乐体验，将旋转、节奏与集体动作转化为共同创作。",
+      en: "Spinphony reimagines a familiar music device as a custom game controller. In this 2D rhythm platformer, Do, a lost music note, solves puzzles through spinning and scratching gestures, gradually reuniting with six other notes.\n\nThe physical controller and digital system were developed together. The encoder prototype defined the tactile feel of the record player interaction, while game’s visual and audio feedback helped players read timing, rhythm, and response.",
+      zh: "《Spinphony（旋转交响）》将熟悉的音乐设备重新想象为自定义游戏控制器。在这款 2D 节奏平台游戏中，迷失的音符 Do 通过旋转与刮擦的操作解开谜题，并逐渐与其他六个音符重聚。\n\n实体控制器与数字系统在迭代中共同成形。编码器原型定义了唱片机交互的触感，而游戏中的视觉与音频反馈则帮助玩家理解时机、节奏与操作回应。",
     },
     content: [
       {
         type: "heading",
-        text: { en: "Movement as Interface", zh: "动作作为界面" },
-      },
-      {
-        type: "paragraph",
         text: {
-          en: "Spinphony begins with a simple gesture: spin. Circular movement becomes an interface through which players build rhythm together.",
-          zh: "Spinphony 从一个简单动作开始：旋转。圆周运动成为玩家共同建立节奏的界面。",
+          en: "What if a record player became a game controller?",
+          zh: "如果唱片机可以变成游戏手柄会怎样？",
         },
       },
       {
         type: "video",
-        src: "indexAsset/Spinphony.mp4",
-        caption: {
-          en: "Spinning transforms physical movement into sound.",
-          zh: "旋转将身体动作转化为声音。",
+        src: "Spinphonyassets/Spinphony.mp4",
+        controls: true,
+        autoplay: false,
+        muted: false,
+        loop: false,
+        // caption: {
+        //   en: "Gameplay",
+        //   zh: "游戏过程",
+        // },
+      },
+      {
+        type: "paragraph",
+        text: {
+          en: "Spinphony is a 2D platformer where the character Do, a lost music note, reunites with six other notes by solving puzzles using a custom-built record player controller.",
+          zh: "《Spinphony》是一款2D平台游戏，其中角色Do（一个丢失的音符）通过使用定制的唱机控制器解决谜题，与其他六个音符重聚。",
         },
       },
       { type: "heading", text: { en: "A Shared Composition", zh: "共同创作" } },
@@ -418,15 +425,19 @@ const projects = {
           zh: "每个动作都加入一个新的声部。系统鼓励协作、惊喜与即兴，而非唯一正确的演奏方式。",
         },
       },
+      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
       {
-        type: "video",
-        src: "indexAsset/Spinphony.mp4",
+        type: "image",
+        src: "Spinphonyassets/visual1.png",
         caption: {
-          en: "Players listen and adjust to one another in real time.",
-          zh: "玩家实时聆听彼此并作出调整。",
+          en: "characters design",
+          zh: "角色设计",
         },
       },
-      { type: "heading", text: { en: "Visual Design", zh: "美术设计" } },
+      {
+        type: "video",
+        src: "Spinphonyassets/visual2.mp4",
+      },
     ],
   },
   office: {
