@@ -1,6 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelect = document.getElementById("languages");
   const contentElements = document.querySelectorAll("[data-lang]");
+  const languageStorageKey = "portfolio-language";
+
+  function getSavedLanguage() {
+    try {
+      const savedLanguage = localStorage.getItem(languageStorageKey);
+      return savedLanguage === "en" || savedLanguage === "zh"
+        ? savedLanguage
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveLanguage(lang) {
+    try {
+      localStorage.setItem(languageStorageKey, lang);
+    } catch {
+      // Continue switching languages when storage is unavailable.
+    }
+  }
+
+  const savedLanguage = getSavedLanguage();
+  if (languageSelect && savedLanguage) languageSelect.value = savedLanguage;
 
   const cursor = document.querySelector(".cursor");
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
@@ -28,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (languageSelect) {
     languageSelect.addEventListener("change", (event) => {
+      saveLanguage(event.target.value);
       applyLanguage(event.target.value);
     });
   }

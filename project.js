@@ -541,24 +541,24 @@ const projects = {
   office: {
     title: { en: "Queen of Hearts in the Office", zh: "红心皇后办公室加班" },
     meta: {
-      en: "Game + narrative experience — 2023",
-      zh: "游戏 + 叙事体验 — 2023",
+      en: "unity — 2023",
+      zh: "unity — 2023",
     },
     tags: {
-      en: ["narrative", "surreal", "office"],
-      zh: ["叙事", "超现实", "办公室"],
+      en: ["puzzle game", "surreal"],
+      zh: ["解密游戏", "超现实"],
     },
     description: {
-      en: "A surreal narrative experience about office work, authority, and the absurd logic of staying late.",
-      zh: "一段关于办公室劳动、权力，以及加班荒诞逻辑的超现实叙事体验。",
+      en: "Inspired by the Alice in Wonderland, Queen of Hearts in the Office is a visual novel that turns its familiar characters upside down, unfolding a darkly comic office horror story about power, exhaustion, and the absurd logic of overtime.",
+      zh: "灵感源于《爱丽丝梦游仙境》，《红心皇后办公室加班》是一款视觉小说。作品颠覆了人们熟悉的角色关系，讲述一段关于权力、疲惫与荒诞加班逻辑的黑色幽默办公室恐怖故事。",
     },
     content: [
-      { type: "heading", text: { en: "Stay Late", zh: "留下加班" } },
+      { type: "heading", text: { en: "Stay Late", zh: "加班" } },
       {
         type: "paragraph",
         text: {
-          en: "The familiar office slowly slips into another kind of logic. Instructions multiply while their purpose becomes less clear.",
-          zh: "熟悉的办公室逐渐滑入另一种逻辑。指令不断增加，目的却越来越模糊。",
+          en: "The player takes on the role of the Queen of Hearts, an exhausted office worker trapped in yet another endless night of overtime. After being threatened with dismissal by her boss, Alice, the Queen returns to work under pressure, only to find Alice beheaded in the darkness. As the office begins to shift into something strange and unsettling, the player must decide whether to investigate the truth behind the murder or simply clock out and leave.",
+          zh: "玩家扮演红桃皇后，一个在无尽加班中被耗尽的办公室员工。在被上司爱丽丝威胁开除后，红桃皇后不得不继续留在办公室工作。可当黑暗降临，爱丽丝却被发现身首异处，整个办公室也开始变得诡谲而不安。玩家需要在荒诞的加班夜里作出选择：调查这场谋杀背后的真相，还是干脆打卡下班。",
         },
       },
       {
@@ -566,20 +566,12 @@ const projects = {
         src: "indexAsset/office.mp4",
         caption: { en: "The office after hours.", zh: "下班后的办公室。" },
       },
-      { type: "heading", text: { en: "Meet the Queen", zh: "遇见皇后" } },
       {
         type: "paragraph",
-        text: {
-          en: "Authority appears as spectacle, threat, and dark humor. The player navigates rules that are recognizable and completely absurd at the same time.",
-          zh: "权力以奇观、威胁与黑色幽默的形式出现。玩家面对的规则既似曾相识，又完全荒诞。",
-        },
-      },
-      {
-        type: "video",
-        src: "indexAsset/office.mp4",
-        caption: {
-          en: "A narrative space shaped by work and authority.",
-          zh: "由劳动与权力塑造的叙事空间。",
+        text: { en: "", zh: "" },
+        link: {
+          text: { en: "view the unity demo", zh: "查看 unity demo" },
+          href: "https://ringooooo.itch.io/final-game",
         },
       },
     ],
@@ -637,6 +629,29 @@ const projects = {
 
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelect = document.getElementById("languages");
+  const languageStorageKey = "portfolio-language";
+
+  function getSavedLanguage() {
+    try {
+      const savedLanguage = localStorage.getItem(languageStorageKey);
+      return savedLanguage === "en" || savedLanguage === "zh"
+        ? savedLanguage
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveLanguage(lang) {
+    try {
+      localStorage.setItem(languageStorageKey, lang);
+    } catch {
+      // Continue switching languages when storage is unavailable.
+    }
+  }
+
+  const savedLanguage = getSavedLanguage();
+  if (languageSelect && savedLanguage) languageSelect.value = savedLanguage;
   const cursor = document.querySelector(".cursor");
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const projectId = new URLSearchParams(window.location.search).get("id");
@@ -644,6 +659,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const article = document.getElementById("project-article");
   const progressFill = document.querySelector(".project-progress-fill");
   const progressNumber = document.querySelector(".project-progress-number");
+  const projectDetails = document.querySelector(".project-details");
+  const projectDescription2 = document.getElementById("project-description2");
+  const projectNavigation = document.getElementById("project-navigation");
+  const previousProjectLink = document.getElementById("project-previous");
+  const nextProjectLink = document.getElementById("project-next");
+  const projectIds = Object.keys(projects);
+  const currentProjectIndex = Math.max(projectIds.indexOf(projectId), 0);
+
+  function positionProjectNavigation() {
+    if (!projectNavigation || !article) return;
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      article.after(projectNavigation);
+    } else if (projectDetails && projectDescription2) {
+      projectDescription2.after(projectNavigation);
+    }
+  }
 
   function language() {
     return languageSelect?.value || "en";
@@ -843,6 +874,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const team = document.getElementById("project-team");
     team.textContent = translated(project.team);
     team.hidden = !project.team;
+    const previousProjectId =
+      projectIds[
+        (currentProjectIndex - 1 + projectIds.length) % projectIds.length
+      ];
+    const nextProjectId =
+      projectIds[(currentProjectIndex + 1) % projectIds.length];
+    if (previousProjectLink) {
+      previousProjectLink.href = `project.html?id=${previousProjectId}`;
+      previousProjectLink.textContent = "←";
+      previousProjectLink.setAttribute(
+        "aria-label",
+        lang === "zh" ? "上一个项目" : "Previous Project",
+      );
+    }
+    if (nextProjectLink) {
+      nextProjectLink.href = `project.html?id=${nextProjectId}`;
+      nextProjectLink.textContent = "→";
+      nextProjectLink.setAttribute(
+        "aria-label",
+        lang === "zh" ? "下一个项目" : "Next Project",
+      );
+    }
     document.title = `${translated(project.title)} | Jinhao Xu`;
     article.replaceChildren(
       ...project.content.map(createContentBlock).filter(Boolean),
@@ -850,9 +903,17 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
   }
 
-  languageSelect?.addEventListener("change", render);
+  languageSelect?.addEventListener("change", (event) => {
+    saveLanguage(event.target.value);
+    render();
+  });
   article?.addEventListener("scroll", updateProgress);
-  window.addEventListener("resize", updateProgress);
+  window.addEventListener("resize", () => {
+    updateProgress();
+    positionProjectNavigation();
+  });
+
+  positionProjectNavigation();
 
   const mobileMenu = document.querySelector("#mobile-menu");
   document
@@ -879,7 +940,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document
       .querySelectorAll(
-        "header a, header select, footer a, .header-name-target, .project-close",
+        "header a, header select, footer a, .header-name-target, .project-close, .project-navigation-link",
       )
       .forEach((element) => {
         element.addEventListener("mouseenter", () =>
