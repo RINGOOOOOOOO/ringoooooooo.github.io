@@ -89,7 +89,7 @@ const projects = {
         },
         link: {
           text: {
-            en: "view the more concept",
+            en: "view more details",
             zh: "查看更多内容",
           },
           href: "wcwrassets/ThesisPaper-WeCleanWhatRemains.pdf",
@@ -370,7 +370,7 @@ const projects = {
         type: "paragraph",
         text: { en: "", zh: "" },
         link: {
-          text: { en: "view the Unity demo", zh: "查看 Unity demo" },
+          text: { en: "view the unity demo", zh: "查看 unity demo" },
           href: "https://ringooooo.itch.io/labyrinth-prototype",
         },
       },
