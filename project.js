@@ -541,12 +541,12 @@ const projects = {
   office: {
     title: { en: "Queen of Hearts in the Office", zh: "红心皇后办公室加班" },
     meta: {
-      en: "unity — 2023",
-      zh: "unity — 2023",
+      en: "Unity — 2023",
+      zh: "Unity — 2023",
     },
     tags: {
-      en: ["puzzle game", "surreal"],
-      zh: ["解密游戏", "超现实"],
+      en: ["puzzle game", "visual novel"],
+      zh: ["解密游戏", "视觉小说"],
     },
     description: {
       en: "Inspired by the Alice in Wonderland, Queen of Hearts in the Office is a visual novel that turns its familiar characters upside down, unfolding a darkly comic office horror story about power, exhaustion, and the absurd logic of overtime.",
@@ -564,7 +564,7 @@ const projects = {
       {
         type: "video",
         src: "indexAsset/office.mp4",
-        caption: { en: "The office after hours.", zh: "下班后的办公室。" },
+        // caption: { en: "The office after hours.", zh: "下班后的办公室。" },
       },
       {
         type: "paragraph",
