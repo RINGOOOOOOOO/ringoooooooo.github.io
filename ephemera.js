@@ -3,9 +3,12 @@ const ephemeraProjects = [
     id: "we-clean-what-remains",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "We Clean What Remains", zh: "我们清理残余物" },
-    image: "wcwrassets/wcwr1.png",
+    image: "wcwrassets/wcwr3.gif",
     href: "project.html?id=we-clean-what-remains",
-    size: "large", offsetX: 0, offsetY: 0, rotation: -0.4,
+    size: "large",
+    offsetX: 0,
+    offsetY: 0,
+    rotation: -0.4,
   },
   {
     id: "labyrinth",
@@ -13,7 +16,10 @@ const ephemeraProjects = [
     title: { en: "LABYRINTH", zh: "LABYRINTH | 迷宫" },
     image: "mazeassets/maze1.png",
     href: "project.html?id=labyrinth",
-    size: "medium", offsetX: 14, offsetY: 34, rotation: 0.5,
+    size: "medium",
+    offsetX: 14,
+    offsetY: 34,
+    rotation: 0.5,
   },
   {
     id: "spinphony",
@@ -21,7 +27,10 @@ const ephemeraProjects = [
     title: { en: "Spinphony", zh: "Spinphony | 旋转交响" },
     image: "Spinphonyassets/spinphony1.png",
     href: "project.html?id=spinphony",
-    size: "small", offsetX: -8, offsetY: -10, rotation: -0.7,
+    size: "small",
+    offsetX: -8,
+    offsetY: -10,
+    rotation: -0.7,
   },
   {
     id: "office",
@@ -29,7 +38,10 @@ const ephemeraProjects = [
     title: { en: "Queen of Hearts in the Office", zh: "红心皇后办公室加班" },
     image: "indexAsset/8.png",
     href: "project.html?id=office",
-    size: "large", offsetX: 10, offsetY: 18, rotation: 0.3,
+    size: "large",
+    offsetX: 10,
+    offsetY: 18,
+    rotation: 0.3,
   },
   {
     id: "desktop",
@@ -37,47 +49,109 @@ const ephemeraProjects = [
     title: { en: "Desktop??", zh: "桌面？？" },
     image: "indexAsset/pc.png",
     href: "project.html?id=desktop",
-    size: "medium", offsetX: -12, offsetY: 42, rotation: -0.2,
+    size: "medium",
+    offsetX: -12,
+    offsetY: 42,
+    rotation: -0.2,
   },
   {
-    id: "data-portrait",
+    id: "lost-and-found",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
-    title: { en: "Data Portrait", zh: "数据肖像" },
-    image: "indexAsset/gamechart.png",
-    href: "#",
-    size: "small", offsetX: 8, offsetY: 5, rotation: 0.8,
-  },
-  {
-    id: "musical-weather",
-    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
-    title: { en: "Musical Weather", zh: "音乐天气" },
+    title: { en: "Lost and Found", zh: "失物招领" },
     image: "indexAsset/21.png",
-    href: "#",
-    size: "large", offsetX: -6, offsetY: 28, rotation: -0.5,
+    href: "creative-coding-pages/p01.html",
+    size: "large",
+    offsetX: -6,
+    offsetY: 28,
+    rotation: -0.5,
+  },
+  {
+    id: "form-generator",
+    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
+    title: { en: "Form Generator", zh: "形状生成器" },
+    image: "indexAsset/xujinhao.png",
+    href: "creative-coding-pages/p02.html",
+    size: "small",
+    offsetX: -4,
+    offsetY: 22,
+    rotation: -0.8,
+  },
+  {
+    id: "experimental-clock",
+    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
+    title: { en: "Experimental Clock", zh: "实验时钟" },
+    image: "indexAsset/cow.png",
+    href: "creative-coding-pages/p03.html",
+    size: "medium",
+    offsetX: 9,
+    offsetY: 38,
+    rotation: 0.6,
+  },
+  {
+    id: "exquisite-corpse",
+    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
+    title: { en: "Exquisite Corpse", zh: "精美尸体" },
+    image: "indexAsset/bg1.png",
+    href: "creative-coding-pages/p04.html",
+    size: "large",
+    offsetX: 10,
+    offsetY: 18,
+    rotation: 0.3,
   },
   {
     id: "optical-illusion",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
     title: { en: "Optical Illusion", zh: "视错觉" },
     image: "indexAsset/noise.png",
-    href: "#",
-    size: "medium", offsetX: 12, offsetY: -8, rotation: 0.4,
+    href: "creative-coding-pages/p05.html",
+    size: "medium",
+    offsetX: 12,
+    offsetY: -8,
+    rotation: 0.4,
   },
   {
-    id: "random-face-generator",
+    id: "data-portrait",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
-    title: { en: "Random Face Generator", zh: "随机人脸生成器" },
-    image: "indexAsset/xujinhao.png",
-    href: "#",
-    size: "small", offsetX: -4, offsetY: 22, rotation: -0.8,
+    title: { en: "Data Portrait", zh: "数据肖像" },
+    image: "indexAsset/gamechart.png",
+    href: "creative-coding-pages/p06.html",
+    size: "small",
+    offsetX: 8,
+    offsetY: 5,
+    rotation: 0.8,
   },
   {
-    id: "unconventional-clock",
+    id: "autobiographical-game",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
-    title: { en: "Unconventional Clock", zh: "非常规时钟" },
-    image: "indexAsset/cow.png",
-    href: "#",
-    size: "medium", offsetX: 9, offsetY: 38, rotation: 0.6,
+    title: { en: "Autobiographical Game", zh: "自传式游戏" },
+    image: "indexAsset/gamechart.png",
+    href: "creative-coding-pages/p07.html",
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
+  },
+  {
+    id: "experimental-camera",
+    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
+    title: { en: "Experimental Camera", zh: "实验相机" },
+    image: "indexAsset/bg3.png",
+    href: "creative-coding-pages/p08.html",
+    size: "small",
+    offsetX: 11,
+    offsetY: 30,
+    rotation: 0.7,
+  },
+  {
+    id: "consentful-interface",
+    category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
+    title: { en: "Consentful Interface", zh: "知情同意界面" },
+    image: "indexAsset/bg2.png",
+    href: "creative-coding-pages/p09.html",
+    size: "medium",
+    offsetX: -5,
+    offsetY: -6,
+    rotation: -0.6,
   },
   {
     id: "and-yet-i-miss-you",
@@ -85,7 +159,10 @@ const ephemeraProjects = [
     title: { en: "And Yet I Miss You", zh: "然而我仍想念你" },
     image: "indexAsset/1.png",
     href: "#",
-    size: "large", offsetX: -9, offsetY: 4, rotation: -0.3,
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
   },
   {
     id: "my-small-stubborn-steps",
@@ -93,7 +170,10 @@ const ephemeraProjects = [
     title: { en: "My Small, Stubborn Steps", zh: "我微小而固执的脚步" },
     image: "indexAsset/2.png",
     href: "#",
-    size: "small", offsetX: 11, offsetY: 30, rotation: 0.7,
+    size: "small",
+    offsetX: 11,
+    offsetY: 30,
+    rotation: 0.7,
   },
   {
     id: "romance-scams-unmasked",
@@ -101,7 +181,10 @@ const ephemeraProjects = [
     title: { en: "Romance Scams: Unmasked", zh: "爱情骗局：揭下面具" },
     image: "indexAsset/3.png",
     href: "#",
-    size: "medium", offsetX: -5, offsetY: -6, rotation: -0.6,
+    size: "medium",
+    offsetX: -5,
+    offsetY: -6,
+    rotation: -0.6,
   },
   {
     id: "stay-dangerous",
@@ -109,7 +192,10 @@ const ephemeraProjects = [
     title: { en: "Stay Dangerous", zh: "保持危险" },
     image: "indexAsset/4.png",
     href: "#",
-    size: "large", offsetX: 7, offsetY: 24, rotation: 0.4,
+    size: "large",
+    offsetX: 7,
+    offsetY: 24,
+    rotation: 0.4,
   },
   {
     id: "found-alphabet",
@@ -117,7 +203,10 @@ const ephemeraProjects = [
     title: { en: "Found Alphabet", zh: "发现的字母" },
     image: "indexAsset/5.png",
     href: "#",
-    size: "small", offsetX: -8, offsetY: 14, rotation: -0.9,
+    size: "small",
+    offsetX: -8,
+    offsetY: 14,
+    rotation: -0.9,
   },
   {
     id: "crying-in-h-mart",
@@ -125,7 +214,10 @@ const ephemeraProjects = [
     title: { en: "Crying in H Mart", zh: "在 H Mart 哭泣" },
     image: "indexAsset/6.png",
     href: "#",
-    size: "medium", offsetX: 10, offsetY: 38, rotation: 0.5,
+    size: "medium",
+    offsetX: 10,
+    offsetY: 38,
+    rotation: 0.5,
   },
   {
     id: "flowerful",
@@ -133,7 +225,10 @@ const ephemeraProjects = [
     title: { en: "flowerful", zh: "花意盎然" },
     image: "indexAsset/7.png",
     href: "#",
-    size: "large", offsetX: -6, offsetY: 2, rotation: -0.4,
+    size: "large",
+    offsetX: -6,
+    offsetY: 2,
+    rotation: -0.4,
   },
 ];
 
@@ -217,7 +312,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const groups = new Map();
     ephemeraProjects.forEach((project) => {
       const key = project.category.en;
-      if (!groups.has(key)) groups.set(key, { category: project.category, projects: [] });
+      if (!groups.has(key))
+        groups.set(key, { category: project.category, projects: [] });
       groups.get(key).projects.push(project);
     });
     return [...groups.values()];
@@ -256,16 +352,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelectorAll(".ephemera-card img").forEach((image) => {
       const project = ephemeraProjects.find(
-        (item) => item.id === image.closest(".ephemera-card")?.dataset.projectId,
+        (item) =>
+          item.id === image.closest(".ephemera-card")?.dataset.projectId,
       );
       if (project) image.alt = translated(project.title);
     });
     document.querySelectorAll("[data-project-id]").forEach((link) => {
-      const project = ephemeraProjects.find((item) => item.id === link.dataset.projectId);
+      const project = ephemeraProjects.find(
+        (item) => item.id === link.dataset.projectId,
+      );
       if (project && link.matches("a")) {
         link.setAttribute(
           "aria-label",
-          lang === "zh" ? `查看项目：${project.title.zh}` : `View project: ${project.title.en}`,
+          lang === "zh"
+            ? `查看项目：${project.title.zh}`
+            : `View project: ${project.title.en}`,
         );
       }
     });
@@ -286,9 +387,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function highlight(projectId) {
       gallery?.classList.add("is-filtering");
       index?.classList.add("is-filtering");
-      document.querySelectorAll(`[data-project-id="${projectId}"]`).forEach((element) => {
-        element.classList.add("is-highlighted");
-      });
+      document
+        .querySelectorAll(`[data-project-id="${projectId}"]`)
+        .forEach((element) => {
+          element.classList.add("is-highlighted");
+        });
     }
     function clearHighlight() {
       gallery?.classList.remove("is-filtering");
@@ -296,9 +399,13 @@ document.addEventListener("DOMContentLoaded", () => {
       elements.forEach((element) => element.classList.remove("is-highlighted"));
     }
     elements.forEach((element) => {
-      element.addEventListener("mouseenter", () => highlight(element.dataset.projectId));
+      element.addEventListener("mouseenter", () =>
+        highlight(element.dataset.projectId),
+      );
       element.addEventListener("mouseleave", clearHighlight);
-      element.addEventListener("focus", () => highlight(element.dataset.projectId));
+      element.addEventListener("focus", () =>
+        highlight(element.dataset.projectId),
+      );
       element.addEventListener("blur", clearHighlight);
       element.addEventListener("click", (event) => {
         if (element.getAttribute("href") === "#") event.preventDefault();
@@ -339,7 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
       element.addEventListener("mouseenter", () => {
         if (!isMobile) cursor.classList.add("expand");
       });
-      element.addEventListener("mouseleave", () => cursor.classList.remove("expand"));
+      element.addEventListener("mouseleave", () =>
+        cursor.classList.remove("expand"),
+      );
     });
     mobileQuery.addEventListener?.("change", updateCursorMode);
     updateCursorMode();

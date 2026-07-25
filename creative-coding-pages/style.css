@@ -1,0 +1,476 @@
+@font-face {
+  font-family: pixel;
+  src: url("../Critical-Computation-Portfolio/asset/dogicapixel.ttf");
+}
+
+@font-face {
+  font-family: "DePixelBreit";
+  src: url("https://cdn.glitch.global/481b4b69-b83d-4a14-9b85-4822045e32d4/DePixelBreit.ttf?v=1694182031217");
+}
+
+:root {
+  --menu-width: 250px;
+  --page-gap: 110px;
+  --page-width: 1280px;
+  --blue: #87cefa;
+  --pink: #f5b7b1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  --sketch-ratio: 600.5 / 642.1;
+  background: var(--project-background, #fff);
+  color: #ffb6c1;
+  font-family: pixel;
+}
+
+body[data-project="01"] {
+  --sketch-ratio: 400 / 400;
+}
+
+body[data-project="02"] {
+  --sketch-ratio: 400 / 450;
+}
+
+body[data-project="04"] {
+  --sketch-ratio: 400 / 660;
+}
+
+.project-shell {
+  display: grid;
+  grid-template-columns: var(--menu-width) minmax(0, 1fr);
+  gap: var(--page-gap);
+  width: min(var(--page-width), calc(100vw - 40px));
+  height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.project-menu {
+  --project-head-size: 1.5rem;
+  --project-head-size-mobile: 0.82rem;
+  align-self: center;
+  min-width: 0;
+  font-family: var(--menu-font, pixel);
+}
+
+body[data-project="02"] .project-menu,
+body[data-project="04"] .project-menu,
+body[data-project="08"] .project-menu {
+  --project-head-size: 1.4rem;
+  --project-head-size-mobile: 0.78rem;
+}
+
+body[data-project="03"],
+body[data-project="05"] {
+  --menu-font: "Roboto Mono", monospace, sans-serif;
+}
+
+body[data-project="03"] .project-menu,
+body[data-project="05"] .project-menu {
+  --project-head-size: 2.4rem;
+  --project-head-size-mobile: 1.25rem;
+}
+
+body[data-project="09"] {
+  --menu-font: "DePixelBreit", pixel, monospace;
+}
+
+body[data-project="09"] .project-menu {
+  --project-head-size: 1.25rem;
+  --project-head-size-mobile: 0.75rem;
+}
+
+.project-menu h1 {
+  margin: 0 0 40px;
+  color: var(--blue);
+  font-family: inherit;
+  font-size: calc(var(--project-head-size) + 0.25rem);
+  line-height: 1;
+}
+
+body[data-project="03"] .project-menu h1,
+body[data-project="05"] .project-menu h1 {
+  font-size: var(--project-head-size);
+}
+
+.project-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-menu li {
+  color: var(--blue);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.project-menu a {
+  color: var(--pink);
+  font-family: inherit;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.menu-number {
+  margin-right: 0.55em;
+  color: var(--blue);
+}
+
+.menu-title {
+  color: var(--pink);
+}
+
+body[data-project="03"] .project-menu a,
+body[data-project="03"] .project-menu h1 a,
+body[data-project="03"] .project-back,
+body[data-project="03"] .menu-number,
+body[data-project="03"] .menu-title,
+body[data-project="05"] .project-menu a,
+body[data-project="05"] .project-menu h1 a,
+body[data-project="05"] .project-back,
+body[data-project="05"] .menu-number,
+body[data-project="05"] .menu-title {
+  color: #fff !important;
+}
+
+body[data-project="02"] .project-menu a,
+body[data-project="02"] .project-menu h1 a,
+body[data-project="02"] .project-back,
+body[data-project="02"] .menu-number,
+body[data-project="02"] .menu-title {
+  color: #000 !important;
+}
+
+.menu-number,
+.menu-title {
+  transition: color 0.3s ease;
+}
+
+.project-menu h1 a {
+  color: var(--blue);
+  font-size: inherit;
+}
+
+.project-menu a:hover .menu-number,
+.project-menu a:hover .menu-title,
+.project-menu a:focus-visible .menu-number,
+.project-menu a:focus-visible .menu-title,
+.project-menu a[aria-current="page"] .menu-number,
+.project-menu a[aria-current="page"] .menu-title {
+  color: #ff5733 !important;
+}
+
+.project-menu h1 a:hover,
+.project-menu h1 a:focus-visible,
+.project-back:hover,
+.project-back:focus-visible,
+body[data-project="02"] .project-menu h1 a:hover,
+body[data-project="02"] .project-back:hover,
+body[data-project="03"] .project-menu h1 a:hover,
+body[data-project="03"] .project-back:hover,
+body[data-project="05"] .project-menu h1 a:hover,
+body[data-project="05"] .project-back:hover {
+  color: #ff5733 !important;
+}
+
+.project-back {
+  display: inline-block;
+  margin-top: 64px;
+  color: var(--blue) !important;
+  font-size: var(--project-head-size) !important;
+  line-height: 1;
+}
+
+.project-scroll {
+  min-width: 0;
+  height: 100dvh;
+  padding: 54px 26px 72px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.project-content {
+  width: 100%;
+  max-width: 820px;
+  margin: 0;
+}
+
+.project-content > div,
+.project-content .content {
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  transform: none !important;
+  text-align: left !important;
+}
+
+.project-content iframe {
+  display: block;
+  max-width: 100%;
+  margin: 24px 0 38px;
+  border: 0;
+}
+
+.project-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-content h1 {
+  color: var(--blue);
+  font-family: pixel;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.project-content h2 {
+  color: var(--pink);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.project-content h3 {
+  color: #000;
+  font-family: pixel;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.project-content h5 {
+  color: #fff;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.project-content p,
+.project-content p1,
+.project-content p3,
+.project-content p4,
+.project-content p5,
+.project-content p6 {
+  display: block;
+  max-width: 100%;
+}
+
+.project-content p {
+  color: var(--pink);
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+.project-content p1 {
+  color: #000;
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+body[data-project="02"] .project-content p1 {
+  line-height: 2.2;
+}
+
+.project-content p3 {
+  color: var(--blue);
+  font-family: pixel;
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.project-content p4,
+.project-content p5 {
+  color: #fff;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-size: 1.2rem;
+}
+
+.project-content p4 {
+  line-height: 1.8;
+}
+
+.project-content p5 {
+  line-height: 4;
+}
+
+.project-content p6 {
+  color: var(--pink);
+  font-family: pixel;
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.project-content a {
+  color: var(--blue);
+}
+
+.project-content a.white {
+  color: #fff;
+}
+
+.project-content a.black {
+  color: #000;
+}
+
+.project-content a.pink {
+  color: var(--pink);
+}
+
+.consentful-frame {
+  width: min(100%, 820px);
+  height: 720px;
+  border: 0;
+}
+
+.loading,
+.load-error {
+  color: var(--blue);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.home-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creative-home {
+  width: 100%;
+  text-align: center;
+}
+
+.creative-home h2 {
+  margin: 0 0 20px;
+  color: var(--pink);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.creative-home h1 {
+  margin: 0 0 56px;
+}
+
+.creative-home img {
+  display: block;
+  width: 256px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --menu-width: clamp(92px, 28vw, 124px);
+    --page-gap: 14px;
+  }
+
+  .project-shell {
+    width: 100%;
+    padding-left: 12px;
+  }
+
+  .project-menu h1 {
+    margin-bottom: 16px;
+    font-size: calc(var(--project-head-size-mobile) + 0.12rem);
+    line-height: 1.55;
+  }
+
+  body[data-project="03"] .project-menu h1,
+  body[data-project="05"] .project-menu h1 {
+    font-size: var(--project-head-size-mobile);
+  }
+
+  .project-menu ul {
+    gap: 1rem;
+  }
+
+  .project-menu li,
+  .project-menu a {
+    font-size: 0.56rem;
+    line-height: 3;
+    overflow-wrap: anywhere;
+  }
+
+  .project-back {
+    margin-top: 36px;
+    font-size: var(--project-head-size-mobile) !important;
+  }
+
+  .project-scroll {
+    padding: 30px 22px 54px 0;
+  }
+
+  .project-content h1 {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .project-content h2,
+  .project-content h3 {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .project-content h5 {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .project-content p,
+  .project-content p1,
+  .project-content p3,
+  .project-content p6 {
+    font-size: 0.58rem;
+    line-height: 1.6;
+  }
+
+  .project-content p4,
+  .project-content p5 {
+    font-size: 0.75rem;
+    line-height: 2;
+  }
+
+  body[data-project="02"] .project-content p1 {
+    line-height: 1.6;
+  }
+
+  .project-content img {
+    width: auto !important;
+    height: auto !important;
+    max-width: min(100%, 190px) !important;
+  }
+
+  .project-content iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: var(--sketch-ratio) !important;
+  }
+
+  .project-content .consentful-frame {
+    width: 100% !important;
+    height: 68dvh !important;
+    aspect-ratio: auto !important;
+  }
+}
