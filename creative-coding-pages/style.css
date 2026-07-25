@@ -343,6 +343,18 @@ body[data-project="02"] .project-content p1 {
   border: 0;
 }
 
+.consentful-sketch {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.consentful-sketch canvas {
+  display: block;
+  max-width: 100%;
+}
+
 .loading,
 .load-error {
   color: var(--blue);
@@ -424,18 +436,18 @@ body[data-project="02"] .project-content p1 {
 
   .project-content h1 {
     font-size: 0.82rem;
-    line-height: 1.55;
+    line-height: 1.75;
   }
 
   .project-content h2,
   .project-content h3 {
     font-size: 0.78rem;
-    line-height: 1.55;
+    line-height: 1.75;
   }
 
   .project-content h5 {
     font-size: 1.25rem;
-    line-height: 1;
+    line-height: 1.2;
   }
 
   .project-content p,
@@ -443,17 +455,17 @@ body[data-project="02"] .project-content p1 {
   .project-content p3,
   .project-content p6 {
     font-size: 0.58rem;
-    line-height: 1.6;
+    line-height: 3;
   }
 
   .project-content p4,
   .project-content p5 {
     font-size: 0.75rem;
-    line-height: 2;
+    line-height: 2.3;
   }
 
   body[data-project="02"] .project-content p1 {
-    line-height: 1.6;
+    line-height: 3;
   }
 
   .project-content img {
@@ -473,4 +485,5 @@ body[data-project="02"] .project-content p1 {
     height: 68dvh !important;
     aspect-ratio: auto !important;
   }
+
 }

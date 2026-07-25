@@ -34,59 +34,7 @@ function buildMenu(currentId) {
   menu.insertBefore(list, menu.querySelector(".project-back"));
 }
 
-function makeSourceUrlsAbsolute(container, sourceUrl) {
-  container.querySelectorAll("[src], [href]").forEach((element) => {
-    for (const attribute of ["src", "href"]) {
-      const value = element.getAttribute(attribute);
-      if (!value || value.startsWith("#") || /^(https?:|mailto:|data:)/i.test(value)) {
-        continue;
-      }
-      element.setAttribute(attribute, new URL(value, sourceUrl).href);
-    }
-  });
-}
-
-function removeOriginalNavigation(container) {
-  container.querySelectorAll("nav").forEach((nav) => nav.remove());
-  container.querySelectorAll("a").forEach((link) => {
-    if (link.textContent.trim().toUpperCase() !== "BACK") return;
-    const wrapper = link.closest("h1, h2, h3, h5, div");
-    (wrapper || link).remove();
-  });
-}
-
-async function loadOriginalContent(project) {
-  const content = document.querySelector(".project-content");
-  const sourceUrl = new URL(
-    `../Critical-Computation-Portfolio/p${project.id}.html`,
-    window.location.href,
-  );
-
-  if (project.id === "09") {
-    const frame = document.createElement("iframe");
-    frame.className = "consentful-frame";
-    frame.title = project.title;
-    frame.src = sourceUrl.href;
-    content.replaceChildren(frame);
-    return;
-  }
-
-  const response = await fetch(sourceUrl);
-  if (!response.ok) throw new Error(`Unable to load p${project.id}.html`);
-  const documentText = await response.text();
-  const sourceDocument = new DOMParser().parseFromString(documentText, "text/html");
-  const originalContent =
-    sourceDocument.querySelector("main") || sourceDocument.querySelector("main1");
-
-  if (!originalContent) throw new Error(`No project content found for p${project.id}.html`);
-
-  const fragment = originalContent.cloneNode(true);
-  removeOriginalNavigation(fragment);
-  makeSourceUrlsAbsolute(fragment, sourceUrl);
-  content.replaceChildren(...fragment.childNodes);
-}
-
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
   const currentId = document.body.dataset.project;
   const project = projects.find((item) => item.id === currentId);
   const content = document.querySelector(".project-content");
@@ -104,12 +52,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.title = `${project.title} | Creative Coding & Experiments`;
   document.body.style.setProperty("--project-background", project.background);
   buildMenu(currentId);
-
-  try {
-    await loadOriginalContent(project);
-  } catch (error) {
-    content.innerHTML =
-      '<p class="load-error">This project could not be loaded. Please return to Ephemera and try again.</p>';
-    console.error(error);
-  }
 });
