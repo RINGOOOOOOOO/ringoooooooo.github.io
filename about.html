@@ -14,7 +14,7 @@
     <link rel="icon" href="asset/512x512.png" type="image/png" />
   </head>
 
-  <body>
+  <body class="about-page">
     <!-- <div class="loader">
       <div class="revealer revealer-1">
         <svg width="151" height="148" viewBox="0 0 151 148" fill="none">
@@ -72,18 +72,20 @@
         </select>
       </span>
 
-      <div class="">Jinhao Xu</div>
+      <div class="header-name-target about-header-name">
+        <a href="index.html">Jinhao Xu</a>
+      </div>
 
       <nav>
         <ul id="menu">
           <li>
             <a
-              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              href="works.html"
               data-lang="en"
               >Works</a
             >
             <a
-              href="https://b.parsons.edu/~xuj678/pages/works.html"
+              href="works.html"
               data-lang="zh"
               style="display: none"
               >作品</a
@@ -91,12 +93,12 @@
           </li>
           <li>
             <a
-              href="https://b.parsons.edu/~xuj678/pages/about.html"
+              href="about.html"
               data-lang="en"
               >About</a
             >
             <a
-              href="https://b.parsons.edu/~xuj678/pages/about.html"
+              href="about.html"
               data-lang="zh"
               style="display: none"
               >关于</a
@@ -130,10 +132,10 @@
 
       <ul>
         <li>
-          <a href="https://b.parsons.edu/~xuj678/pages/works.html">Works</a>
+          <a href="works.html">Works</a>
         </li>
         <li>
-          <a href="https://b.parsons.edu/~xuj678/pages/about.html">About</a>
+          <a href="about.html">About</a>
         </li>
         <li>
           <a href="ephemera.html" data-lang="en">Ephemera</a>
@@ -142,56 +144,43 @@
       </ul>
     </div>
 
-    <main class="container">
-      <div class="intro-text">
-        <!-- <img src="asset/xujinhao.png" alt="Jinhao Xu" class="profile-img" /> -->
+    <main class="about-layout">
+      <figure class="about-portrait">
+        <img src="asset/xujinhao.png" alt="Portrait illustration of Jinhao Xu" />
+      </figure>
 
-        <p class="intro-content">
-          <span class="name-main">Jinhao Xu</span>
-          <span class="intro-base fade-on-scroll typing-isa"></span>
+      <div class="about-copy">
+        <section class="about-section">
+          <h1>Profile</h1>
+          <p>
+            I am a game designer pursuing a BFA in Game Design at Parsons
+            School of Design. I am passionate about integrating diverse forms
+            of art and design to redefine how we experience play and
+            creativity.
+          </p>
+        </section>
 
-          <br />
+        <section class="about-section">
+          <h2>Skills</h2>
+          <p>
+            Unity / Figma / AI / PS / Communication / Creativity / Creative
+            problem solving
+          </p>
+        </section>
 
-          <a
-            href="javascript:void(0)"
-            class="hover-this intro-role image-hover fade-on-scroll"
-            data-scroll-gallery="true"
-            data-assets="indexAsset/Mise-en-scène.mp4,indexAsset/dogwash.mp4,indexAsset/duck.mp4"
-          >
-            <span>game developer</span>
-          </a>
-
-          <span class="intro-base fade-on-scroll">,</span>
-
-          <a
-            href="javascript:void(0)"
-            class="hover-this intro-role image-hover fade-on-scroll"
-            data-scroll-gallery="true"
-            data-assets="indexAsset/lying-smalle.gif,indexAsset/bg1.png,indexAsset/bg3.png"
-          >
-            <span>creative programmer</span>
-          </a>
-
-          <span class="intro-base fade-on-scroll">, and</span>
-
-          <a
-            href="javascript:void(0)"
-            class="hover-this intro-role image-hover fade-on-scroll"
-            data-scroll-gallery="true"
-            data-assets="indexAsset/cow.png,indexAsset/10.mp4,indexAsset/512x512.png"
-          >
-            <span>digital media designer</span>
-          </a>
-
-          <!-- <a href="javascript:void(0)" class="hover-this intro-role">
-          <span>illustrator</span>
-        </a> -->
-          <span class="intro-base fade-on-scroll">.</span>
-        </p>
-      </div>
-      <div class="role-preview">
-        <img class="preview-image" src="" alt="" />
-        <video class="preview-video" muted loop playsinline></video>
+        <section class="about-section">
+          <h2>Experience</h2>
+          <dl class="about-experience">
+            <div>
+              <dt>Education:</dt>
+              <dd>Parsons School of Design (2022 - Present)</dd>
+            </div>
+            <div>
+              <dt>Professional:</dt>
+              <dd>DBC (2023) - Book design project</dd>
+            </div>
+          </dl>
+        </section>
       </div>
     </main>
 

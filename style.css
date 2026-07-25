@@ -1015,3 +1015,134 @@ footer .marquee-zh span {
     text-decoration: none;
   }
 }
+
+/* About */
+
+.about-page {
+  overflow: hidden;
+}
+
+.about-page header,
+.about-page footer,
+.about-layout {
+  width: var(--content-width);
+}
+
+.about-page .about-header-name {
+  opacity: 1;
+}
+
+.about-layout {
+  position: relative;
+  z-index: 10;
+  height: calc(100dvh - var(--header-height) - var(--footer-height));
+  margin: var(--header-height) auto var(--footer-height);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(420px, 1.18fr);
+  gap: clamp(56px, 7vw, 120px);
+  align-items: center;
+}
+
+.about-portrait {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.about-portrait img {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+  object-fit: contain;
+}
+
+.about-copy {
+  max-width: 680px;
+  padding-right: clamp(12px, 3vw, 48px);
+}
+
+.about-section + .about-section {
+  margin-top: clamp(30px, 4.5vh, 54px);
+}
+
+.about-section h1,
+.about-section h2 {
+  margin: 0 0 13px;
+  font-family: var(--mono);
+  font-size: clamp(17px, 1.35vw, 22px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.about-section p,
+.about-experience {
+  margin: 0;
+  font-size: clamp(13px, 0.95vw, 16px);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.about-experience > div {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.5em;
+}
+
+.about-experience > div + div {
+  margin-top: 8px;
+}
+
+.about-experience dt,
+.about-experience dd {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    overflow-y: auto;
+  }
+
+  .about-layout {
+    height: auto;
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+    padding: 28px 0 48px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    align-content: center;
+  }
+
+  .about-portrait {
+    justify-content: center;
+  }
+
+  .about-portrait img {
+    width: min(62vw, 220px);
+  }
+
+  .about-copy {
+    max-width: none;
+    padding: 0 4px;
+  }
+
+  .about-section + .about-section {
+    margin-top: 28px;
+  }
+
+  .about-section h1,
+  .about-section h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .about-section p,
+  .about-experience {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .about-experience > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

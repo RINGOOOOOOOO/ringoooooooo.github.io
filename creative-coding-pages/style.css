@@ -1,6 +1,7 @@
 @font-face {
   font-family: pixel;
-  src: url("../Critical-Computation-Portfolio/asset/dogicapixel.ttf");
+  src: url("asset/dogicapixel.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -197,6 +198,11 @@ body[data-project="05"] .project-back:hover {
   color: var(--blue) !important;
   font-size: var(--project-head-size) !important;
   line-height: 1;
+}
+
+body[data-project="08"] .project-back,
+body[data-project="09"] .project-back {
+  font-size: 1.5rem !important;
 }
 
 .project-scroll {
@@ -428,6 +434,11 @@ body[data-project="02"] .project-content p1 {
   .project-back {
     margin-top: 36px;
     font-size: var(--project-head-size-mobile) !important;
+  }
+
+  body[data-project="08"] .project-back,
+  body[data-project="09"] .project-back {
+    font-size: 0.82rem !important;
   }
 
   .project-scroll {
