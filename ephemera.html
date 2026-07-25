@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ephemera archive | Jinhao Xu" />
+    <title>Ephemera | Jinhao Xu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ephemera.css" />
+    <link rel="icon" href="asset/512x512.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="ephemera-page">
+    <div class="header-bg"></div>
+    <div class="footer-bg"></div>
+    <div class="cursor"></div>
+
+    <header>
+      <span id="site-name">
+        <select id="languages" class="language-select" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh">中</option>
+        </select>
+      </span>
+      <div class="header-name-target ephemera-header-name">
+        <a href="index.html" data-lang="en">Jinhao Xu</a>
+        <a href="index.html" data-lang="zh" style="display: none">徐金淏</a>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul id="menu">
+          <li>
+            <a href="works.html" data-lang="en">Works</a>
+            <a href="works.html" data-lang="zh" style="display: none">作品</a>
+          </li>
+          <li>
+            <a href="about.html" data-lang="en">About</a>
+            <a href="about.html" data-lang="zh" style="display: none">关于</a>
+          </li>
+          <li>
+            <a class="active" href="ephemera.html" data-lang="en" aria-current="page">Ephemera</a>
+            <a class="active" href="ephemera.html" data-lang="zh" aria-current="page" style="display: none">拾遗</a>
+          </li>
+        </ul>
+      </nav>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span data-lang="en">Menu</span>
+        <span data-lang="zh" style="display: none">菜单</span>
+      </button>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <button class="mobile-close" type="button" aria-label="Close menu">
+        <span data-lang="en">Close</span>
+        <span data-lang="zh" style="display: none">关闭</span>
+      </button>
+      <ul>
+        <li>
+          <a href="works.html" data-lang="en">Works</a>
+          <a href="works.html" data-lang="zh" style="display: none">作品</a>
+        </li>
+        <li>
+          <a href="about.html" data-lang="en">About</a>
+          <a href="about.html" data-lang="zh" style="display: none">关于</a>
+        </li>
+        <li>
+          <a class="active" href="ephemera.html" data-lang="en" aria-current="page">Ephemera</a>
+          <a class="active" href="ephemera.html" data-lang="zh" aria-current="page" style="display: none">拾遗</a>
+        </li>
+      </ul>
+    </div>
+
+    <main class="ephemera-layout">
+      <section class="ephemera-gallery" aria-label="Ephemera gallery"></section>
+      <aside class="ephemera-index" aria-label="Ephemera project index"></aside>
+    </main>
+
+    <footer>
+      <div class="marquee" data-lang="en">
+        <span><a href="mailto:xuj678@newschool.com">&nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp; &nbsp; If you're interested, let's chat together &nbsp; / &nbsp;</a></span>
+      </div>
+      <div class="marquee-zh" data-lang="zh" style="display: none">
+        <span><a href="mailto:xuj678@newschool.com">如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp; 如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp; 如果感兴趣的话，请联系我：） &nbsp; / &nbsp; &nbsp;</a></span>
+      </div>
+    </footer>
+    <script src="ephemera.js"></script>
+  </body>
+</html>

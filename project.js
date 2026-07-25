@@ -156,7 +156,7 @@ const projects = {
     },
     description: {
       en: "Inspired by the Greek myth of the Minotaur, a monster with a bull's head and a human body, LABYRINTH is a two-player asymmetric hide-and-seek game played through physical controllers. Inside a dark maze, one player becomes the Hider trying to escape, while the other becomes the Seeker, a ghostly entity that hunts through sound.",
-      zh: "《LABYRINTH（迷宫）》灵感来自希腊神话牛首人身怪弥诺陶洛斯的迷宫，是一款通过实体控制器进行的双人非对称捉迷藏游戏。在黑暗迷宫中，一名玩家作为 Hider 试图逃离，另一名玩家作为 Seeker，成为依靠声音追猎的幽灵般存在。",
+      zh: "《LABYRINTH（迷宫）》灵感来自希腊神话弥诺陶洛斯的迷宫，是一款通过实体控制器进行的双人非对称捉迷藏游戏。在黑暗迷宫中，一名玩家作为 Hider 试图逃离，另一名玩家作为 Seeker，成为依靠声音追猎的幽灵般存在。",
     },
     content: [
       { type: "heading", text: { en: "Enter the Maze", zh: "进入迷宫" } },
@@ -394,7 +394,7 @@ const projects = {
       {
         type: "heading",
         text: {
-          en: "What if a record player became a game controller?",
+          en: "What If a Record Player Became a Game Controller?",
           zh: "如果唱片机可以变成游戏手柄会怎样？",
         },
       },
@@ -553,12 +553,16 @@ const projects = {
       zh: "灵感源于《爱丽丝梦游仙境》，《红心皇后办公室加班》是一款视觉小说。作品颠覆了人们熟悉的角色关系，讲述一段关于权力、疲惫与荒诞加班逻辑的黑色幽默办公室恐怖故事。",
     },
     content: [
-      { type: "heading", text: { en: "Stay Late", zh: "加班" } },
+      {
+        type: "heading",
+        text: { en: "Stay Late", zh: "关于加班" },
+        zzz: true,
+      },
       {
         type: "paragraph",
         text: {
-          en: "The player takes on the role of the Queen of Hearts, an exhausted office worker trapped in yet another endless night of overtime. After being threatened with dismissal by her boss, Alice, the Queen returns to work under pressure, only to find Alice beheaded in the darkness. As the office begins to shift into something strange and unsettling, the player must decide whether to investigate the truth behind the murder or simply clock out and leave.",
-          zh: "玩家扮演红桃皇后，一个在无尽加班中被耗尽的办公室员工。在被上司爱丽丝威胁开除后，红桃皇后不得不继续留在办公室工作。可当黑暗降临，爱丽丝却被发现身首异处，整个办公室也开始变得诡谲而不安。玩家需要在荒诞的加班夜里作出选择：调查这场谋杀背后的真相，还是干脆打卡下班。",
+          en: "You play as the Queen of Hearts, an ordinary office worker exhausted from yet another late-night shift. After Alice catches you complaining about her behind her back, an argument breaks out—and her head suddenly rolls right off her shoulders. Walking away now would make you the prime suspect in your boss’s murder. So, will you explore the increasingly strange office and try to clear your name, or simply clock out and decide that solving your boss’s murder is above your pay grade?",
+          zh: "你将扮演红桃皇后，一个在深夜加班中精疲力竭的普通上班族。没想到只是在背后吐槽了几句上司爱丽丝，就被她当场抓住。两人争执之际，爱丽丝的头颅却突然从肩膀上滚落下来。现在直接走人，无疑会让你成为杀害老板的头号嫌疑人！那么，你要探索这个越来越诡异的办公室，设法洗清自己的嫌疑，还是干脆打卡下班，认定调查老板的谋杀案已经超出了你的工资范围？",
         },
       },
       {
@@ -574,55 +578,65 @@ const projects = {
           href: "https://ringooooo.itch.io/final-game",
         },
       },
+      { type: "heading", text: { en: "Visual Deisgn", zh: "视觉设计" } },
+      {
+        type: "image",
+        src: "qhio/visualdesign.png",
+        alt: {
+          en: "game visual design",
+          zh: "游戏视觉设计",
+        },
+        caption: {
+          en: "characters design sketch",
+          zh: "角色设计草稿",
+        },
+      },
     ],
   },
   desktop: {
     title: { en: "Desktop??", zh: "桌面？？" },
     meta: { en: "Web + interface — 2023", zh: "网页 + 界面 — 2023" },
     tags: {
-      en: ["web", "interface", "interaction"],
-      zh: ["网页", "界面", "交互"],
+      en: ["UI/UX", "interaction"],
+      zh: ["UI/UX", "交互"],
     },
     description: {
-      en: "An interactive web desktop that treats familiar interface conventions as a space for play and discovery.",
-      zh: "一个互动网页桌面，将熟悉的界面惯例变成游戏与探索的空间。",
+      en: "A personal hand-drawn website demo",
+      zh: "个人手绘网站demo",
     },
     content: [
-      { type: "heading", text: { en: "A Familiar Screen", zh: "熟悉的屏幕" } },
+      // { type: "heading", text: { en: "A Familiar Screen", zh: "熟悉的屏幕" } },
       {
         type: "paragraph",
-        text: {
-          en: "The project begins with an immediately recognizable desktop, then turns windows and icons into invitations to wander.",
-          zh: "项目从一眼可识别的桌面开始，随后将窗口和图标变成漫游的邀请。",
+        text: { en: "", zh: "" },
+        link: {
+          text: { en: "view more", zh: "查看更多" },
+          href: "windowxp.html",
         },
       },
       {
         type: "video",
         src: "indexAsset/laptop.mp4",
-        caption: {
-          en: "A desktop interface built for exploration.",
-          zh: "为探索而构建的桌面界面。",
-        },
       },
-      {
-        type: "heading",
-        text: { en: "Interface as Place", zh: "界面作为场所" },
-      },
-      {
-        type: "paragraph",
-        text: {
-          en: "Navigation becomes a small world rather than a utility. Familiar conventions create expectations that can then be interrupted and played with.",
-          zh: "导航不再只是工具，而成为一个微型世界。熟悉的惯例建立预期，也让这些预期能够被打断和玩味。",
-        },
-      },
-      {
-        type: "video",
-        src: "indexAsset/laptop.mp4",
-        caption: {
-          en: "Windows, icons, and interaction form a playful environment.",
-          zh: "窗口、图标和交互共同构成一个趣味环境。",
-        },
-      },
+      // {
+      //   type: "heading",
+      //   text: { en: "Interface as Place", zh: "界面作为场所" },
+      // },
+      // {
+      //   type: "paragraph",
+      //   text: {
+      //     en: "Navigation becomes a small world rather than a utility. Familiar conventions create expectations that can then be interrupted and played with.",
+      //     zh: "导航不再只是工具，而成为一个微型世界。熟悉的惯例建立预期，也让这些预期能够被打断和玩味。",
+      //   },
+      // },
+      // {
+      //   type: "video",
+      //   src: "indexAsset/laptop.mp4",
+      //   caption: {
+      //     en: "Windows, icons, and interaction form a playful environment.",
+      //     zh: "窗口、图标和交互共同构成一个趣味环境。",
+      //   },
+      // },
     ],
   },
 };
@@ -688,6 +702,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const heading = document.createElement("h2");
       heading.className = "article-heading";
       heading.textContent = translated(block.text);
+      if (block.zzz) {
+        const zzzGroup = document.createElement("span");
+        zzzGroup.className = "zzz-group";
+        zzzGroup.setAttribute("aria-hidden", "true");
+        ["z1", "z2", "z3"].forEach((className) => {
+          const z = document.createElement("span");
+          z.className = `zzz ${className}`;
+          z.textContent = "z";
+          zzzGroup.appendChild(z);
+        });
+        heading.appendChild(zzzGroup);
+      }
       return heading;
     }
     if (block.type === "paragraph" || block.type === "caption") {
@@ -940,7 +966,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document
       .querySelectorAll(
-        "header a, header select, footer a, .header-name-target, .project-close, .project-navigation-link",
+        "header a, header select, footer a, .header-name-target, .project-close, .project-navigation-link, .article-inline-link",
       )
       .forEach((element) => {
         element.addEventListener("mouseenter", () =>
