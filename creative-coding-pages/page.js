@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentId = document.body.dataset.project;
   const project = projects.find((item) => item.id === currentId);
   const content = document.querySelector(".project-content");
+  const copyright = document.createElement("div");
+  copyright.className = "site-copyright";
+  copyright.textContent = "© 2026 JINHAO XU";
+  document.body.append(copyright);
 
   if (currentId === "home") {
     buildMenu(null);

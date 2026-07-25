@@ -240,3 +240,25 @@ p1 {
 .AboutMeBrowser.hidden {
   display: none;
 }
+.site-copyright {
+  position: fixed;
+  top: 50%;
+  right: 14px;
+  z-index: 9999;
+  transform: translate(50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .site-copyright {
+    display: none;
+  }
+}

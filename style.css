@@ -52,6 +52,23 @@ body {
   min-height: 100dvh;
 }
 
+.site-copyright {
+  position: fixed;
+  top: 50%;
+  right: calc((100vw - var(--content-width)) / 4);
+  z-index: 60;
+  transform: translate(50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 html,
 body {
   width: 100%;
@@ -835,6 +852,10 @@ footer .marquee-zh span {
 
   .cursor {
     display: none !important;
+  }
+
+  .site-copyright {
+    display: none;
   }
 
   header::after,

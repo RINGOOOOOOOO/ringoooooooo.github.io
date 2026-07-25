@@ -36,6 +36,23 @@ body {
   font-family: pixel;
 }
 
+.site-copyright {
+  position: fixed;
+  top: 50%;
+  right: 14px;
+  z-index: 60;
+  transform: translate(50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  color: var(--blue);
+  font-family: var(--menu-font, pixel);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 body[data-project="01"] {
   --sketch-ratio: 400 / 400;
 }
@@ -407,6 +424,10 @@ body[data-project="02"] .project-content p1 {
   .project-shell {
     width: 100%;
     padding-left: 12px;
+  }
+
+  .site-copyright {
+    display: none;
   }
 
   .project-menu h1 {

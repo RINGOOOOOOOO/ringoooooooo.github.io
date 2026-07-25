@@ -239,6 +239,8 @@
   }
 
   .ephemera-index {
+    grid-column: 1;
+    grid-row: 1;
     position: static;
     width: 100%;
     height: 100%;
@@ -253,6 +255,8 @@
   }
 
   .ephemera-gallery {
+    grid-column: 2;
+    grid-row: 1;
     display: block;
     width: 100%;
     height: 100%;
