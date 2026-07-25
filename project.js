@@ -581,7 +581,7 @@ const projects = {
       { type: "heading", text: { en: "Visual Deisgn", zh: "视觉设计" } },
       {
         type: "image",
-        src: "qhio/visualdesign.png",
+        src: "qhio/characters.png",
         alt: {
           en: "game visual design",
           zh: "游戏视觉设计",
