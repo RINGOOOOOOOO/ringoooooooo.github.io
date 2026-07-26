@@ -83,13 +83,6 @@ body[data-project="04"] {
   font-family: var(--menu-font, pixel);
 }
 
-body[data-project="02"] .project-menu,
-body[data-project="04"] .project-menu,
-body[data-project="08"] .project-menu {
-  --project-head-size: 1.4rem;
-  --project-head-size-mobile: 0.78rem;
-}
-
 body[data-project="03"],
 body[data-project="05"] {
   --menu-font: "Roboto Mono", monospace, sans-serif;
@@ -105,17 +98,17 @@ body[data-project="09"] {
   --menu-font: "DePixelBreit", pixel, monospace;
 }
 
-body[data-project="09"] .project-menu {
-  --project-head-size: 1.25rem;
-  --project-head-size-mobile: 0.75rem;
-}
-
 .project-menu h1 {
   margin: 0 0 40px;
   color: var(--blue);
   font-family: inherit;
   font-size: calc(var(--project-head-size) + 0.25rem);
   line-height: 1;
+}
+
+body:not([data-project="03"]):not([data-project="05"]) .project-menu h1 {
+  font-family: pixel;
+  font-weight: 700;
 }
 
 body[data-project="03"] .project-menu h1,
@@ -217,9 +210,9 @@ body[data-project="05"] .project-back:hover {
   line-height: 1;
 }
 
-body[data-project="08"] .project-back,
-body[data-project="09"] .project-back {
-  font-size: 1.5rem !important;
+body:not([data-project="03"]):not([data-project="05"]) .project-back {
+  font-family: pixel;
+  font-weight: 400;
 }
 
 .project-scroll {
@@ -455,11 +448,6 @@ body[data-project="02"] .project-content p1 {
   .project-back {
     margin-top: 36px;
     font-size: var(--project-head-size-mobile) !important;
-  }
-
-  body[data-project="08"] .project-back,
-  body[data-project="09"] .project-back {
-    font-size: 0.82rem !important;
   }
 
   .project-scroll {
