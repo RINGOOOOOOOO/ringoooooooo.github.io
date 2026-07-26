@@ -222,7 +222,7 @@ const ephemeraProjects = [
   {
     id: "experimental-clock",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
-    title: { en: "Time in the Moon Phases", zh: "时间在月相中" },
+    title: { en: "Time in the Moon", zh: "时间在月亮里" },
     image: "creative-coding-pages-assets/Project3EXPERIMENTAL-CLOCK.png",
     href: "creative-coding-pages/p03.html",
     size: "medium",
@@ -297,6 +297,50 @@ const ephemeraProjects = [
     rotation: -0.6,
   },
   {
+    id: "Game-Design-Tasking-Chart",
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+    title: { en: "Game Design Tasking Chart", zh: "游戏设计任务图" },
+    image: "indexAsset/game-chart.png",
+    href: "https://xujinhao.com/Game-Design-Tasking-Chart/",
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
+  },
+  {
+    id: "web-design",
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+    title: { en: "Untitled", zh: "无题" },
+    image: "indexAsset/news.png",
+    href: "https://xujinhao.com/cd-assignment/PoliticalNews/News1.html",
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
+  },
+  {
+    id: "poster-design",
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+    title: { en: "Untitled", zh: "无题" },
+    image: "indexAsset/6.png",
+    href: "https://xujinhao.com/cd-assignment/poster/poster.html",
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
+  },
+  {
+    id: "poop",
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+    title: { en: "Poop Survey", zh: "关爱你的便便调查" },
+    image: "indexAsset/poop.png",
+    href: "https://xujinhao.com/Project3-Community-Tool-or-Quiz/",
+    size: "large",
+    offsetX: -9,
+    offsetY: 4,
+    rotation: -0.3,
+  },
+  {
     id: "and-yet-i-miss-you",
     category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "And Yet I Miss You", zh: "然而我仍想念你" },
@@ -307,72 +351,39 @@ const ephemeraProjects = [
     offsetY: 4,
     rotation: -0.3,
   },
-  {
-    id: "my-small-stubborn-steps",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "My Small, Stubborn Steps", zh: "我微小而固执的脚步" },
-    // image: "indexAsset/2.png",
-    href: "#",
-    size: "small",
-    offsetX: 11,
-    offsetY: 30,
-    rotation: 0.7,
-  },
-  {
-    id: "romance-scams-unmasked",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "Romance Scams: Unmasked", zh: "爱情骗局：揭下面具" },
-    // image: "indexAsset/3.png",
-    href: "#",
-    size: "medium",
-    offsetX: -5,
-    offsetY: -6,
-    rotation: -0.6,
-  },
-  {
-    id: "stay-dangerous",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "Stay Dangerous", zh: "保持危险" },
-    // image: "indexAsset/4.png",
-    href: "#",
-    size: "large",
-    offsetX: 7,
-    offsetY: 24,
-    rotation: 0.4,
-  },
-  {
-    id: "found-alphabet",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "Found Alphabet", zh: "发现的字母" },
-    // image: "indexAsset/5.png",
-    href: "#",
-    size: "small",
-    offsetX: -8,
-    offsetY: 14,
-    rotation: -0.9,
-  },
-  {
-    id: "crying-in-h-mart",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "Crying in H Mart", zh: "在 H Mart 哭泣" },
-    // image: "indexAsset/6.png",
-    href: "#",
-    size: "medium",
-    offsetX: 10,
-    offsetY: 38,
-    rotation: 0.5,
-  },
-  {
-    id: "flowerful",
-    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
-    title: { en: "flowerful", zh: "花意盎然" },
-    // image: "indexAsset/7.png",
-    href: "#",
-    size: "large",
-    offsetX: -6,
-    offsetY: 2,
-    rotation: -0.4,
-  },
+  // {
+  //   id: "my-small-stubborn-steps",
+  //   category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+  //   title: { en: "My Small, Stubborn Steps", zh: "我微小而固执的脚步" },
+  //   // image: "indexAsset/2.png",
+  //   href: "#",
+  //   size: "small",
+  //   offsetX: 11,
+  //   offsetY: 30,
+  //   rotation: 0.7,
+  // },
+  // {
+  //   id: "romance-scams-unmasked",
+  //   category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+  //   title: { en: "Romance Scams", zh: "爱情骗局" },
+  //   // image: "indexAsset/3.png",
+  //   href: "#",
+  //   size: "medium",
+  //   offsetX: -5,
+  //   offsetY: -6,
+  //   rotation: -0.6,
+  // },
+  // {
+  //   id: "crying-in-h-mart",
+  //   category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
+  //   title: { en: "Crying in H Mart", zh: "在 H Mart 哭泣" },
+  //   // image: "indexAsset/6.png",
+  //   href: "#",
+  //   size: "medium",
+  //   offsetX: 10,
+  //   offsetY: 38,
+  //   rotation: 0.5,
+  // },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -382,6 +393,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const index = document.querySelector(".ephemera-index");
   const mobileQuery = window.matchMedia("(max-width: 768px)");
   let isMobile = mobileQuery.matches;
+  const categoryOrder = new Map([
+    ["Web & Graphic Design", 0],
+    ["Games & Interactive Experiences", 1],
+    ["Creative Coding & Experiments", 2],
+  ]);
+
+  function projectsInDisplayOrder() {
+    return [...ephemeraProjects].sort(
+      (a, b) =>
+        (categoryOrder.get(a.category.en) ?? Number.MAX_SAFE_INTEGER) -
+        (categoryOrder.get(b.category.en) ?? Number.MAX_SAFE_INTEGER),
+    );
+  }
 
   function getSavedLanguage() {
     try {
@@ -479,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function groupProjects() {
     const groups = new Map();
-    ephemeraProjects.forEach((project) => {
+    projectsInDisplayOrder().forEach((project) => {
       const key = project.category.en;
       if (!groups.has(key))
         groups.set(key, { category: project.category, projects: [] });
@@ -545,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gallery || !index) return;
     const galleryInner = document.createElement("div");
     galleryInner.className = "ephemera-gallery-inner";
-    galleryInner.append(...ephemeraProjects.map(createGalleryCard));
+    galleryInner.append(...projectsInDisplayOrder().map(createGalleryCard));
     gallery.replaceChildren(galleryInner);
     index.replaceChildren(...groupProjects().map(createIndexCategory));
     updateLanguage();
