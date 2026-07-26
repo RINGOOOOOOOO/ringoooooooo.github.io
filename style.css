@@ -1100,6 +1100,7 @@ footer .marquee-zh span {
 .about-section p,
 .about-experience {
   margin: 0;
+  margin-left: 20px;
   font-size: clamp(13px, 0.95vw, 16px);
   font-weight: 300;
   line-height: 1.8;
@@ -1160,8 +1161,9 @@ footer .marquee-zh span {
 
   .about-section p,
   .about-experience {
-    font-size: 13px;
+    font-size: var(--text-size);
     line-height: 1.75;
+    margin-left: 20px;
   }
 
   .about-experience > div {
