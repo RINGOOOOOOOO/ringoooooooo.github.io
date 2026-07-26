@@ -98,7 +98,9 @@
   overflow: hidden;
 }
 
-.ephemera-media img {
+.ephemera-media img,
+.ephemera-media video {
+  display: block;
   width: 100%;
   height: auto;
   max-height: 360px;
@@ -131,7 +133,9 @@
 }
 
 .ephemera-card:hover .ephemera-media img,
-.ephemera-card:focus-visible .ephemera-media img {
+.ephemera-card:hover .ephemera-media video,
+.ephemera-card:focus-visible .ephemera-media img,
+.ephemera-card:focus-visible .ephemera-media video {
   transform: scale(1.025);
 }
 

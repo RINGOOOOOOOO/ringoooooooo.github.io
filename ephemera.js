@@ -47,8 +47,8 @@ const ephemeraProjects = [
     id: "zine",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "zine", zh: "zine" },
-    image: "indexAsset/zine.png",
-    href: "https://ringooooo.itch.io/week5-fortune-teller-generator",
+    image: "asset/dogzine.png",
+    href: "https://ringooooo.itch.io/week7-zine",
     size: "medium",
     offsetX: 14,
     offsetY: 34,
@@ -58,7 +58,7 @@ const ephemeraProjects = [
     id: "zoology",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "Zoology Museum", zh: "动物学博物馆" },
-    image: "indexAsset/zoology.png",
+    image: "asset/zoo.png",
     href: "https://ringooooo.itch.io/week10-museum-game",
     size: "medium",
     offsetX: 14,
@@ -91,7 +91,7 @@ const ephemeraProjects = [
     id: "The Trolley",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "The Trolley Problem", zh: "电车难题" },
-    image: "indexAsset/trolley.png",
+    image: "asset/trolley.png",
     href: "https://ringooooo.itch.io/bitsy-game",
     size: "medium",
     offsetX: 14,
@@ -113,7 +113,18 @@ const ephemeraProjects = [
     id: "haunted",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "Haunted Photography", zh: "鬼屋摄影" },
-    image: "indexAsset/haunted.png",
+    image: "indexAsset/camera.png",
+    href: "https://ringooooo.itch.io/bitsy-game",
+    size: "medium",
+    offsetX: 14,
+    offsetY: 34,
+    rotation: 0.5,
+  },
+  {
+    id: "pet life",
+    category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
+    title: { en: "Pet Life", zh: "宠物生活" },
+    image: "indexAsset/3.png",
     href: "https://ringooooo.itch.io/bitsy-game",
     size: "medium",
     offsetX: 14,
@@ -126,6 +137,28 @@ const ephemeraProjects = [
     title: { en: "Mise-en-scène", zh: "Mise-en-scène" },
     image: "indexAsset/Mise-en-scène.png",
     href: "https://ringooooo.itch.io/bitsy-game",
+    size: "medium",
+    offsetX: 14,
+    offsetY: 34,
+    rotation: 0.5,
+  },
+  {
+    id: "who-would-win",
+    category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
+    title: { en: "Who Would Win?", zh: "谁会赢？" },
+    image: "indexAsset/bg3.png",
+    href: "https://ringooooo.itch.io/bitsy-game",
+    size: "medium",
+    offsetX: 14,
+    offsetY: 34,
+    rotation: 0.5,
+  },
+  {
+    id: "🍟🍽️🪰",
+    category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
+    title: { en: "🍟🍽️🪰", zh: "🍟🍽️🪰" },
+    image: "indexAsset/9.png",
+    href: "https://ringooooo.itch.io/final",
     size: "medium",
     offsetX: 14,
     offsetY: 34,
@@ -157,7 +190,7 @@ const ephemeraProjects = [
     id: "desktop",
     category: { en: "Games & Interactive Experiences", zh: "游戏与互动体验" },
     title: { en: "Desktop??", zh: "桌面？？" },
-    image: "asset/web.gif",
+    image: "indexAsset/lying-smalle.gif",
     href: "project.html?id=desktop",
     size: "small",
     offsetX: -12,
@@ -256,7 +289,7 @@ const ephemeraProjects = [
     id: "consentful-interface",
     category: { en: "Creative Coding & Experiments", zh: "创意编程与实验" },
     title: { en: "Consentful Interface", zh: "知情同意界面" },
-    // image: "indexAsset/bg2.png",
+    image: "creative-coding-pages-assets/09.mp4",
     href: "creative-coding-pages/p09.html",
     size: "medium",
     offsetX: -5,
@@ -265,7 +298,7 @@ const ephemeraProjects = [
   },
   {
     id: "and-yet-i-miss-you",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "And Yet I Miss You", zh: "然而我仍想念你" },
     // image: "indexAsset/1.png",
     href: "#",
@@ -276,7 +309,7 @@ const ephemeraProjects = [
   },
   {
     id: "my-small-stubborn-steps",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "My Small, Stubborn Steps", zh: "我微小而固执的脚步" },
     // image: "indexAsset/2.png",
     href: "#",
@@ -287,7 +320,7 @@ const ephemeraProjects = [
   },
   {
     id: "romance-scams-unmasked",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "Romance Scams: Unmasked", zh: "爱情骗局：揭下面具" },
     // image: "indexAsset/3.png",
     href: "#",
@@ -298,7 +331,7 @@ const ephemeraProjects = [
   },
   {
     id: "stay-dangerous",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "Stay Dangerous", zh: "保持危险" },
     // image: "indexAsset/4.png",
     href: "#",
@@ -309,7 +342,7 @@ const ephemeraProjects = [
   },
   {
     id: "found-alphabet",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "Found Alphabet", zh: "发现的字母" },
     // image: "indexAsset/5.png",
     href: "#",
@@ -320,7 +353,7 @@ const ephemeraProjects = [
   },
   {
     id: "crying-in-h-mart",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "Crying in H Mart", zh: "在 H Mart 哭泣" },
     // image: "indexAsset/6.png",
     href: "#",
@@ -331,7 +364,7 @@ const ephemeraProjects = [
   },
   {
     id: "flowerful",
-    category: { en: "Editorial & Graphic Design", zh: "编辑与平面设计" },
+    category: { en: "Web & Graphic Design", zh: "网页和平面设计" },
     title: { en: "flowerful", zh: "花意盎然" },
     // image: "indexAsset/7.png",
     href: "#",
@@ -406,15 +439,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const figure = document.createElement("figure");
     const media = document.createElement("div");
     media.className = "ephemera-media";
-    const image = document.createElement("img");
-    image.src = project.image;
-    image.loading = "lazy";
-    image.alt = translated(project.title);
+    const isVideo = /\.(mp4|webm|mov)(?:[?#].*)?$/i.test(project.image || "");
+    let mediaElement;
+
+    if (isVideo) {
+      const video = document.createElement("video");
+      video.src = project.image;
+      video.autoplay = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = "auto";
+      video.disablePictureInPicture = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("aria-label", translated(project.title));
+      video.addEventListener("canplay", () => video.play().catch(() => {}), {
+        once: true,
+      });
+      mediaElement = video;
+    } else {
+      const image = document.createElement("img");
+      image.src = project.image;
+      image.loading = "lazy";
+      image.alt = translated(project.title);
+      mediaElement = image;
+    }
+
     const caption = document.createElement("figcaption");
     caption.append(...createTranslationSpans(project.title));
-    media.append(image);
+    media.append(mediaElement);
     figure.append(media, caption);
     card.append(figure);
+    if (isVideo) mediaElement.play().catch(() => {});
     return card;
   }
 
